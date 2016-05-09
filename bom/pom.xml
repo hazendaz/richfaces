@@ -64,7 +64,7 @@
     <properties>
         <version.oscache>2.3</version.oscache>
         <version.jbosscache>3.2.5.GA</version.jbosscache>
-        <version.ehcache>2.4.3</version.ehcache>
+        <version.ehcache>2.10.3</version.ehcache>
 
         <maven.min.version>3.0</maven.min.version>
     </properties>
