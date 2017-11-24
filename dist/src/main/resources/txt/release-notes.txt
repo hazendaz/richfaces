@@ -1,6 +1,6 @@
 4.5.21-SNAPSHOT
 ----------
-
+	[  ] Upgrade cssparser to 0.9.23
 
 4.5.20.ayg
 ----------
@@ -10,7 +10,7 @@
 4.5.19.ayg
 ----------
 
-    [  ] Upgrade cssparser to 0.9.23
+	[  ] Upgrade cssparser to 0.9.23
 	[  ] Fix tableSubfooterBackgroundColor color on wine theme
 
 
