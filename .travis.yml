@@ -8,8 +8,9 @@ jdk:
 
 
 addons:
+  firefox: latest
   # download Firefox 45 ESR
-  firefox: "45.0esr"
+#  firefox: "45.0esr"
 #  firefox: latest-esr
 
 before_install:
@@ -25,9 +26,9 @@ before_script:
   # give xvfb some time to start
   - sleep 3
   # unpack and add Firefox to PATH
-  - echo "Extracting firefox and setting PATH variable..."
-  - tar -xjf /tmp/firefox-45.0esr.tar.bz2 --directory /tmp
-  - export PATH="/tmp/firefox:$PATH"
+#  - echo "Extracting firefox and setting PATH variable..."
+#  - tar -xjf /tmp/firefox-45.0esr.tar.bz2 --directory /tmp
+#  - export PATH="/tmp/firefox:$PATH"
   # log used version of Firefox
   - echo "Using firefox version `firefox --version`"
 
