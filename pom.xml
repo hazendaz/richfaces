@@ -274,33 +274,7 @@
                     </configuration>
                 </plugin>
 
-                <!-- Checkstyle -->
-                <plugin>
-                    <groupId>org.apache.maven.plugins</groupId>
-                    <artifactId>maven-checkstyle-plugin</artifactId>
-                    <configuration>
-                        <configLocation>richfaces-checkstyle/richfaces-checkstyle.xml</configLocation>
-                        <logViolationsToConsole>true</logViolationsToConsole>
-                        <violationSeverity>error</violationSeverity>
-                        <includeTestSourceDirectory>true</includeTestSourceDirectory>
-                    </configuration>
-                    <executions>
-                        <execution>
-                            <id>richfaces-checkstyle-report</id>
-                            <phase>verify</phase>
-                            <goals>
-                                <goal>check</goal>
-                            </goals>
-                        </execution>
-                    </executions>
-                    <dependencies>
-                        <dependency>
-                            <groupId>org.richfaces</groupId>
-                            <artifactId>richfaces-build-resources</artifactId>
-                            <version>${version.richfaces}</version>
-                        </dependency>
-                    </dependencies>
-                </plugin>
+               
                 <plugin>
                     <artifactId>maven-eclipse-plugin</artifactId>
                     <configuration>

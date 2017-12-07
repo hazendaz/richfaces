@@ -90,11 +90,6 @@
 
     <build>
         <finalName>standalone-js</finalName>
-        <plugins>
-            <plugin>
-                <artifactId>maven-checkstyle-plugin</artifactId>
-            </plugin>
-        </plugins>
     </build>
 
     <profiles>
