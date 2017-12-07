@@ -21,7 +21,12 @@
  */
 package org.richfaces.resource.optimizer.resource.writer.impl;
 
-import java.io.*;
+import java.io.BufferedOutputStream;
+import java.io.File;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.OutputStream;
+import java.nio.file.StandardOpenOption;
 import java.text.MessageFormat;
 import java.util.Collections;
 import java.util.LinkedHashMap;
@@ -32,9 +37,6 @@ import java.util.Set;
 
 import javax.faces.application.Resource;
 
-import com.google.common.io.ByteSource;
-import com.google.common.io.FileWriteMode;
-import com.google.common.io.Files;
 import org.richfaces.log.Logger;
 import org.richfaces.resource.ResourceKey;
 import org.richfaces.resource.ResourceSkinUtils;
@@ -48,6 +50,9 @@ import com.google.common.base.Predicate;
 import com.google.common.collect.Iterables;
 import com.google.common.collect.Maps;
 import com.google.common.collect.Sets;
+import com.google.common.io.ByteSource;
+import com.google.common.io.FileWriteMode;
+import com.google.common.io.Files;
 
 /**
  * @author Nick Belaevski
@@ -196,14 +201,20 @@ public class ResourceWriterImpl implements ResourceWriter {
     @Override
     public void writeProcessedResourceMappings(File staticResourceMappingFile, String staticResourcePrefix) throws IOException {
         // TODO separate mappings file location
-        FileOutputStream fos = null;
+        OutputStream fos = null;
         try {
             if (!staticResourceMappingFile.exists()) {
                 staticResourceMappingFile.getParentFile().mkdirs();
                 staticResourceMappingFile.createNewFile();
             }
 
-            fos = new FileOutputStream(staticResourceMappingFile, true);
+            fos = new BufferedOutputStream(
+            		java.nio.file.Files.newOutputStream(
+            				staticResourceMappingFile.toPath(), 
+            				StandardOpenOption.CREATE, 
+            				StandardOpenOption.APPEND
+            		));
+            		
 
             Properties properties = new Properties();
             for (Entry<String, String> entry : processedResources.entrySet()) {
