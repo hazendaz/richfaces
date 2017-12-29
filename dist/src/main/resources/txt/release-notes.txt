@@ -2,6 +2,7 @@
 ----------
     [#7] Removes usage of FileOutputStream and others to prevent GC overhead
 	[  ] Upgrade cssparser to 0.9.24
+	[  ] Use moono-lisa theme by default
 
 4.5.20.ayg
 ----------

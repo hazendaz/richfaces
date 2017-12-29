@@ -10,7 +10,7 @@
      */
     var defaultOptions = {
         toolbar : 'Basic',
-        skin: 'moono',
+        skin: 'moono-lisa',
         readonly : false,
         style : '',
         styleClass : '',
