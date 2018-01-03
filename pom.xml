@@ -238,6 +238,7 @@
                             <manifestEntries>
                                 <mode>development</mode>
                                 <Build-Number>${buildNumber}</Build-Number>
+                                <Automatic-Module-Name>org.richfaces.${artifactId}</Automatic-Module-Name>
                             </manifestEntries>
                         </archive>
                     </configuration>
