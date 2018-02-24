@@ -27,7 +27,7 @@
     <artifactId>template</artifactId>
     <groupId>org.richfaces.examples</groupId>
     <name>RichFaces Examples Template</name>
-    <version>4.5.21-SNAPSHOT</version>
+    <version>4.6.0-SNAPSHOT</version>
     <packaging>war</packaging>
 
     <description>
@@ -51,7 +51,7 @@
     </developers>
 
     <properties>
-        <version.richfaces>4.5.21-SNAPSHOT</version.richfaces>
+        <version.richfaces>4.6.0-SNAPSHOT</version.richfaces>
 
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
@@ -65,14 +65,14 @@
         <dependencies>
             <!-- RichFaces BOM Import -->
             <dependency>
-                <groupId>org.richfaces</groupId>
+                <groupId>com.github.albfernandez.richfaces</groupId>
                 <artifactId>richfaces-cache-bom</artifactId>
                 <version>${version.richfaces}</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
             <dependency>
-                <groupId>org.richfaces</groupId>
+                <groupId>com.github.albfernandez.richfaces</groupId>
                 <artifactId>richfaces-build</artifactId>
                 <version>${version.richfaces}</version>
                 <type>pom</type>
@@ -96,7 +96,7 @@
         </dependency>
 
         <dependency>
-            <groupId>org.richfaces</groupId>
+            <groupId>com.github.albfernandez.richfaces</groupId>
             <artifactId>richfaces</artifactId>
             <scope>provided</scope>
         </dependency>

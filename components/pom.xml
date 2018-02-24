@@ -28,13 +28,13 @@
          examples at once from trunk. -->
 
     <parent>
-        <groupId>org.richfaces</groupId>
+        <groupId>com.github.albfernandez.richfaces</groupId>
         <artifactId>richfaces-parent</artifactId>
         <version>4.6.0-SNAPSHOT</version>
         <relativePath>../pom.xml</relativePath>
     </parent>
 
-    <groupId>org.richfaces</groupId>
+    <groupId>com.github.albfernandez.richfaces</groupId>
     <artifactId>richfaces-components-parent</artifactId>
     <version>4.6.0-SNAPSHOT</version>
     <packaging>pom</packaging>
@@ -46,7 +46,7 @@
     </modules>
 
     <properties>
-        <version.richfaces>4.5.21-SNAPSHOT</version.richfaces>
+        <version.richfaces>4.6.0-SNAPSHOT</version.richfaces>
     </properties>
 
     <build>
@@ -109,7 +109,7 @@
                         <requirePluginVersions>
                             <!-- During development SNAPSHOT versions of the CDK plugin are used.
                                  This setting ignores the no SNAPSHOT rule for the CDK  -->
-                            <unCheckedPluginList>org.richfaces.cdk:richfaces-cdk-maven-plugin, org.richfaces:richfaces-resource-optimizer-maven-plugin</unCheckedPluginList>
+                            <unCheckedPluginList>org.richfaces.cdk:richfaces-cdk-maven-plugin, com.github.albfernandez.richfaces:richfaces-resource-optimizer-maven-plugin</unCheckedPluginList>
                         </requirePluginVersions>
                     </rules>
                 </configuration>
@@ -121,7 +121,7 @@
     <dependencies>
         <!-- runtime -->
         <dependency>
-            <groupId>org.richfaces</groupId>
+            <groupId>com.github.albfernandez.richfaces</groupId>
             <artifactId>richfaces-core</artifactId>
         </dependency>
 
@@ -133,14 +133,14 @@
 
         <!-- tests -->
         <dependency>
-            <groupId>org.richfaces</groupId>
+            <groupId>com.github.albfernandez.richfaces</groupId>
             <artifactId>richfaces-core</artifactId>
             <scope>test</scope>
             <type>test-jar</type>
             <version>${version.richfaces}</version>
         </dependency>
         <dependency>
-            <groupId>org.richfaces</groupId>
+            <groupId>com.github.albfernandez.richfaces</groupId>
             <artifactId>richfaces-page-fragments</artifactId>
             <scope>test</scope>
             <optional>true</optional>
@@ -181,24 +181,24 @@
     <dependencyManagement>
         <dependencies>
             <dependency>
-                <groupId>org.richfaces</groupId>
+                <groupId>com.github.albfernandez.richfaces</groupId>
                 <artifactId>richfaces-build</artifactId>
                 <version>${version.richfaces}</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
             <dependency>
-                <groupId>org.richfaces</groupId>
+                <groupId>com.github.albfernandez.richfaces</groupId>
                 <artifactId>richfaces-core</artifactId>
                 <version>${version.richfaces}</version>
             </dependency>
             <dependency>
-                <groupId>org.richfaces</groupId>
+                <groupId>com.github.albfernandez.richfaces</groupId>
                 <artifactId>richfaces-a4j</artifactId>
                 <version>${version.richfaces}</version>
             </dependency>
             <dependency>
-                <groupId>org.richfaces</groupId>
+                <groupId>com.github.albfernandez.richfaces</groupId>
                 <artifactId>richfaces</artifactId>
                 <version>${version.richfaces}</version>
             </dependency>
