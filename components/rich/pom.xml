@@ -87,7 +87,7 @@
             <scope>test</scope>
         </dependency>
         <dependency>
-            <groupId>org.jboss.test-jsf</groupId>
+            <groupId>com.github.albfernandez.test-jsf</groupId>
             <artifactId>jsf-test-scriptunit</artifactId>
             <scope>test</scope>
         </dependency>

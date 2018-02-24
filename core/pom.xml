@@ -114,7 +114,7 @@
 
         <!-- Test Dependencies -->
         <dependency>
-            <groupId>org.jboss.test-jsf</groupId>
+            <groupId>com.github.albfernandez.test-jsf</groupId>
             <artifactId>htmlunit-client</artifactId>
             <scope>test</scope>
             <exclusions>
@@ -125,17 +125,17 @@
             </exclusions>
         </dependency>
         <dependency>
-            <groupId>org.jboss.test-jsf</groupId>
+            <groupId>com.github.albfernandez.test-jsf</groupId>
             <artifactId>jsf-mock</artifactId>
             <scope>test</scope>
         </dependency>
         <dependency>
-            <groupId>org.jboss.test-jsf</groupId>
+            <groupId>com.github.albfernandez.test-jsf</groupId>
             <artifactId>jsf-mockito</artifactId>
             <scope>test</scope>
         </dependency>
         <dependency>
-            <groupId>org.jboss.test-jsf</groupId>
+            <groupId>com.github.albfernandez.test-jsf</groupId>
             <artifactId>jsf-test-scriptunit</artifactId>
             <scope>test</scope>
         </dependency>

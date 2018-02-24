@@ -30,13 +30,6 @@ import java.util.Map;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-import net.sourceforge.htmlunit.corejs.javascript.FunctionObject;
-import net.sourceforge.htmlunit.corejs.javascript.NativeArray;
-import net.sourceforge.htmlunit.corejs.javascript.NativeObject;
-import net.sourceforge.htmlunit.corejs.javascript.ScriptableObject;
-import net.sourceforge.htmlunit.corejs.javascript.Undefined;
-import net.sourceforge.htmlunit.corejs.javascript.UniqueTag;
-
 import org.ajax4jsf.javascript.JSFunction;
 import org.ajax4jsf.javascript.JSFunctionDefinition;
 import org.jboss.test.faces.ApplicationServer;
@@ -49,7 +42,14 @@ import com.gargoylesoftware.htmlunit.ScriptPreProcessor;
 import com.gargoylesoftware.htmlunit.ScriptResult;
 import com.gargoylesoftware.htmlunit.html.HtmlElement;
 import com.gargoylesoftware.htmlunit.html.HtmlPage;
+import com.gargoylesoftware.htmlunit.javascript.host.Window;
 import com.gargoylesoftware.htmlunit.javascript.host.WindowProxy;
+
+import net.sourceforge.htmlunit.corejs.javascript.FunctionObject;
+import net.sourceforge.htmlunit.corejs.javascript.NativeArray;
+import net.sourceforge.htmlunit.corejs.javascript.NativeObject;
+import net.sourceforge.htmlunit.corejs.javascript.ScriptableObject;
+import net.sourceforge.htmlunit.corejs.javascript.Undefined;
 
 /**
  * @author Nick Belaevski
@@ -173,8 +173,18 @@ public abstract class AbstractQueueComponentTest {
     }
 
     protected void postRenderView() throws Exception {
-        WindowProxy scriptableObject = (WindowProxy) page.executeJavaScript("window").getJavaScriptResult();
-        scriptableObject.getDelegee().defineProperty("sysOut", systemOut, ScriptableObject.READONLY);
+    	Window window = null;
+    	Object o = page.executeJavaScript("window").getJavaScriptResult();
+    	if (o instanceof Window) {
+	        window = (Window) o;
+    	}
+    	else if (o instanceof WindowProxy) {
+    		WindowProxy scriptableObject = (WindowProxy) page.executeJavaScript("window").getJavaScriptResult();
+    		window = scriptableObject.getDelegee();
+    	}
+    	if (window != null) {
+    		window.defineProperty("sysOut", systemOut, ScriptableObject.READONLY);
+    	}
     }
 
     protected void click(String id) {

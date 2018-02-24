@@ -15,6 +15,7 @@ import com.gargoylesoftware.htmlunit.html.HtmlElement;
 import com.gargoylesoftware.htmlunit.html.HtmlForm;
 import com.gargoylesoftware.htmlunit.html.HtmlInput;
 import com.gargoylesoftware.htmlunit.html.HtmlPage;
+import com.gargoylesoftware.htmlunit.javascript.host.event.Event;
 
 
 public abstract class IntegrationTestBase {
@@ -51,11 +52,23 @@ public abstract class IntegrationTestBase {
     protected HtmlPage submitValueAndCheckMessage(String value, Matcher<String> matcher) throws Exception {
         HtmlPage page = requestPage();
         HtmlInput input = getInput(page);
-        page = (HtmlPage) input.setValueAttribute(value);
-        page = submit(page);
+        input.setValueAttribute(value);
+        sleep(5000);
+        input.fireEvent(Event.TYPE_BLUR);
+        
         checkMessage(page, "uiMessage", matcher);
         return page;
     }
+    private void sleep(long millis) {
+    	try {
+    		Thread.sleep(millis);
+    	}
+    	catch (InterruptedException ignore) {
+    		//
+    	}
+    	
+    }
+    
 
     protected void checkMessage(HtmlPage page, String messageId, Matcher<String> matcher) {
         HtmlElement message = (HtmlElement) page.getElementById(messageId);

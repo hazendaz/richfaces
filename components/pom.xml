@@ -147,7 +147,7 @@
             <version>${project.version}</version>
         </dependency>
         <dependency>
-            <groupId>org.jboss.test-jsf</groupId>
+            <groupId>com.github.albfernandez.test-jsf</groupId>
             <artifactId>jsf-test-stage</artifactId>
             <scope>test</scope>
         </dependency>
@@ -157,17 +157,17 @@
             <scope>test</scope>
         </dependency>
         <dependency>
-            <groupId>org.jboss.test-jsf</groupId>
+            <groupId>com.github.albfernandez.test-jsf</groupId>
             <artifactId>htmlunit-client</artifactId>
             <scope>test</scope>
         </dependency>
         <dependency>
-            <groupId>org.jboss.test-jsf</groupId>
+            <groupId>com.github.albfernandez.test-jsf</groupId>
             <artifactId>jsf-mock</artifactId>
             <scope>test</scope>
         </dependency>
         <dependency>
-            <groupId>org.jboss.test-jsf</groupId>
+            <groupId>com.github.albfernandez.test-jsf</groupId>
             <artifactId>jsf-mockito</artifactId>
             <scope>test</scope>
         </dependency>

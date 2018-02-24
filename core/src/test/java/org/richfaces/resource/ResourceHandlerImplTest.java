@@ -137,13 +137,13 @@ public class ResourceHandlerImplTest extends AbstractFacesTest {
         assertEquals("W/\"" + "ping?".length() + "-" + lastModified.getTime() + "\"",
             webResponse.getResponseHeaderValue("ETag"));
         assertNull(webResponse.getResponseHeaderValue("Pragma"));
-        assertEquals("ping?", webResponse.getContentAsString("US-ASCII"));
+        assertEquals("ping?", webResponse.getContentAsString(StandardCharsets.US_ASCII));
         webRequest.getAdditionalHeaders().put(ECHO_HEADER, "pong");
 
         WebResponse cachedWebResponse = webClient.loadWebResponse(webRequest);
 
         assertEquals(HttpServletResponse.SC_OK, cachedWebResponse.getStatusCode());
-        assertEquals("ping?", cachedWebResponse.getContentAsString("US-ASCII"));
+        assertEquals("ping?", cachedWebResponse.getContentAsString(StandardCharsets.US_ASCII));
         webRequest.getAdditionalHeaders().put(IF_MODIFIED_SINCE, ResourceUtils.formatHttpDate(currentTime));
 
         WebResponse cachedWebResponse2 = webClient.loadWebResponse(webRequest);
@@ -167,13 +167,13 @@ public class ResourceHandlerImplTest extends AbstractFacesTest {
         assertTrue(webResponse.getResponseHeaderValue("Content-Type").startsWith("text/plain"));
         assertNull(webResponse.getResponseHeaderValue("ETag"));
         assertEquals("no-cache", webResponse.getResponseHeaderValue("Pragma"));
-        assertEquals("ping?", webResponse.getContentAsString("US-ASCII"));
+        assertEquals("ping?", webResponse.getContentAsString(StandardCharsets.US_ASCII));
         webRequest.getAdditionalHeaders().put(ECHO_HEADER, "pong");
 
         WebResponse cachedWebResponse = webClient.loadWebResponse(webRequest);
 
         assertEquals(HttpServletResponse.SC_OK, cachedWebResponse.getStatusCode());
-        assertEquals("pong", cachedWebResponse.getContentAsString("US-ASCII"));
+        assertEquals("pong", cachedWebResponse.getContentAsString(StandardCharsets.US_ASCII));
         webRequest.getAdditionalHeaders().put(IF_MODIFIED_SINCE, ResourceUtils.formatHttpDate(currentTime));
 
         WebResponse cachedWebResponse2 = webClient.loadWebResponse(webRequest);
@@ -252,7 +252,7 @@ public class ResourceHandlerImplTest extends AbstractFacesTest {
         WebResponse resourceResponse = webClient.loadWebResponse(webRequest);
 
         assertEquals(HttpServletResponse.SC_OK, resourceResponse.getStatusCode());
-        assertEquals("test text", resourceResponse.getContentAsString("US-ASCII"));
+        assertEquals("test text", resourceResponse.getContentAsString(StandardCharsets.US_ASCII));
 
         EasyMock.verify(mockedCodec, resourceCodecData, mockCache);
     }
