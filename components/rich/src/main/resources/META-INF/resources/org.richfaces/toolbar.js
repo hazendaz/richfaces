@@ -4,7 +4,7 @@
 
   rf.ui.toolbarHandlers = function(options) {
       if (options.id && options.events) {
-          $('.rf-tb-itm', document.getElementById(options.id)).bind(
+          $('.rf-tb-itm', document.getElementById(options.id)).on(
               options.events);
       }
       var groups = options.groups;
@@ -19,7 +19,7 @@
                   for (var y = 0; y < groupIds.length; y++) {
                       groupElements.push(document.getElementById(groupIds[y]));
                   }
-                  $(groupElements).bind(group.events);
+                  $(groupElements).on(group.events);
               }
           }
       }

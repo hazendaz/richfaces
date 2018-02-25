@@ -159,10 +159,10 @@
             destroy: function (event) {
                 if (this.intervalId) {
                     window.clearInterval(this.intervalId);
-                    this.decreaseButton.css("backgroundPosition", " 50% 40%").unbind("mouseout", this.destroy)
-                        .unbind("mouseup", this.destroy);
-                    this.increaseButton.css("backgroundPosition", " 50% 40%").unbind("mouseout", this.destroy)
-                        .unbind("mouseup", this.destroy);
+                    this.decreaseButton.css("backgroundPosition", " 50% 40%").off("mouseout", this.destroy)
+                        .off("mouseup", this.destroy);
+                    this.increaseButton.css("backgroundPosition", " 50% 40%").off("mouseout", this.destroy)
+                        .off("mouseup", this.destroy);
                     this.intervalId = null;
                 }
                 $super.destroy.call(this);
@@ -223,7 +223,7 @@
                     component.decrease(event);
                 }, this.delay);
                 var proxy = $.proxy(this.destroy, this);
-                this.decreaseButton.bind("mouseup", proxy).bind("mouseout", proxy)
+                this.decreaseButton.on("mouseup", proxy).on("mouseout", proxy)
                     .css("backgroundPosition", "60% 60%");
                 event.preventDefault();
             },
@@ -235,7 +235,7 @@
                     component.increase(event);
                 }, this.delay);
                 var proxy = $.proxy(this.destroy, this);
-                this.increaseButton.bind("mouseup", proxy).bind("mouseout", proxy)
+                this.increaseButton.on("mouseup", proxy).on("mouseout", proxy)
                     .css("backgroundPosition", "60% 60%");
                 event.preventDefault();
             }

@@ -60,7 +60,7 @@
 // :data(<name>^=<value>)  Includes elements that have a specific jQuery data name defined, with a value that starts with the value specified.
 // :data(<name>$=<value>)  Includes elements that have a specific jQuery data name defined, with a value that ends with the value specified.
 // :data(<name>*=<value>)  Includes elements that have a specific jQuery data name defined, with a value that contains the value specified.
-    $.extend($.expr[":"], {
+    $.extend($.expr.pseudos, {
         "search":function (elem) {
             return "search" === (elem.type || "");
         },
@@ -387,11 +387,11 @@
                                     function () {
                                         $.watermark._hide($wm, true);
                                     }
-                            ).bind("dragenter",
+                            ).on("dragenter",
                                     function () {
                                         $.watermark._hide($wm);
                                     }
-                            ).bind("dragend",
+                            ).on("dragend",
                                     function () {
                                         window.setTimeout(function () {
                                             $wm.blur();
@@ -402,7 +402,7 @@
                                     function () {
                                         $.watermark._show($input);
                                     }
-                            ).bind("dragleave",
+                            ).on("dragleave",
                                     function () {
                                         $.watermark._show($input);
                                     }
@@ -423,21 +423,21 @@
                                         $input.data(dataFocus, 0);
                                         $.watermark._show($input);
                                     }
-                            ).bind("dragenter",
+                            ).on("dragenter",
                                     function () {
                                         $.watermark._hide($input);
                                     }
-                            ).bind("dragleave",
+                            ).on("dragleave",
                                     function () {
                                         $.watermark._show($input);
                                     }
-                            ).bind("dragend",
+                            ).on("dragend",
                                     function () {
                                         window.setTimeout(function () {
                                             $.watermark._show($input);
                                         }, 1);
                                     }
-                            ).bind("drop",
+                            ).on("drop",
                                     // Firefox makes this lovely function necessary because the dropped text
                                     // is merged with the watermark before the drop event is called.
                                     function (evt) {

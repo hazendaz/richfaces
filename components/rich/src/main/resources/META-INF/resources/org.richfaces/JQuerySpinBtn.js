@@ -170,7 +170,7 @@ sbjQuery.fn.SpinButton = function(cfg){
 			}
 		})
 
-		.bind("mousewheel", function(e){
+		.on("mousewheel", function(e){
 			// Respond to mouse wheel in IE. (It returns up/dn motion in multiples of 120)
 			if (e.wheelDelta >= 120)
 				this.adjustValue(this.spinCfg.step);

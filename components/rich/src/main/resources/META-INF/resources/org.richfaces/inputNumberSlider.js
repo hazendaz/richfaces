@@ -285,11 +285,11 @@
             __mouseupHandler: function () {
                 this.handle.removeClass(this.handleSelectedClass);
                 this.tooltip.hide();
-                $(document).unbind("mousemove", this.__mousemoveHandler);
+                $(document).off("mousemove", this.__mousemoveHandler);
             },
 
             destroy: function (event) {
-                $(document).unbind("mousemove", this.__mousemoveHandler);
+                $(document).off("mousemove", this.__mousemoveHandler);
                 $superInputNumberSlider.destroy.call(this);
             }
         });

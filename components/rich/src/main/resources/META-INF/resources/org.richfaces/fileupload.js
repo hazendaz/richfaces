@@ -55,9 +55,9 @@
         this.inputContainer = this.addButton.find(".rf-fu-inp-cntr:first");
         this.input = this.inputContainer.children("input");
         this.list = header.next();
-        this.element.bind('dragenter', function(e) {e.stopPropagation(); e.preventDefault();});
-        this.element.bind('dragover', function(e) {e.stopPropagation(); e.preventDefault();});
-        this.element.bind('drop', $.proxy(this.__addItemsFromDrop, this));
+        this.element.on('dragenter', function(e) {e.stopPropagation(); e.preventDefault();});
+        this.element.on('dragover', function(e) {e.stopPropagation(); e.preventDefault();});
+        this.element.on('drop', $.proxy(this.__addItemsFromDrop, this));
 
         this.hiddenContainer = this.list.next();
         this.cleanInput = this.input.clone();

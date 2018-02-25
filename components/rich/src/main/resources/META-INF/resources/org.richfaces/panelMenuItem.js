@@ -167,7 +167,7 @@
                     var item = this;
 
                     if (this.options.selectable) {
-                        this.__header().bind("click", function() {
+                        this.__header().on("click", function() {
                             if (item.__rfPanelMenu().selectedItem() == item.id) {
                                 if (item.options.unselectable) {
                                     return item.unselect();
