@@ -57,9 +57,9 @@ import com.google.common.base.Strings;
         @ResourceDependency(library = "org.richfaces", name = "richfaces-event.js"),
         @ResourceDependency(library = "com.jqueryui", name = "core.js"),
         @ResourceDependency(library = "com.jqueryui", name = "widget.js"),
-        @ResourceDependency(library = "com.jqueryui", name = "mouse.js"),
-        @ResourceDependency(library = "com.jqueryui", name = "draggable.js"),
-        @ResourceDependency(library = "com.jqueryui", name = "droppable.js"),
+        @ResourceDependency(library = "com.jqueryui", name = "widgets/mouse.js"),
+        @ResourceDependency(library = "com.jqueryui", name = "widgets/draggable.js"),
+        @ResourceDependency(library = "com.jqueryui", name = "widgets/droppable.js"),
         @ResourceDependency(library = "org.richfaces", name = "dnd-droppable.js") })
 @JsfRenderer(type = "org.richfaces.DropTargetRenderer", family = AbstractDropTarget.COMPONENT_FAMILY)
 public class DropTargetRenderer extends DnDRenderBase {
