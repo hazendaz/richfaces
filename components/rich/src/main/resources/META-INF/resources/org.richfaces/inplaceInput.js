@@ -92,7 +92,7 @@
 
             __setInputFocus: function() {
                 this.getInput().off("focus", this.__editHandler);
-                this.getInput().focus();
+                this.getInput().trigger("focus");
             },
 
             __saveBtnHandler: function(e) {
@@ -144,7 +144,7 @@
                 if (this.tabBlur) {
                     this.tabBlur = false;
                 } else {
-                    this.getInput().focus();
+                    this.getInput().trigger("focus");
                 }
             },
 

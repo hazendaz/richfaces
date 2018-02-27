@@ -164,7 +164,7 @@
 
                     window.setTimeout(
                             function () {
-                                $input.select();  // Fix missing cursor in IE
+                                $input.trigger("select");  // Fix missing cursor in IE
                             }
                             , 1);
                 }
@@ -413,12 +413,12 @@
                         }
                         else {
 
-                            $input.focus(
+                            $input.on("focus",
                                     function () {
                                         $input.data(dataFocus, 1);
                                         $.watermark._hide($input, true);
                                     }
-                            ).blur(
+                            ).on("blur",
                                     function () {
                                         $input.data(dataFocus, 0);
                                         $.watermark._show($input);

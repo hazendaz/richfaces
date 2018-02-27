@@ -60,13 +60,13 @@
                     this.increaseButton = buttonsArea.children(".rf-insp-inc");
 
                     var proxy = $.proxy(this.__inputHandler, this)
-                    this.input.change(proxy);
-                    this.input.submit(proxy);
-                    this.input.submit(proxy);
-                    this.input.mousewheel($.proxy(this.__mousewheelHandler, this));
-                    this.input.keydown($.proxy(this.__keydownHandler, this));
-                    this.decreaseButton.mousedown($.proxy(this.__decreaseHandler, this));
-                    this.increaseButton.mousedown($.proxy(this.__increaseHandler, this));
+                    this.input.on("change", proxy);
+                    this.input.on("submit". proxy);
+                    //this.input.on("submit", proxy);
+                    this.input.on("mousewheel", $.proxy(this.__mousewheelHandler, this));
+                    this.input.on("keydown", $.proxy(this.__keydownHandler, this));
+                    this.decreaseButton.on("mousedown", $.proxy(this.__decreaseHandler, this));
+                    this.increaseButton.on("mousedown", $.proxy(this.__increaseHandler, this));
                 }
             },
 

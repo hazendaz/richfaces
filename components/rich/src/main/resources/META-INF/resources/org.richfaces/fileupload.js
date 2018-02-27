@@ -62,12 +62,12 @@
         this.hiddenContainer = this.list.next();
         this.cleanInput = this.input.clone();
         this.addProxy = $.proxy(this.__addItems, this);
-        this.input.change(this.addProxy);
-        this.addButton.mousedown(pressButton).mouseup(unpressButton).mouseout(unpressButton);
-        this.uploadButton.click($.proxy(this.__startUpload, this)).mousedown(pressButton)
-            .mouseup(unpressButton).mouseout(unpressButton);
-        this.clearButton.click($.proxy(this.__removeAllItems, this)).mousedown(pressButton)
-            .mouseup(unpressButton).mouseout(unpressButton);
+        this.input.on("change", this.addProxy);
+        this.addButton.on("mousedown", pressButton).on("mouseup", unpressButton).on("mouseout", unpressButton);
+        this.uploadButton.on("click", $.proxy(this.__startUpload, this)).on("mousedown", pressButton)
+            .on("mouseup",unpressButton).on("mouseout", unpressButton);
+        this.clearButton.on("click", $.proxy(this.__removeAllItems, this)).on("mousedown", pressButton)
+            .on("mouseup", unpressButton).on("mouseout", unpressButton);
         if (this.onfilesubmit) {
             rf.Event.bind(this.element, "onfilesubmit", new Function("event", this.onfilesubmit));
         }
@@ -252,7 +252,7 @@
             },
 
             __updateButtons: function() {
-                if (!this.loadableItem && this.list.children(".rf-fu-itm").size()) {
+                if (!this.loadableItem && this.list.children(".rf-fu-itm").length) {
                     if (this.items.length) {
                         this.uploadButton.css("display", "inline-block");
                     } else {
@@ -414,7 +414,7 @@
                 this.link = leftArea.next().children("a");
                 this.label.html(this.model.name);
                 this.link.html(this.fileUpload["deleteLabel"]);
-                this.link.click($.proxy(this.removeOrStop, this));
+                this.link.on("click", $.proxy(this.removeOrStop, this));
                 return this.element;
             },
 

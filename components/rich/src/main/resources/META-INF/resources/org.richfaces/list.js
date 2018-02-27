@@ -463,7 +463,7 @@
             },
 
             setFocus : function() {
-    		    this.focusKeeper.focus();
+    		    this.focusKeeper.trigger("focus");
 	        }
 
         }

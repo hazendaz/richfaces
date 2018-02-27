@@ -127,8 +127,8 @@
             rf.Event.bind(this, "listblur" + this.namespace, options['onblur']);
         }
 
-        this.pickList.focusin($.proxy(this.__focusHandler, this));
-        this.pickList.focusout($.proxy(this.__blurHandler, this));
+        this.pickList.on("focusin", $.proxy(this.__focusHandler, this));
+        this.pickList.on("focusout", $.proxy(this.__blurHandler, this));
     };
 
     $.extend(rf.ui.PickList.prototype, (function () {

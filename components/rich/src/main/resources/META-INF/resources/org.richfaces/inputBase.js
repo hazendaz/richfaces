@@ -62,7 +62,7 @@
             },
 
             __setInputFocus: function() {
-                this.input.focus();
+                this.input.trigger("focus");
             },
 
             __getValue: function() {

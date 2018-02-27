@@ -1027,7 +1027,7 @@
 
                 this.columnControl = new RichFaces.ui.Popup(controlId, popupOptions);
                 this.columnControl.hide();
-                button.click($.proxy(function(event) {
+                button.on("click", $.proxy(function(event) {
                     this.columnControl.visible ? this.columnControl.hide() : this.columnControl.show(event);
                 }, this));
 
