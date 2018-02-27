@@ -1,6 +1,6 @@
 image::https://raw.github.com/richfaces/docs/4.3.1.20130305-Final/Component_Reference/src/main/docbook/en-US/images/rf_logo.png[[RichFaces Project Logo]
 
-RichFaces 4.5 image:https://travis-ci.org/albfernandez/richfaces.png?branch=master[alt="Build Status", link="https://travis-ci.org/albfernandez/richfaces"]
+RichFaces 4.6 image:https://travis-ci.org/albfernandez/richfaces.png?branch=upgrade_to_jquery_3[alt="Build Status", link="https://travis-ci.org/albfernandez/richfaces"]
 
 '''
 
@@ -23,18 +23,18 @@ Build System::  Maven
 * http://docs.jboss.org/richfaces/[Documentation]
 * https://github.com/albfernandez/richfaces/issues[Issue Tracker]
 * https://developer.jboss.org/en/richfaces/content[User Forums]
-* https://travis-ci.org/albfernandez/richfaces/builds[Continuous Integration] image:https://travis-ci.org/albfernandez/richfaces.png?branch=master[alt="Build Status", link="https://travis-ci.org/albfernandez/richfaces"]
+* https://travis-ci.org/albfernandez/richfaces/builds[Continuous Integration] image:https://travis-ci.org/albfernandez/richfaces.png?branch=upgrade_to_jquery_3[alt="Build Status", link="https://travis-ci.org/albfernandez/richfaces"]
 
 == Getting Started
 
-To use the RichFaces framework in your JSF maven application, simply add the following dependency to your `pom.xml` file (Replacing the version `4.5.17` with the version of the library you wish to include):
+To use the RichFaces framework in your JSF maven application, simply add the following dependency to your `pom.xml` file (Replacing the version `4.6.0` with the version of the library you wish to include):
 
 [source, xml]
 ----
 <dependency>
     <groupId>com.github.albfernandez.richfaces</groupId>
     <artifactId>richfaces</artifactId>
-    <version>4.5.17</version>
+    <version>4.6.0</version>
 </dependency>
 ----
 
@@ -130,4 +130,11 @@ This will download WildFly and run the project tests against a managed instance 
 For a detailed explanation of additional testing configurations and options, refer to the link:TESTS.md[Testing guide].
 
 These smoke tests are also executed in the https://travis-ci.org/albfernandez/richfaces/builds[continuous integration job].
+
+=== Building showcase
+
+    $ cd examples/showcase
+    $ mvn clean package -Pjee6,release
+
+
 
