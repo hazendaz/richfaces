@@ -1335,7 +1335,7 @@ Licensed under the MIT license.
         function bindEvents() {
             // bind events
             if (options.grid.hoverable) {
-                eventHolder.mousemove(onMouseMove);
+                eventHolder.on("mousemove", onMouseMove);
 
                 // Use bind, rather than .mouseleave, because we officially
                 // still support jQuery 1.2.6, which doesn't define a shortcut
@@ -1346,16 +1346,16 @@ Licensed under the MIT license.
                 eventHolder.on("mouseleave", onMouseLeave);
             }
 
-            if (options.grid.clickable)
-                eventHolder.click(onClick);
-
+            if (options.grid.clickable){
+                eventHolder.on("click", onClick);
+            }
             executeHooks(hooks.bindEvents, [eventHolder]);
         }
 
         function shutdown() {
-            if (redrawTimeout)
+            if (redrawTimeout){
                 clearTimeout(redrawTimeout);
-
+            }
             eventHolder.off("mousemove", onMouseMove);
             eventHolder.off("mouseleave", onMouseLeave);
             eventHolder.off("click", onClick);
