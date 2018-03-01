@@ -539,7 +539,7 @@ More detail and specific examples can be found in the included HTML file.
 
 				layer.save();
 				var innerRadius = options.series.pie.innerRadius > 1 ? options.series.pie.innerRadius : maxRadius * options.series.pie.innerRadius;
-				layer.globalCompositeOperation = "destination-out"; // this does not work with excanvas, but it will fall back to using the stroke color
+				layer.globalCompositeOperation = "destination-out";
 				layer.beginPath();
 				layer.fillStyle = options.series.pie.stroke.color;
 				layer.arc(0, 0, innerRadius, 0, Math.PI * 2, false);
@@ -596,34 +596,6 @@ More detail and specific examples can be found in the included HTML file.
 
 					if (ctx.isPointInPath) {
 						if (ctx.isPointInPath(mouseX - centerLeft, mouseY - centerTop)) {
-							ctx.restore();
-							return {
-								datapoint: [s.percent, s.data],
-								dataIndex: 0,
-								series: s,
-								seriesIndex: i
-							};
-						}
-					} else {
-
-						// excanvas for IE doesn;t support isPointInPath, this is a workaround.
-
-						var p1X = radius * Math.cos(s.startAngle),
-							p1Y = radius * Math.sin(s.startAngle),
-							p2X = radius * Math.cos(s.startAngle + s.angle / 4),
-							p2Y = radius * Math.sin(s.startAngle + s.angle / 4),
-							p3X = radius * Math.cos(s.startAngle + s.angle / 2),
-							p3Y = radius * Math.sin(s.startAngle + s.angle / 2),
-							p4X = radius * Math.cos(s.startAngle + s.angle / 1.5),
-							p4Y = radius * Math.sin(s.startAngle + s.angle / 1.5),
-							p5X = radius * Math.cos(s.startAngle + s.angle),
-							p5Y = radius * Math.sin(s.startAngle + s.angle),
-							arrPoly = [[0, 0], [p1X, p1Y], [p2X, p2Y], [p3X, p3Y], [p4X, p4Y], [p5X, p5Y]],
-							arrPoint = [x, y];
-
-						// TODO: perhaps do some mathmatical trickery here with the Y-coordinate to compensate for pie tilt?
-
-						if (isPointInPoly(arrPoly, arrPoint)) {
 							ctx.restore();
 							return {
 								datapoint: [s.percent, s.data],

@@ -82,7 +82,7 @@ Licensed under the MIT license.
 				if (window.G_vmlCanvasManager) {
 					element = window.G_vmlCanvasManager.initElement(element);
 				} else {
-					throw new Error("Canvas is not available. If you're using IE with a fall-back such as Excanvas, then there's either a mistake in your conditional include, or the page has no DOCTYPE and is rendering in Quirks Mode.");
+					throw new Error("Canvas is not available");
 				}
 			}
 		}
@@ -144,7 +144,7 @@ Licensed under the MIT license.
 		// size of its element, to take advantage of the fact that retina
 		// displays have that many more pixels in the same advertised space.
 
-		// Resizing should reset the state (excanvas seems to be buggy though)
+
 
 		if (this.width != width) {
 			element.width = width * pixelRatio;
@@ -2637,7 +2637,6 @@ Licensed under the MIT license.
             if (lineWidth > 0 && (drawLeft || drawRight || drawTop || drawBottom)) {
                 c.beginPath();
 
-                // FIXME: inline moveTo is buggy with excanvas
                 c.moveTo(left, bottom);
                 if (drawLeft)
                     c.lineTo(left, top);
