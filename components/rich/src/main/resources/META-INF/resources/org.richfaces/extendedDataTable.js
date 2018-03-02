@@ -599,7 +599,7 @@
             beginReorder: function(event) {
                 if (!$(event.target).is("a, img, :input")) {
                     this.idOfReorderingColumn = event.currentTarget.className.match(new RegExp(WIDTH_CLASS_NAME_BASE + "([^\\W]*)"))[1];
-                    $(document).pme("mousemove", $.proxy(this.reorder, this));
+                    $(document).on("mousemove", $.proxy(this.reorder, this));
                     this.headerCells.on("mouseover", $.proxy(this.overReorder, this));
                     $(document).one("mouseup", $.proxy(this.cancelReorder, this));
                     return false;
