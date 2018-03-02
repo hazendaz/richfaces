@@ -1,8 +1,11 @@
 4.6.0-SNAPSHOT
 ----------
-    [#7] Removes usage of FileOutputStream and others to prevent GC overhead
-	[  ] Upgrade cssparser to 0.9.25
-	[  ] Use moono-lisa theme by default on ckeditor
+	[#15] upgrade showcase to point to this site instead original Richfaces site
+	[#14] Create page for documentation	 
+    [ #7] Removes usage of FileOutputStream and others to prevent GC overhead
+    [ #6] Upgrade to JQuery 3
+	[   ] Upgrade cssparser to 0.9.25
+	[   ] Use moono-lisa theme by default on ckeditor
 
 4.5.20.ayg
 ----------
