@@ -74,10 +74,8 @@ public class MenuItemRendererBase extends AjaxCommandRendererBase {
     }
 
     /**
-     * overridden due to {@link https://issues.jboss.org/browse/RF-10695}
+     * overridden due to <a href="https://issues.jboss.org/browse/RF-10695">https://issues.jboss.org/browse/RF-10695</a>
      *
-     * @param context
-     * @param component
      */
     @Override
     public String getOnClick(FacesContext context, UIComponent component) {

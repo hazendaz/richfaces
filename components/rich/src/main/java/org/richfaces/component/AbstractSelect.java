@@ -1,5 +1,8 @@
 package org.richfaces.component;
 
+import java.io.IOException;
+import java.util.Map;
+
 import javax.faces.component.EditableValueHolder;
 import javax.faces.component.UIComponent;
 import javax.faces.component.UISelectItems;
@@ -14,7 +17,6 @@ import javax.faces.event.PostAddToViewEvent;
 import javax.faces.validator.Validator;
 
 import org.richfaces.cdk.annotations.Attribute;
-import org.richfaces.cdk.annotations.Description;
 import org.richfaces.cdk.annotations.EventName;
 import org.richfaces.cdk.annotations.JsfComponent;
 import org.richfaces.cdk.annotations.JsfRenderer;
@@ -34,9 +36,6 @@ import org.richfaces.renderkit.MetaComponentRenderer;
 import org.richfaces.renderkit.SelectManyHelper;
 import org.richfaces.validator.SelectLabelValueValidator;
 import org.richfaces.view.facelets.AutocompleteHandler;
-
-import java.io.IOException;
-import java.util.Map;
 
 /**
  * <p>

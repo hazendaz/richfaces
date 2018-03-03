@@ -21,8 +21,6 @@
  */
 package org.richfaces.component;
 
-import org.richfaces.cdk.annotations.Attribute;
-import org.richfaces.cdk.annotations.EventName;
 import org.richfaces.component.attribute.CoreProps;
 import org.richfaces.component.attribute.EventsMouseProps;
 import org.richfaces.component.attribute.I18nProps;

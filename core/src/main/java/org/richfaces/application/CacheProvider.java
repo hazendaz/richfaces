@@ -41,14 +41,7 @@ public class CacheProvider implements Initializable, Cache {
     private Cache instance;
     private CacheManager cacheManager;
 
-    /**
-     * <p class="changed_added_4_0">
-     * </p>
-     *
-     * @param key
-     * @return
-     * @see org.richfaces.cache.Cache#get(java.lang.Object)
-     */
+
     public Object get(Object key) {
         return this.instance.get(key);
     }

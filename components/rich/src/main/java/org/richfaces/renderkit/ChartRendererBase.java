@@ -75,10 +75,6 @@ public abstract class ChartRendererBase extends RendererBase {
 
     /**
      * Method adds key-value pair to object.
-     * @param obj
-     * @param key
-     * @param value
-     * @return
      * @throws IOException
      *             if put to JSONObject fails
      */
@@ -96,10 +92,6 @@ public abstract class ChartRendererBase extends RendererBase {
 
     /**
      * Method creates JSON containing chart options
-     * @param context
-     * @param component
-     * @return
-     * @throws IOException
      */
     public JSONObject getOpts(FacesContext context, UIComponent component)
             throws IOException {
@@ -185,10 +177,6 @@ public abstract class ChartRendererBase extends RendererBase {
 
     /**
      * Returns chart chart data
-     *
-     * @param ctx
-     * @param component
-     * @return
      */
     public JSONArray getChartData(FacesContext ctx, UIComponent component) {
         return (JSONArray) component.getAttributes().get("chartData");
@@ -247,9 +235,6 @@ public abstract class ChartRendererBase extends RendererBase {
     /**
      * Converts class name of data type used in axes to shorter string
      * representation ie. class java.lang.String -> string
-     *
-     * @param c
-     * @return
      */
     public String axisDataTypeToString(Class c) {
         if (c == String.class) {
@@ -270,9 +255,6 @@ public abstract class ChartRendererBase extends RendererBase {
 
     /**
      * Method creates unique identifier for request parameter.
-     * @param component
-     * @param attribute
-     * @return
      */
     public String getFieldId(UIComponent component, String attribute) {
         return component.getClientId() + attribute;
@@ -326,10 +308,6 @@ public abstract class ChartRendererBase extends RendererBase {
 
         /**
          * Copy attributes from source UIComponent to target.
-         * @param src
-         * @param target
-         * @param prefix
-         * @param attrs
          */
         private void copyAttrs(UIComponent src, UIComponent target,
                 String prefix, List<String> attrs) {

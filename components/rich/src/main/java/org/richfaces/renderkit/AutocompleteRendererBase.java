@@ -51,8 +51,6 @@ import org.richfaces.component.MetaComponentResolver;
 import org.richfaces.component.util.InputUtils;
 import org.richfaces.context.ExtendedPartialViewContext;
 import org.richfaces.el.GenericsIntrospectionService;
-import org.richfaces.log.Logger;
-import org.richfaces.log.RichfacesLogger;
 
 /**
  * @author Nick Belaevski
@@ -68,7 +66,6 @@ import org.richfaces.log.RichfacesLogger;
         @ResourceDependency(library = "org.richfaces", name = "Autocomplete.js"),
         @ResourceDependency(library = "org.richfaces", name = "Autocomplete.ecss") })
 public abstract class AutocompleteRendererBase extends InputRendererBase implements MetaComponentRenderer {
-    private static final Logger LOGGER = RichfacesLogger.RENDERKIT.getLogger();
 
     public JSReference getClientFilterFunction(UIComponent component) {
         AbstractAutocomplete autocomplete = (AbstractAutocomplete) component;
@@ -82,7 +79,6 @@ public abstract class AutocompleteRendererBase extends InputRendererBase impleme
 
     // TODO nick - handle parameter
 
-    @SuppressWarnings("unchecked")
     private Object saveVar(FacesContext context, String var) {
         if (var != null) {
             Map<String, Object> requestMap = context.getExternalContext().getRequestMap();

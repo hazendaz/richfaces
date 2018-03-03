@@ -255,10 +255,7 @@ public interface Skin {
 
     Integer getIntegerParameter(FacesContext context, String name, Object defaultValue);
 
-    /**
-     * @param name
-     * @return
-     */
+
     boolean containsProperty(String name);
 
     /**

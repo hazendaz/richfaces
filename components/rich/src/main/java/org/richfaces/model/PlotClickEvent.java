@@ -30,7 +30,10 @@ import javax.faces.event.FacesListener;
  * @author Lukas Macko
  */
 public class PlotClickEvent extends FacesEvent {
-    /**
+
+	private static final long serialVersionUID = -759268060945981166L;
+
+	/**
      * Index into chart series. The first series has index 0.
      */
     private int seriesIndex;

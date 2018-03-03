@@ -137,9 +137,6 @@ public class PartialStateHolderHelper implements StateHelper {
     /**
      * Get the object from the main-map. As everything is written through from the delta-map to the main-map, this should be
      * enough.
-     *
-     * @param key
-     * @return
      */
     public Object get(Serializable key) {
         return defaultMap.get(key);

@@ -44,33 +44,19 @@ public abstract class SkinFactory {
 
     /**
      * Get default {@link Skin} implementation.
-     *
-     * @param context
-     * @return
      */
     public abstract Skin getDefaultSkin(FacesContext context);
 
     /**
      * Get current {@link Skin} implementation.
-     *
-     * @param context
-     * @return
      */
     public abstract Skin getSkin(FacesContext context);
 
     /**
      * Get base {@link Skin} implementation
-     *
-     * @param facesContext
-     * @return
      */
     public abstract Skin getBaseSkin(FacesContext facesContext);
 
-    /**
-     * @param facesContext
-     * @param name
-     * @return
-     */
     public abstract Theme getTheme(FacesContext facesContext, String name);
 
     public abstract Skin getSkin(FacesContext context, String name);

@@ -25,7 +25,6 @@ import javax.faces.component.UIComponent;
 import javax.faces.context.FacesContext;
 
 import org.richfaces.cdk.annotations.Attribute;
-import org.richfaces.cdk.annotations.Description;
 import org.richfaces.cdk.annotations.JsfComponent;
 import org.richfaces.cdk.annotations.JsfRenderer;
 import org.richfaces.cdk.annotations.Tag;

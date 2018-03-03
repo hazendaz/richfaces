@@ -22,7 +22,6 @@
 package org.richfaces.renderkit;
 
 import static org.richfaces.renderkit.RenderKitUtils.getFirstNonEmptyAttribute;
-import static org.richfaces.renderkit.TreeRendererBase.getToggleTypeOrDefault;
 
 import java.io.IOException;
 import java.util.Map;

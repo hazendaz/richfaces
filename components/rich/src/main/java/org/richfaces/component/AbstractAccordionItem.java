@@ -21,6 +21,8 @@
  */
 package org.richfaces.component;
 
+import java.util.Iterator;
+
 import javax.faces.component.UIComponent;
 import javax.faces.component.behavior.ClientBehaviorHolder;
 import javax.faces.component.visit.VisitCallback;
@@ -36,9 +38,6 @@ import org.richfaces.cdk.annotations.TagType;
 import org.richfaces.component.attribute.CoreProps;
 import org.richfaces.component.attribute.EventsMouseProps;
 import org.richfaces.component.attribute.I18nProps;
-import org.richfaces.renderkit.html.DivPanelRenderer;
-
-import java.util.Iterator;
 
 /**
  * <p>The &lt;rich:accordionItem&gt; component is a panel for use with the &lt;rich:accordion&gt; component.

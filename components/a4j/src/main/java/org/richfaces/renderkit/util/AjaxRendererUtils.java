@@ -29,9 +29,7 @@ import javax.faces.context.FacesContext;
 import org.ajax4jsf.component.AjaxClientBehavior;
 import org.ajax4jsf.javascript.JSFunctionDefinition;
 import org.ajax4jsf.javascript.JSReference;
-import org.richfaces.component.AbstractActionComponent;
 import org.richfaces.component.BasicActionComponent;
-import org.richfaces.component.attribute.AjaxProps;
 import org.richfaces.renderkit.AjaxConstants;
 import org.richfaces.renderkit.AjaxFunction;
 import org.richfaces.renderkit.AjaxOptions;
@@ -459,10 +457,6 @@ public final class AjaxRendererUtils {
 
     /**
      * Create call to Ajax Submit function with first two parameters
-     *
-     * @param facesContext
-     * @param component
-     * @return
      */
     public static AjaxFunction buildAjaxFunction(FacesContext facesContext, UIComponent component) {
         return new AjaxFunction(component.getClientId(facesContext), buildEventOptions(facesContext, component));

@@ -94,7 +94,7 @@ import com.google.common.collect.Sets;
 /**
  * Configurable command-line interface of CDK generator.
  *
- * This class is similar functionality as {@link org.richfaces.builder.mojo.GenerateMojo} from richfaces-cdk-maven-plugin.
+ * This class is similar functionality as org.richfaces.builder.mojo.GenerateMojo from richfaces-cdk-maven-plugin.
  *
  * @author Lukas Fryc
  */

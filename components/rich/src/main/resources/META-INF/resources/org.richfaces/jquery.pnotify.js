@@ -237,73 +237,75 @@
             // Stop animation, reset the removal timer, and show the close
             // button when the user mouses over.
             var pnotify = $("<div />", {
-                "class": "rf-ntf " + opts.pnotify_addclass,
+                "class": "rf-ntf " + opts.pnotify_addclass,                
+                on : {
+	                "mouseenter": function(e) {
+	                    if (opts.pnotify_nonblock) e.stopPropagation();
+	                    if (opts.pnotify_mouse_reset && animating == "out") {
+	                        // If it's animating out, animate back in really quick.
+	                        pnotify.stop(true);
+	                        animating = "in";
+	                        pnotify.css("height", "auto").animate({"width": opts.pnotify_width, "opacity": opts.pnotify_nonblock ? opts.pnotify_nonblock_opacity : opts.pnotify_opacity}, "fast");
+	                    }
+	                    if (opts.pnotify_nonblock) {
+	                        // If it's non-blocking, animate to the other opacity.
+	                        pnotify.animate({"opacity": opts.pnotify_nonblock_opacity}, "fast");
+	                    }
+	                    if (opts.pnotify_hide && opts.pnotify_mouse_reset) pnotify.pnotify_cancel_remove();
+	                    //                    Do not update
+	                    if (opts.pnotify_closer && !opts.pnotify_nonblock) pnotify.closer.css("visibility", "visible");
+	                },
+	                "mouseleave": function(e) {
+	                    if (opts.pnotify_nonblock) e.stopPropagation();
+	                    nonblock_last_elem = null;
+	                    pnotify.css("cursor", "auto");
+	                    if (opts.pnotify_nonblock && animating != "out")
+	                        pnotify.animate({"opacity": opts.pnotify_opacity}, "fast");
+	                    if (opts.pnotify_hide && opts.pnotify_mouse_reset) pnotify.pnotify_queue_remove();
+	                    //                    Do not update
+	                    pnotify.closer.css("visibility", "hidden");
+	                    $.pnotify_position_all();
+	                },
+	                "mouseover": function(e) {
+	                    if (opts.pnotify_nonblock) e.stopPropagation();
+	                },
+	                "mouseout": function(e) {
+	                    if (opts.pnotify_nonblock) e.stopPropagation();
+	                },
+	                "mousemove": function(e) {
+	                    if (opts.pnotify_nonblock) {
+	                        e.stopPropagation();
+	                        nonblock_pass(e, "onmousemove");
+	                    }
+	                },
+	                "mousedown": function(e) {
+	                    if (opts.pnotify_nonblock) {
+	                        e.stopPropagation();
+	                        e.preventDefault();
+	                        nonblock_pass(e, "onmousedown");
+	                    }
+	                },
+	                "mouseup": function(e) {
+	                    if (opts.pnotify_nonblock) {
+	                        e.stopPropagation();
+	                        e.preventDefault();
+	                        nonblock_pass(e, "onmouseup");
+	                    }
+	                },
+	                "click": function(e) {
+	                    if (opts.pnotify_nonblock) {
+	                        e.stopPropagation();
+	                        nonblock_pass(e, "onclick");
+	                    }
+	                },
+	                "dblclick": function(e) {
+	                    if (opts.pnotify_nonblock) {
+	                        e.stopPropagation();
+	                        nonblock_pass(e, "ondblclick");
+	                    }
+	                }
+                },
                 "css": {"display": "none"},
-                "mouseenter": function(e) {
-                    if (opts.pnotify_nonblock) e.stopPropagation();
-                    if (opts.pnotify_mouse_reset && animating == "out") {
-                        // If it's animating out, animate back in really quick.
-                        pnotify.stop(true);
-                        animating = "in";
-                        pnotify.css("height", "auto").animate({"width": opts.pnotify_width, "opacity": opts.pnotify_nonblock ? opts.pnotify_nonblock_opacity : opts.pnotify_opacity}, "fast");
-                    }
-                    if (opts.pnotify_nonblock) {
-                        // If it's non-blocking, animate to the other opacity.
-                        pnotify.animate({"opacity": opts.pnotify_nonblock_opacity}, "fast");
-                    }
-                    if (opts.pnotify_hide && opts.pnotify_mouse_reset) pnotify.pnotify_cancel_remove();
-                    //                    Do not update
-                    if (opts.pnotify_closer && !opts.pnotify_nonblock) pnotify.closer.css("visibility", "visible");
-                },
-                "mouseleave": function(e) {
-                    if (opts.pnotify_nonblock) e.stopPropagation();
-                    nonblock_last_elem = null;
-                    pnotify.css("cursor", "auto");
-                    if (opts.pnotify_nonblock && animating != "out")
-                        pnotify.animate({"opacity": opts.pnotify_opacity}, "fast");
-                    if (opts.pnotify_hide && opts.pnotify_mouse_reset) pnotify.pnotify_queue_remove();
-                    //                    Do not update
-                    pnotify.closer.css("visibility", "hidden");
-                    $.pnotify_position_all();
-                },
-                "mouseover": function(e) {
-                    if (opts.pnotify_nonblock) e.stopPropagation();
-                },
-                "mouseout": function(e) {
-                    if (opts.pnotify_nonblock) e.stopPropagation();
-                },
-                "mousemove": function(e) {
-                    if (opts.pnotify_nonblock) {
-                        e.stopPropagation();
-                        nonblock_pass(e, "onmousemove");
-                    }
-                },
-                "mousedown": function(e) {
-                    if (opts.pnotify_nonblock) {
-                        e.stopPropagation();
-                        e.preventDefault();
-                        nonblock_pass(e, "onmousedown");
-                    }
-                },
-                "mouseup": function(e) {
-                    if (opts.pnotify_nonblock) {
-                        e.stopPropagation();
-                        e.preventDefault();
-                        nonblock_pass(e, "onmouseup");
-                    }
-                },
-                "click": function(e) {
-                    if (opts.pnotify_nonblock) {
-                        e.stopPropagation();
-                        nonblock_pass(e, "onclick");
-                    }
-                },
-                "dblclick": function(e) {
-                    if (opts.pnotify_nonblock) {
-                        e.stopPropagation();
-                        nonblock_pass(e, "ondblclick");
-                    }
-                },
                 "dir": opts.dir,
                 "lang": opts.lang
             });
@@ -512,13 +514,15 @@
 
             // Provide a button to close the notice.
             pnotify.closer = $("<div />", {
-                "class": "rf-ntf-cls",
-                "css": {"cursor": "pointer", "visibility": "hidden"},
-                "click": function() {
-                    pnotify.pnotify_remove();
-                    //                    Do not update
-                    pnotify.closer.css("visibility", "hidden");
-                }
+                "class": "rf-ntf-cls",               
+                on : {
+                	"click": function() {
+	                    pnotify.pnotify_remove();
+	                    //                    Do not update
+	                    pnotify.closer.css("visibility", "hidden");
+	                }
+                },
+            	"css": {"cursor": "pointer", "visibility": "hidden"}
             })
                     .append($("<span />", {"class": "rf-ntf-cls-ico"}))
                     .appendTo(pnotify.container);
@@ -584,61 +588,57 @@
                 if (typeof body_history == "undefined") {
                     body_history = $("<div />", {
                         "class": "rf-ntf-hstr",
-                        "mouseleave": function() {
-                            body_history.animate({top: "-" + history_handle_top + "px"}, {duration: 100, queue: false});
+                        on : {
+                        	"mouseleave": function() {                        
+	                            body_history.animate({top: "-" + history_handle_top + "px"}, {duration: 100, queue: false});
+	                        }
                         }
                     })
                             .append($("<div />", {"class": "rf-ntf-hstr-hdr", "text": "Redisplay"}))
                             .append($("<button />", {
                         "class": "rf-ntf-hstr-all",
-                        "text": "All",
-                        //							"mouseenter": function(){
-                        //								$(this).addClass("ui-state-hover");
-                        //							},
-                        //							"mouseleave": function(){
-                        //								$(this).removeClass("ui-state-hover");
-                        //							},
-                        "click": function() {
-                            // Display all notices. (Disregarding non-history notices.)
-                            //                            Don't change it to pnotify's new version, cause using body_data here is a bug
-                            $.each(body.data("pnotify"), function() {
-                                if (this.pnotify_history && this.pnotify_display)
-                                    this.pnotify_display();
-                            });
-                            return false;
-                        }
+                        on : {
+                        	"click": function() {
+                                // Display all notices. (Disregarding non-history notices.)
+                                //                            Don't change it to pnotify's new version, cause using body_data here is a bug
+                                $.each(body.data("pnotify"), function() {
+                                    if (this.pnotify_history && this.pnotify_display)
+                                        this.pnotify_display();
+                                });
+                                return false;
+                            }
+                        },
+                        "text": "All"                        
                     }))
                             .append($("<button />", {
                         "class": "rf-ntf-hstr-last",
-                        "text": "Last",
-                        //							"mouseenter": function(){
-                        //								$(this).addClass("ui-state-hover");
-                        //							},
-                        //							"mouseleave": function(){
-                        //								$(this).removeClass("ui-state-hover");
-                        //							},
-                        "click": function() {
-                            // Look up the last history notice, and display it.
-                            var i = 1;
-                            var body_data = body.data("pnotify");
-                            while (!body_data[body_data.length - i] || !body_data[body_data.length - i].pnotify_history || body_data[body_data.length - i].is(":visible")) {
-                                if (body_data.length - i === 0)
-                                    return false;
-                                i++;
+                        on : {
+                            "click": function() {
+                                // Look up the last history notice, and display it.
+                                var i = 1;
+                                var body_data = body.data("pnotify");
+                                while (!body_data[body_data.length - i] || !body_data[body_data.length - i].pnotify_history || body_data[body_data.length - i].is(":visible")) {
+                                    if (body_data.length - i === 0)
+                                        return false;
+                                    i++;
+                                }
+                                var n = body_data[body_data.length - i];
+                                if (n.pnotify_display)
+                                    n.pnotify_display();
+                                return false;
                             }
-                            var n = body_data[body_data.length - i];
-                            if (n.pnotify_display)
-                                n.pnotify_display();
-                            return false;
-                        }
+                        },
+                        "text": "Last"
                     }))
                             .appendTo(body);
 
                     // Make a handle so the user can pull down the history pull down.
                     var handle = $("<span />", {
                         "class": "rf-ntf-hstr-hndl",
-                        "mouseenter": function() {
-                            body_history.animate({top: "0"}, {duration: 100, queue: false});
+                        on : {
+                        	"mouseenter": function() {                        
+                        		body_history.animate({top: "0"}, {duration: 100, queue: false});
+                        	}
                         }
                     })
                             .appendTo(body_history);

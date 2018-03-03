@@ -59,7 +59,6 @@ public class PopupPanelBaseRenderer extends RendererBase {
         headerFacet.encodeAll(context);
     }
 
-    @SuppressWarnings("unchecked")
     protected void doDecode(FacesContext context, UIComponent component) {
         super.doDecode(context, component);
 
@@ -127,7 +126,6 @@ public class PopupPanelBaseRenderer extends RendererBase {
         return true;
     }
 
-    @SuppressWarnings("unchecked")
     public String buildShowScript(FacesContext context, UIComponent component) {
         AbstractPopupPanel panel = (AbstractPopupPanel) component;
         StringBuilder result = new StringBuilder();
@@ -183,12 +181,6 @@ public class PopupPanelBaseRenderer extends RendererBase {
         return res.toString();
     }
 
-    private Object buildEventFunction(Object eventFunction) {
-        if (eventFunction != null && eventFunction.toString().length() > 0) {
-            return "new Function(\"" + eventFunction.toString() + "\");";
-        }
-        return null;
-    }
 
     public Map<String, Object> getHandledVisualOptions(UIComponent component) {
         AbstractPopupPanel panel = (AbstractPopupPanel) component;
