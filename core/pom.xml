@@ -444,6 +444,7 @@
                     </plugin>
 
                     <!-- JSDoc -->
+                    <!--  
                     <plugin>
                         <groupId>gr.abiss.mvn.plugins</groupId>
                         <artifactId>maven-jstools-plugin</artifactId>
@@ -482,6 +483,7 @@
                             </execution>
                         </executions>
                     </plugin>
+                    -->
                 </plugins>
             </build>
         </profile>
