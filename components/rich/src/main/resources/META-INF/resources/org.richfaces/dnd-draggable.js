@@ -50,7 +50,7 @@
         } else if (options.indicator) {
             var element = $(document.getElementById(options.indicator));
             var clone = element.clone();
-            $("*[id]", clone).andSelf().each(function() {
+            $("*[id]", clone).addBack().each(function() {
                 $(this).removeAttr("id");
             });
             if (element.attr("id")) {
