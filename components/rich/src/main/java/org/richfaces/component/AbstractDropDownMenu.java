@@ -1,9 +1,6 @@
 package org.richfaces.component;
 
-import javax.faces.component.UIComponentBase;
-
 import org.richfaces.cdk.annotations.Attribute;
-import org.richfaces.cdk.annotations.EventName;
 import org.richfaces.cdk.annotations.Facet;
 import org.richfaces.cdk.annotations.JsfComponent;
 import org.richfaces.cdk.annotations.JsfRenderer;

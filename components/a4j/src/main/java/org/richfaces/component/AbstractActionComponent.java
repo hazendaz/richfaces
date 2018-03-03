@@ -21,13 +21,12 @@
  */
 package org.richfaces.component;
 
-import org.richfaces.cdk.annotations.Attribute;
-import org.richfaces.component.attribute.BypassProps;
-
 import javax.faces.component.UICommand;
 import javax.faces.event.ActionEvent;
 import javax.faces.event.FacesEvent;
 import javax.faces.event.PhaseId;
+
+import org.richfaces.component.attribute.BypassProps;
 
 /**
  * @author Nick Belaevski

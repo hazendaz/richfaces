@@ -51,6 +51,7 @@ import javax.faces.validator.Validator;
 
 import org.ajax4jsf.component.behavior.AjaxBehavior;
 import org.ajax4jsf.javascript.ScriptUtils;
+import org.richfaces.application.ServiceTracker;
 import org.richfaces.cdk.annotations.Attribute;
 import org.richfaces.cdk.annotations.Description;
 import org.richfaces.cdk.annotations.JsfBehavior;
@@ -60,24 +61,20 @@ import org.richfaces.component.ClientSideMessage;
 import org.richfaces.component.attribute.ImmediateProps;
 import org.richfaces.javascript.JavaScriptService;
 import org.richfaces.javascript.Message;
-import org.richfaces.log.Logger;
-import org.richfaces.log.RichfacesLogger;
 import org.richfaces.renderkit.html.ClientValidatorRenderer;
 import org.richfaces.renderkit.html.FormClientValidatorRenderer;
-import org.richfaces.application.ServiceTracker;
 import org.richfaces.validator.BeanValidatorService;
 import org.richfaces.validator.ConverterDescriptor;
 import org.richfaces.validator.FacesBeanValidator;
 import org.richfaces.validator.FacesConverterService;
 import org.richfaces.validator.FacesValidatorService;
 import org.richfaces.validator.ValidatorDescriptor;
+import org.richfaces.view.facelets.html.ClientValidatorHandler;
 
 import com.google.common.base.Function;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.Iterators;
 import com.google.common.collect.Lists;
-
-import org.richfaces.view.facelets.html.ClientValidatorHandler;
 
 /**
  * <p>The &lt;rich:validator&gt; behavior adds client-side validation to a form input control based on registered server-side validators. It provides this validation without the need to reproduce the server-side annotations.</p>
@@ -95,7 +92,6 @@ public class ClientValidatorImpl extends AjaxBehavior implements ClientValidator
     private static final Class<?>[] EMPTY_GROUPS = new Class<?>[0];
     private static final String VALUE = "value";
     private static final String IMMEDIATE = "immediate";
-    private static final Logger LOG = RichfacesLogger.COMPONENTS.getLogger();
     private Class<?>[] groups;
 
     private static final Function<? super FacesMessage, Message> MESSAGES_TRANSFORMER = new Function<FacesMessage, Message>() {

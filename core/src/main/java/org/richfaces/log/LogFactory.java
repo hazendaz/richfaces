@@ -58,7 +58,7 @@ public final class LogFactory {
      * This method creates default logger.
      * </p>
      *
-     * @return
+     * @return Logger
      */
     public static Logger getLogger() {
         return DEFAULT_LOGGER;
@@ -69,8 +69,8 @@ public final class LogFactory {
      * This method produces logger instance for given category.
      * </p>
      *
-     * @param category
-     * @return
+     * @param category logger category
+     * @return Logger
      */
     public static Logger getLogger(String category) {
         if (isLog4JAvailable) {

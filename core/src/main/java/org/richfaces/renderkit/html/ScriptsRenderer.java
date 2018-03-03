@@ -43,7 +43,6 @@ import org.richfaces.resource.ResourceKey;
 public class ScriptsRenderer extends ResourceRenderer {
     public static final String RENDERER_TYPE = "org.richfaces.renderer.ScriptsRenderer";
     private static final String TEXT_JAVASCRIPT = "text/javascript";
-    private static final String SRC = "src";
     private static final String TYPE = "type";
     private static final String SCRIPT = "script";
     private static final ResourceKey JQUERY = ResourceKey.create("jquery.js", "org.richfaces");

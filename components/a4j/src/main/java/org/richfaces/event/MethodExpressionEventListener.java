@@ -108,8 +108,8 @@ public abstract class MethodExpressionEventListener implements FacesListener, St
      * cause of the failure.</span>
      * </p>
      *
-     * @throws NullPointerException {@inheritDoc}
-     * @throws AbortProcessingException {@inheritDoc}
+     * @throws NullPointerException if event is null
+     * @throws AbortProcessingException AbortProcessingException
      */
     public void processEvent(FacesEvent event) throws AbortProcessingException {
 

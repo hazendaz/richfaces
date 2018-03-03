@@ -5,7 +5,6 @@ import javax.faces.component.UIOutput;
 import javax.faces.convert.Converter;
 
 import org.richfaces.cdk.annotations.Attribute;
-import org.richfaces.cdk.annotations.EventName;
 import org.richfaces.cdk.annotations.Facet;
 import org.richfaces.cdk.annotations.JsfComponent;
 import org.richfaces.cdk.annotations.JsfRenderer;

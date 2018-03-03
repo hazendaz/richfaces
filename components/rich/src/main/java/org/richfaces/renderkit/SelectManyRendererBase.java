@@ -57,7 +57,6 @@ import java.util.Map;
         @ResourceDependency(library = "org.richfaces", name = "pickList.js"),
         @ResourceDependency(library = "org.richfaces", name = "pickList.ecss")})
 public class SelectManyRendererBase extends InputRendererBase {
-    private static final String HIDDEN_SUFFIX = "Hidden";
 
     public List<ClientSelectItem> getClientSelectItems(FacesContext facesContext, UIComponent component) {
         AbstractSelectManyComponent select = (AbstractSelectManyComponent) component;

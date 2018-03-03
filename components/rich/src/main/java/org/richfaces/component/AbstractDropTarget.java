@@ -29,16 +29,15 @@ import javax.faces.event.FacesEvent;
 import javax.faces.event.PhaseId;
 
 import org.richfaces.cdk.annotations.Attribute;
-import org.richfaces.cdk.annotations.EventName;
 import org.richfaces.cdk.annotations.JsfComponent;
 import org.richfaces.cdk.annotations.JsfRenderer;
 import org.richfaces.cdk.annotations.Tag;
 import org.richfaces.cdk.annotations.TagType;
-import org.richfaces.event.DropEvent;
-import org.richfaces.event.DropListener;
 import org.richfaces.component.attribute.AjaxProps;
 import org.richfaces.component.attribute.BypassProps;
 import org.richfaces.component.attribute.ImmediateProps;
+import org.richfaces.event.DropEvent;
+import org.richfaces.event.DropListener;
 import org.richfaces.view.facelets.DropHandler;
 
 /**

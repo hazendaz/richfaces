@@ -39,7 +39,6 @@ import org.ajax4jsf.component.IterationStateHolder;
  */
 public final class SavedState implements StateHolder {
     public static final SavedState EMPTY = new SavedState();
-    private static final long serialVersionUID = -1563864456074187422L;
     private boolean valid = true;
     private boolean localValueSet;
     private boolean submitted;

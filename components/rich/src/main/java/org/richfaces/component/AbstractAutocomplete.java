@@ -26,7 +26,6 @@ import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
-import java.util.Map;
 
 import javax.el.ELException;
 import javax.el.ExpressionFactory;
@@ -54,7 +53,6 @@ import org.richfaces.cdk.annotations.TagType;
 import org.richfaces.component.attribute.AutocompleteProps;
 import org.richfaces.component.attribute.CoreProps;
 import org.richfaces.component.attribute.DisabledProps;
-import org.richfaces.component.attribute.ErrorProps;
 import org.richfaces.component.attribute.EventsKeyProps;
 import org.richfaces.component.attribute.EventsMouseProps;
 import org.richfaces.component.attribute.FocusProps;

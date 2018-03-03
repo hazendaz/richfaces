@@ -21,7 +21,6 @@
  */
 package org.richfaces.model;
 import java.io.IOException;
-import org.richfaces.json.JSONObject;
 
 /**
  * @author Lukas Macko

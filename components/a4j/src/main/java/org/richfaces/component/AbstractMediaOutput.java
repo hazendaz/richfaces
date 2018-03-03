@@ -29,19 +29,16 @@ import javax.faces.component.UIOutput;
 import javax.faces.convert.Converter;
 
 import org.richfaces.cdk.annotations.Attribute;
-import org.richfaces.cdk.annotations.EventName;
 import org.richfaces.cdk.annotations.JsfComponent;
 import org.richfaces.cdk.annotations.JsfRenderer;
 import org.richfaces.cdk.annotations.Tag;
 import org.richfaces.cdk.annotations.TagType;
 import org.richfaces.component.attribute.AccesskeyProps;
-import org.richfaces.resource.MediaOutputResource;
 import org.richfaces.component.attribute.CoreProps;
-import org.richfaces.component.attribute.EventsKeyProps;
-import org.richfaces.component.attribute.EventsMouseProps;
 import org.richfaces.component.attribute.FocusProps;
 import org.richfaces.component.attribute.I18nProps;
 import org.richfaces.component.attribute.LinkProps;
+import org.richfaces.resource.MediaOutputResource;
 import org.richfaces.view.facelets.html.MediaOutputHandler;
 
 /**

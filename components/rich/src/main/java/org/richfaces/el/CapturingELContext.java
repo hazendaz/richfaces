@@ -102,7 +102,6 @@ public class CapturingELContext extends ELContext {
         return resolver;
     }
 
-    @SuppressWarnings("unchecked")
     @Override
     public Object getContext(Class key) {
         return parent.getContext(key);
@@ -123,7 +122,6 @@ public class CapturingELContext extends ELContext {
         return parent.getVariableMapper();
     }
 
-    @SuppressWarnings("unchecked")
     @Override
     public void putContext(Class key, Object contextObject) {
         parent.putContext(key, contextObject);

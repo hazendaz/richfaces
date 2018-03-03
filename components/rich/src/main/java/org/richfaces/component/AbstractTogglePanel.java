@@ -475,7 +475,6 @@ public abstract class AbstractTogglePanel extends UIOutput implements AbstractDi
         if (caught != null) {
             assert message != null;
 
-            @SuppressWarnings({ "ThrowableInstanceNeverThrown" })
             UpdateModelException toQueue = new UpdateModelException(message, caught);
             ExceptionQueuedEventContext eventContext = new ExceptionQueuedEventContext(facesContext, toQueue, this,
                     PhaseId.UPDATE_MODEL_VALUES);

@@ -21,9 +21,13 @@
  */
 package org.richfaces.component;
 
-import com.google.common.collect.Iterators;
-import org.richfaces.cdk.annotations.Attribute;
-import org.richfaces.cdk.annotations.EventName;
+import java.util.Iterator;
+
+import javax.faces.component.UIColumn;
+import javax.faces.component.UISelectItems;
+import javax.faces.component.UISelectMany;
+import javax.faces.context.FacesContext;
+
 import org.richfaces.component.attribute.DisabledProps;
 import org.richfaces.component.attribute.EventsKeyProps;
 import org.richfaces.component.attribute.EventsMouseProps;
@@ -33,11 +37,7 @@ import org.richfaces.component.attribute.StyleProps;
 import org.richfaces.component.util.SelectItemsInterface;
 import org.richfaces.renderkit.SelectManyHelper;
 
-import javax.faces.component.UIColumn;
-import javax.faces.component.UISelectItems;
-import javax.faces.component.UISelectMany;
-import javax.faces.context.FacesContext;
-import java.util.Iterator;
+import com.google.common.collect.Iterators;
 
 /**
  * @author <a href="http://community.jboss.org/people/bleathem">Brian Leathem</a>

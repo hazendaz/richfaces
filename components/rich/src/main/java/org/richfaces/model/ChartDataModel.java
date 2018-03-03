@@ -22,10 +22,10 @@
 package org.richfaces.model;
 import java.io.IOException;
 import java.util.HashMap;
-import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
+
 import org.richfaces.json.JSONArray;
 import org.richfaces.json.JSONObject;
 import org.richfaces.renderkit.ChartRendererBase;

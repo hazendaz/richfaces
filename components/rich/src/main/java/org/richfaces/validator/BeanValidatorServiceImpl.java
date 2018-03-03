@@ -58,7 +58,6 @@ import com.google.common.collect.ImmutableSet;
  */
 public class BeanValidatorServiceImpl implements BeanValidatorService {
     private static final Collection<String> HIDDEN_PARAMS = ImmutableSet.of("message", "payload", "groups");
-    private static final String FACES_CONTEXT_IS_NULL = "Faces context is null";
     private static final String INPUT_PARAMETERS_IS_NOT_CORRECT = "Input parameters is not correct.";
     private static final Class<?>[] DEFAULT_GROUP = {};
     private final ValueExpressionAnalayser analayser;

@@ -25,7 +25,10 @@ package org.richfaces.component;
  * @author <a href="http://community.jboss.org/people/bleathem">Brian Leathem</a>
  */
 public class TogglePanelVisitException extends RuntimeException {
-    public TogglePanelVisitException() {
+
+	private static final long serialVersionUID = -4351075451446037338L;
+
+	public TogglePanelVisitException() {
         super();
     }
 

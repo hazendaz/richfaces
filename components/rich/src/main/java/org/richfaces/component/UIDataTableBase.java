@@ -41,14 +41,10 @@ import javax.faces.event.FacesEvent;
 import javax.faces.event.PhaseId;
 import javax.faces.event.PreRenderComponentEvent;
 
-import com.google.common.base.Predicate;
-import com.google.common.collect.Iterators;
-
 import org.ajax4jsf.model.DataVisitor;
 import org.ajax4jsf.model.ExtendedDataModel;
 import org.ajax4jsf.model.Range;
 import org.richfaces.cdk.annotations.Attribute;
-import org.richfaces.cdk.annotations.EventName;
 import org.richfaces.cdk.annotations.Facet;
 import org.richfaces.component.attribute.ColumnProps;
 import org.richfaces.component.attribute.EventsRowProps;
@@ -70,6 +66,9 @@ import org.richfaces.model.FilterField;
 import org.richfaces.model.SortField;
 import org.richfaces.model.SortMode;
 import org.richfaces.renderkit.MetaComponentRenderer;
+
+import com.google.common.base.Predicate;
+import com.google.common.collect.Iterators;
 
 public abstract class UIDataTableBase extends UISequence implements Row, MetaComponentResolver, MetaComponentEncoder, ColumnProps, EventsRowProps, RowColumnStyleProps, StyleProps {
     public static final String COMPONENT_FAMILY = "org.richfaces.Data";
