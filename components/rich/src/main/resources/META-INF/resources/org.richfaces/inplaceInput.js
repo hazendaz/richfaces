@@ -22,7 +22,7 @@
         this.useDefaultLabel = labelText != inputLabel
         this.saveOnBlur = mergedOptions.saveOnBlur;
         this.showControls = mergedOptions.showControls;
-        this.getInput().bind("focus", $.proxy(this.__editHandler, this));
+        this.getInput().on("focus", $.proxy(this.__editHandler, this));
         if (this.showControls) {
             var btnContainer = document.getElementById(id + "Btn");
             if (btnContainer) {
@@ -30,8 +30,8 @@
             }
             this.okbtn = $(document.getElementById(id + "Okbtn"));
             this.cancelbtn = $(document.getElementById(id + "Cancelbtn"));
-            this.okbtn.bind("mousedown", $.proxy(this.__saveBtnHandler, this));
-            this.cancelbtn.bind("mousedown", $.proxy(this.__cancelBtnHandler, this));
+            this.okbtn.on("mousedown", $.proxy(this.__saveBtnHandler, this));
+            this.cancelbtn.on("mousedown", $.proxy(this.__cancelBtnHandler, this));
         }
     };
 
@@ -91,8 +91,8 @@
             },
 
             __setInputFocus: function() {
-                this.getInput().unbind("focus", this.__editHandler);
-                this.getInput().focus();
+                this.getInput().off("focus", this.__editHandler);
+                this.getInput().trigger("focus");
             },
 
             __saveBtnHandler: function(e) {
@@ -144,7 +144,7 @@
                 if (this.tabBlur) {
                     this.tabBlur = false;
                 } else {
-                    this.getInput().focus();
+                    this.getInput().trigger("focus");
                 }
             },
 
@@ -176,7 +176,7 @@
                     }
                     var _this = this;
                     window.setTimeout(function() {
-                        _this.getInput().bind("focus", $.proxy(_this.__editHandler, _this));
+                        _this.getInput().on("focus", $.proxy(_this.__editHandler, _this));
                     }, 1);
                 }
             },

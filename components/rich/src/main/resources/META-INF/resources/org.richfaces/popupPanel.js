@@ -9,22 +9,22 @@
     var disableSelection = function (element) {
         if (typeof element.onselectstart != "undefined") //IE
         {
-            $(rf.getDomElement(element)).bind('selectstart', selectionEventHandler);
+            $(rf.getDomElement(element)).on('selectstart', selectionEventHandler);
         }
         else //All other (ie: Opera)
         {
-            $(rf.getDomElement(element)).bind('mousedown', selectionEventHandler);
+            $(rf.getDomElement(element)).on('mousedown', selectionEventHandler);
         }
     };
 
     var enableSelection = function (element) {
         if (typeof element.onselectstart != "undefined") //IE
         {
-            $(rf.getDomElement(element)).unbind('selectstart', selectionEventHandler);
+            $(rf.getDomElement(element)).off('selectstart', selectionEventHandler);
         }
         else //All other (ie: Opera)
         {
-            $(rf.getDomElement(element)).unbind('mousedown', selectionEventHandler);
+            $(rf.getDomElement(element)).off('mousedown', selectionEventHandler);
         }
     };
 
@@ -101,7 +101,7 @@
 
         this.resizeProxy = $.proxy(this.resizeListener, this);
 
-        this.cdiv.resize(this.resizeProxy);
+        this.cdiv.on("resize", this.resizeProxy);
         this.findForm(this.cdiv).on("ajaxcomplete", this.resizeProxy);
         $(document).on("javascriptServiceComplete", this.resizeProxy);
     };
@@ -306,7 +306,7 @@
                     if (this.options.keepVisualState && forms) {
                         for (var i = 0; i < forms.length; i++) {
                             var popup = this;
-                            $(forms[i]).bind("submit", {popup:popup}, this.setStateInput);
+                            $(forms[i]).on("submit", {popup:popup}, this.setStateInput);
                         }
                     }
 
@@ -447,7 +447,7 @@
 
                         eIframe = $(rf.getDomElement(this.iframe));
 
-                        eIframe.bind('load', this.initIframe);
+                        eIframe.on('load', this.initIframe);
                         this.eIframe = eIframe;
                     }
 
@@ -582,7 +582,7 @@
                     var popup = this;
                     if (this.firstOutside) {
 
-                        $(rf.getDomElement(this.firstOutside)).bind("focus", {popup: popup}, this.firstOnfocus);
+                        $(rf.getDomElement(this.firstOutside)).on("focus", {popup: popup}, this.firstOnfocus);
                     }
                 }
             },
@@ -592,7 +592,7 @@
                     this.processAllFocusElements(document, this.restoreTabindexes);
 
                     if (this.firstOutside) {
-                        $(rf.getDomElement(this.firstOutside)).unbind("focus", this.firstOnfocus);
+                        $(rf.getDomElement(this.firstOutside)).off("focus", this.firstOnfocus);
                         this.firstOutside = null;
                     }
                 }
@@ -639,7 +639,7 @@
                     var forms = $("form", element);
                     if (this.options.keepVisualState && forms) {
                         for (var i = 0; i < forms.length; i++) {
-                            $(forms[i]).unbind("submit", this.setStateInput);
+                            $(forms[i]).off("submit", this.setStateInput);
                         }
                     }
 

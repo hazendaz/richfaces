@@ -79,13 +79,13 @@
                         }
                     }
                     var proxy = $.proxy(this.__inputHandler, this);
-                    this.input.change(proxy);
-                    this.input.submit(proxy);
-                    this.element.mousewheel($.proxy(this.__mousewheelHandler, this));
-                    this.track.keydown($.proxy(this.__keydownHandler, this));
-                    this.decreaseButton.mousedown($.proxy(this.__decreaseHandler, this));
-                    this.increaseButton.mousedown($.proxy(this.__increaseHandler, this));
-                    this.track.mousedown($.proxy(this.__mousedownHandler, this));
+                    this.input.on("change", proxy);
+                    this.input.on("submit", proxy);
+                    this.element.on("mousewheel", $.proxy(this.__mousewheelHandler, this));
+                    this.track.on("keydown", $.proxy(this.__keydownHandler, this));
+                    this.decreaseButton.on("mousedown", $.proxy(this.__decreaseHandler, this));
+                    this.increaseButton.on("mousedown", $.proxy(this.__increaseHandler, this));
+                    this.track.on("mousedown", $.proxy(this.__mousedownHandler, this));
                 }
             },
 
@@ -285,11 +285,11 @@
             __mouseupHandler: function () {
                 this.handle.removeClass(this.handleSelectedClass);
                 this.tooltip.hide();
-                $(document).unbind("mousemove", this.__mousemoveHandler);
+                $(document).off("mousemove", this.__mousemoveHandler);
             },
 
             destroy: function (event) {
-                $(document).unbind("mousemove", this.__mousemoveHandler);
+                $(document).off("mousemove", this.__mousemoveHandler);
                 $superInputNumberSlider.destroy.call(this);
             }
         });

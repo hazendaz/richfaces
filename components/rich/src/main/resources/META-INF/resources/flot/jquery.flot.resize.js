@@ -39,11 +39,11 @@ can just fix the size of their placeholders.
         }
         
         function bindEvents(plot, eventHolder) {
-            plot.getPlaceholder().resize(onResize);
+            plot.getPlaceholder().on("resize", onResize);
         }
 
         function shutdown(plot, eventHolder) {
-            plot.getPlaceholder().unbind("resize", onResize);
+            plot.getPlaceholder().off("resize", onResize);
         }
         
         plot.hooks.bindEvents.push(bindEvents);

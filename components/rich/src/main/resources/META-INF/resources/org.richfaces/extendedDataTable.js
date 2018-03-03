@@ -170,11 +170,11 @@
                     };
                 };
                 
-                body.bind("scroll", delayedScroll(this, body));
-                body.bind("mousewheel", $.proxy(this.horizontalScrollHandler, this));
-                $(this.scrollElement).bind("scroll", $.proxy(this.updateScrollPosition, this));
+                body.on("scroll", delayedScroll(this, body));
+                body.on("mousewheel", $.proxy(this.horizontalScrollHandler, this));
+                $(this.scrollElement).on("scroll", $.proxy(this.updateScrollPosition, this));
                 this.bindHeaderHandlers();
-                $(this.element).bind("rich:onajaxcomplete", $.proxy(this.ajaxComplete, this));
+                $(this.element).on("rich:onajaxcomplete", $.proxy(this.ajaxComplete, this));
                 
                 this.resizeData = {};
                 this.idOfReorderingColumn = "";
@@ -331,7 +331,7 @@
             },
 
             destroy: function() {
-                $(window).unbind("resize", this.updateLayout);
+                $(window).off("resize", this.updateLayout);
                 $(rf.getDomElement(this.id + ':st')).remove();
                 if (this.columnControl) {
                     this.columnControl.destroy();
@@ -340,15 +340,15 @@
             },
 
             bindHeaderHandlers: function() {
-                this.header.find(".rf-edt-rsz").bind("mousedown", $.proxy(this.beginResize, this));
-                this.headerCells.bind("mousedown", $.proxy(this.beginReorder, this));
+                this.header.find(".rf-edt-rsz").on("mousedown", $.proxy(this.beginResize, this));
+                this.headerCells.on("mousedown", $.proxy(this.beginReorder, this));
                 var self = this;
                 this.header.find(".rf-edt-c-srt").each(function() {
-                    $(this).bind("click", {sortHandle: this}, $.proxy(self.sortHandler, self));
+                    $(this).on("click", {sortHandle: this}, $.proxy(self.sortHandler, self));
                 });
                 this.header.find(".rf-edt-flt-i").each(function() {
-                    $(this).bind("blur", {filterHandle: this}, $.proxy(self.filterHandler, self));
-                    $(this).bind("keyup", {filterHandle: this}, $.proxy(self.filterHandler, self));
+                    $(this).on("blur", {filterHandle: this}, $.proxy(self.filterHandler, self));
+                    $(this).on("keyup", {filterHandle: this}, $.proxy(self.filterHandler, self));
                 });
             },
 
@@ -493,10 +493,10 @@
                     if (this.rowCount != this.rows) {
                         this.contentElement.style.height = (this.rowCount * this.rowHeight) + "px";
                     }
-                    bodyJQuery.bind("scroll", $.proxy(this.bodyScrollListener, this));
+                    bodyJQuery.on("scroll", $.proxy(this.bodyScrollListener, this));
                     if (this.options.selectionMode != "none") {
-                        this.tbodies.bind("click", $.proxy(this.selectionClickListener, this));
-                        bodyJQuery.bind(window.opera ? "keypress" : "keydown", $.proxy(this.selectionKeyDownListener, this));
+                        this.tbodies.on("click", $.proxy(this.selectionClickListener, this));
+                        bodyJQuery.on(window.opera ? "keypress" : "keydown", $.proxy(this.selectionKeyDownListener, this));
                         this.initializeSelection();
                     }
                 } else {
@@ -578,13 +578,13 @@
                 this.dragElement.style.height = this.element.offsetHeight + "px";
                 $(this.dragElement).setPosition({top:$(this.element).offset().top, left:event.pageX});
                 this.dragElement.style.display = "block";
-                $(document).bind("mousemove", $.proxy(this.drag, this));
+                $(document).on("mousemove", $.proxy(this.drag, this));
                 $(document).one("mouseup", $.proxy(this.endResize, this));
                 return false;
             },
 
             endResize: function(event) {
-                $(document).unbind("mousemove", this.drag);
+                $(document).off("mousemove", this.drag);
                 this.dragElement.style.display = "none";
                 var width = Math.max(MIN_WIDTH, event.pageX - this.resizeData.left);
                 this.setColumnWidth(this.resizeData.id, width);
@@ -599,8 +599,8 @@
             beginReorder: function(event) {
                 if (!$(event.target).is("a, img, :input")) {
                     this.idOfReorderingColumn = event.currentTarget.className.match(new RegExp(WIDTH_CLASS_NAME_BASE + "([^\\W]*)"))[1];
-                    $(document).bind("mousemove", $.proxy(this.reorder, this));
-                    this.headerCells.bind("mouseover", $.proxy(this.overReorder, this));
+                    $(document).on("mousemove", $.proxy(this.reorder, this));
+                    this.headerCells.on("mouseover", $.proxy(this.overReorder, this));
                     $(document).one("mouseup", $.proxy(this.cancelReorder, this));
                     return false;
                 }
@@ -619,12 +619,12 @@
 
             outReorder: function(event) {
                 this.reorderMarkerElement.style.display = "";
-                $(event.currentTarget).unbind("mouseup", this.endReorder);
+                $(event.currentTarget).off("mouseup", this.endReorder);
             },
 
             endReorder: function(event) {
                 this.reorderMarkerElement.style.display = "";
-                $(event.currentTarget).unbind("mouseout", this.outReorder);
+                $(event.currentTarget).off("mouseout", this.outReorder);
                 var id = event.currentTarget.className.match(new RegExp(WIDTH_CLASS_NAME_BASE + "([^\\W]*)"))[1];
                 var colunmsOrder = "";
                 var _this = this;
@@ -640,8 +640,8 @@
             },
 
             cancelReorder: function(event) {
-                $(document).unbind("mousemove", this.reorder);
-                this.headerCells.unbind("mouseover", this.overReorder);
+                $(document).off("mousemove", this.reorder);
+                this.headerCells.off("mouseover", this.overReorder);
                 this.reorderElement.style.display = "none";
             },
 
@@ -1027,7 +1027,7 @@
 
                 this.columnControl = new RichFaces.ui.Popup(controlId, popupOptions);
                 this.columnControl.hide();
-                button.click($.proxy(function(event) {
+                button.on("click", $.proxy(function(event) {
                     this.columnControl.visible ? this.columnControl.hide() : this.columnControl.show(event);
                 }, this));
 

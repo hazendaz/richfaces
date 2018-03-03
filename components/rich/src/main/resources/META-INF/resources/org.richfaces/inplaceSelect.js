@@ -15,7 +15,7 @@
     rf.ui.InplaceSelect = function(id, options) {
         var mergedOptions = $.extend({}, defaultOptions, options);
         $super.constructor.call(this, id, mergedOptions);
-        this.getInput().bind("click", $.proxy(this.__clickHandler, this));
+        this.getInput().on("click", $.proxy(this.__clickHandler, this));
         mergedOptions['attachTo'] = id;
         mergedOptions['scrollContainer'] = $(document.getElementById(id + "Items")).parent()[0];
         mergedOptions['focusKeeperEnabled'] = false;
@@ -25,8 +25,8 @@
         this.selValueInput = $(document.getElementById(id + "selValue"));
         this.initialValue = this.selValueInput.val();
         this.listHandler = $(document.getElementById(id + "List"));
-        this.listHandler.bind("mousedown", $.proxy(this.__onListMouseDown, this));
-        this.listHandler.bind("mouseup", $.proxy(this.__onListMouseUp, this));
+        this.listHandler.on("mousedown", $.proxy(this.__onListMouseDown, this));
+        this.listHandler.on("mouseup", $.proxy(this.__onListMouseUp, this));
         this.openOnEdit = mergedOptions.openOnEdit;
         this.saveOnSelect = mergedOptions.saveOnSelect;
         this.savedIndex = -1;

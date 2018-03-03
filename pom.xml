@@ -30,10 +30,10 @@
         <version>11</version>
     </parent>
 
-    <groupId>org.richfaces</groupId>
+    <groupId>com.github.albfernandez.richfaces</groupId>
     <artifactId>richfaces-parent</artifactId>
     <packaging>pom</packaging>
-    <version>4.5.21-SNAPSHOT</version>
+    <version>4.6.0-SNAPSHOT</version>
     <name>RichFaces Parent</name>
 
     <modules>
@@ -116,7 +116,7 @@
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 
         <!-- Base Dependencies Versions -->
-        <version.richfaces>4.5.21-SNAPSHOT</version.richfaces>
+        <version.richfaces>4.6.0-SNAPSHOT</version.richfaces>
         <version.cdk>4.5.1-SNAPSHOT</version.cdk>
         <version.jboss-javaee>3.0.2.Final</version.jboss-javaee>
 
@@ -188,14 +188,14 @@
 
             <!-- RichFaces -->
             <dependency>
-                <groupId>org.richfaces</groupId>
+                <groupId>com.github.albfernandez.richfaces</groupId>
                 <artifactId>richfaces-cache-bom</artifactId>
                 <version>${version.richfaces}</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
             <dependency>
-                <groupId>org.richfaces</groupId>
+                <groupId>com.github.albfernandez.richfaces</groupId>
                 <artifactId>richfaces-build</artifactId>
                 <version>${version.richfaces}</version>
                 <type>pom</type>
@@ -238,7 +238,7 @@
                             <manifestEntries>
                                 <mode>development</mode>
                                 <Build-Number>${buildNumber}</Build-Number>
-                                <Automatic-Module-Name>org.richfaces.${artifactId}</Automatic-Module-Name>
+                                <Automatic-Module-Name>org.richfaces.${project.artifactId}</Automatic-Module-Name>
                             </manifestEntries>
                         </archive>
                     </configuration>
@@ -454,7 +454,7 @@
             </properties>
             <dependencies>
                 <dependency>
-                    <groupId>org.richfaces</groupId>
+                    <groupId>com.github.albfernandez.richfaces</groupId>
                     <artifactId>richfaces-build-resources</artifactId>
                     <scope>test</scope>
                 </dependency>
@@ -525,7 +525,7 @@
                                 <configuration>
                                     <artifactItems>
                                         <artifactItem>
-                                            <groupId>org.richfaces</groupId>
+                                            <groupId>com.github.albfernandez.richfaces</groupId>
                                             <artifactId>richfaces-build-resources</artifactId>
                                             <version>${version.richfaces}</version>
                                             <type>jar</type>
@@ -597,7 +597,7 @@
                         </executions>
                         <dependencies>
                             <dependency>
-                                <groupId>org.richfaces</groupId>
+                                <groupId>com.github.albfernandez.richfaces</groupId>
                                 <artifactId>richfaces-build-resources</artifactId>
                                 <version>${version.richfaces}</version>
                             </dependency>

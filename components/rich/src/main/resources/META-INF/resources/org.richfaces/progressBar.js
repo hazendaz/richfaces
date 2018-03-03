@@ -81,7 +81,7 @@
             },
 
             __onResourceDataAvailable: function(data) {
-                var parsedData = rf.parseJSON(data);
+                var parsedData = JSON.parse(data);
                 if (parsedData instanceof Number || typeof parsedData == 'number') {
                     this.setValue(parsedData);
                 }

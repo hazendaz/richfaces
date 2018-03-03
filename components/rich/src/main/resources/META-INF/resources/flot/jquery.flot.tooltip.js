@@ -90,14 +90,14 @@
             var $tip = that.getDomElement();
 
             // bind event
-            $( plot.getPlaceholder() ).bind("plothover", plothover);
+            $( plot.getPlaceholder() ).on("plothover", plothover);
 
-            $(eventHolder).bind('mousemove', mouseMove);
+            $(eventHolder).on('mousemove', mouseMove);
         });
 
         plot.hooks.shutdown.push(function (plot, eventHolder){
-            $(plot.getPlaceholder()).unbind("plothover", plothover);
-            $(eventHolder).unbind("mousemove", mouseMove);
+            $(plot.getPlaceholder()).off("plothover", plothover);
+            $(eventHolder).off("mousemove", mouseMove);
         });
 
         function mouseMove(e){

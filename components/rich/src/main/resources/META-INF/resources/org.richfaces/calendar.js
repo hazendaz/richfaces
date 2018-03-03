@@ -1141,7 +1141,7 @@
                         this.scrollElements = rf.Event.bindScrollEventHandlers(element, this.eventOnScroll, this);
                     }
                     
-                    $(rf.getDomElement(this.CALENDAR_CONTENT)).focus();
+                    $(rf.getDomElement(this.CALENDAR_CONTENT)).trigger("focus");
                     rf.Event.bindById(this.id, "focusout" + this.namespace, this.eventOnCollapse, this);
                     rf.Event.unbindById(this.INPUT_DATE_ID, "click" + this.namespace);
                 }
@@ -1178,7 +1178,7 @@
                 if (field.value != dateStr) {
                     field.value = dateStr;
                     this.invokeEvent("change", rf.getDomElement(this.id), event, this.selectedDate);
-                    $(rf.getDomElement(this.INPUT_DATE_ID)).blur();
+                    $(rf.getDomElement(this.INPUT_DATE_ID)).trigger("blur");
                 }
             },
 
@@ -1193,7 +1193,7 @@
              * @name RichFaces.ui.Calendar#focus
              */
             focus: function() {
-                rf.getDomElement(this.INPUT_DATE_ID).focus();
+                rf.getDomElement(this.INPUT_DATE_ID).trigger("focus");
             },
 
             __getSelectedDate: function() {

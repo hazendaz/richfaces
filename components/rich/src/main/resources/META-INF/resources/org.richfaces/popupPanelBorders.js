@@ -9,7 +9,7 @@
         this.element = $(rf.getDomElement(id));
         this.element.css('cursor', cursor);
         var border = this;
-        this.element.bind('mousedown', {border:border}, this.startDrag);
+        this.element.on('mousedown', {border:border}, this.startDrag);
 
         this.modalPanel = modalPanel;
         this.sizer = sizer;
@@ -26,11 +26,11 @@
 
             destroy: function() {
                 if (this.doingDrag) {
-                    $(document).unbind('mousemove', this.doDrag);
-                    $(document).unbind('mouseup', this.endDrag);
+                    $(document).off('mousemove', this.doDrag);
+                    $(document).off('mouseup', this.endDrag);
                 }
 
-                this.element.unbind('mousedown', this.startDrag);
+                this.element.off('mousedown', this.startDrag);
                 this.element = null;
                 this.modalPanel = null;
             },
@@ -49,8 +49,8 @@
 
                 border.dragX = event.clientX;
                 border.dragY = event.clientY;
-                $(document).bind('mousemove', {border:border}, border.doDrag);
-                $(document).bind('mouseup', {border:border}, border.endDrag);
+                $(document).on('mousemove', {border:border}, border.doDrag);
+                $(document).on('mouseup', {border:border}, border.endDrag);
 
                 border.modalPanel.startDrag(border);
 
@@ -150,8 +150,8 @@
                 var border = event.data.border;
                 border.doingDrag = undefined;
 
-                $(document).unbind('mousemove', border.doDrag);
-                $(document).unbind('mouseup', border.endDrag);
+                $(document).off('mousemove', border.doDrag);
+                $(document).off('mouseup', border.endDrag);
 
                 border.modalPanel.endDrag(border);
 

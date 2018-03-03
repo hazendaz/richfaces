@@ -32,8 +32,8 @@
 
 
         if (mergedOptions.showControl && !mergedOptions.disabled) {
-            this.container.bind("mousedown", $.proxy(this.__onBtnMouseDown, this))
-                .bind("mouseup", $.proxy(this.__onMouseUp, this));
+            this.container.on("mousedown", $.proxy(this.__onBtnMouseDown, this))
+                .on("mouseup", $.proxy(this.__onMouseUp, this));
         }
 
         this.isFirstAjax = true;
@@ -43,8 +43,8 @@
         this.list = this.popupList.__getList();
         this.listElem = $(document.getElementById(id + "List"));
 
-        this.listElem.bind("mousedown", $.proxy(this.__onListMouseDown, this));
-        this.listElem.bind("mouseup", $.proxy(this.__onMouseUp, this));
+        this.listElem.on("mousedown", $.proxy(this.__onListMouseDown, this));
+        this.listElem.on("mouseup", $.proxy(this.__onMouseUp, this));
 
         var listEventHandlers = {};
         listEventHandlers["listshow" + this.namespace] = $.proxy(this.__listshowHandler, this);

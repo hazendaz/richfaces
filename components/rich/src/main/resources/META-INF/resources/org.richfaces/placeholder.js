@@ -3,7 +3,7 @@
     rf.ui = rf.ui || {};
 
     var defaultOptions = {
-        useNative: false
+        useNative: true
     };
 
     rf.ui.Placeholder = rf.BaseComponent.extendClass({
@@ -28,9 +28,10 @@
                 options.className = 'rf-plhdr ' + ((options.styleClass) ? options.styleClass : '');
                 var elements = (options.selector) ? $(options.selector) : $(document.getElementById(options.targetId));
                 // finds all inputs within the subtree of target elements
-                var inputs = elements.find('*').andSelf().filter(':editable');
-                inputs.watermark(options.text, options);
+                var inputs = elements.find('*').addBack().filter(':editable');
+                inputs.attr("placeholder", options.text);
             });
+            
         },
         // destructor definition
         destroy: function () {
@@ -39,14 +40,6 @@
             // call parent’s destructor
             $super.destroy.call(this);
         }
-    });
-    
-    // once per all placeholders on a page
-    $(function() {
-        $(document).on('ajaxsubmit', 'form', $.watermark.hideAll);
-        $(document).on('ajaxbegin', 'form', $.watermark.showAll);
-            // need to use setTimeout to allow client's native reset to happen
-        $(document).on('reset', 'form', function() {setTimeout( $.watermark.showAll, 0); });
     });
     
     // define super class reference - reference to the parent prototype

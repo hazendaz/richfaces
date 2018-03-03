@@ -64,7 +64,7 @@
                 }
                 return result;
             }, this);
-            $(this.options.selector).bind(type + this.namespace, this.options, this.__handlers[type]);
+            $(this.options.selector).on(type + this.namespace, this.options, this.__handlers[type]);
         },
 
         destroy : function() {
@@ -72,7 +72,7 @@
 
             for (var type in this.__handlers) {
                 if (this.__handlers.hasOwnProperty(type)) {
-                    $(this.options.selector).unbind(type + this.namespace, this.__handlers[type]);
+                    $(this.options.selector).off(type + this.namespace, this.__handlers[type]);
                 }
             }
 

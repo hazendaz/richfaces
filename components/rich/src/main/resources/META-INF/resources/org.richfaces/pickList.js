@@ -38,13 +38,13 @@
         this.pickList = $(document.getElementById(id));
 
         this.addButton = $('.rf-pick-add', this.pickList);
-        this.addButton.bind("click", $.proxy(this.add, this));
+        this.addButton.on("click", $.proxy(this.add, this));
         this.addAllButton = $('.rf-pick-add-all', this.pickList);
-        this.addAllButton.bind("click", $.proxy(this.addAll, this));
+        this.addAllButton.on("click", $.proxy(this.addAll, this));
         this.removeButton = $('.rf-pick-rem', this.pickList);
-        this.removeButton.bind("click", $.proxy(this.remove, this));
+        this.removeButton.on("click", $.proxy(this.remove, this));
         this.removeAllButton = $('.rf-pick-rem-all', this.pickList);
-        this.removeAllButton.bind("click", $.proxy(this.removeAll, this));
+        this.removeAllButton.on("click", $.proxy(this.removeAll, this));
         this.disabled = mergedOptions.disabled;
 
         if (mergedOptions['onadditems'] && typeof mergedOptions['onadditems'] == 'function') {
@@ -127,8 +127,8 @@
             rf.Event.bind(this, "listblur" + this.namespace, options['onblur']);
         }
 
-        this.pickList.focusin($.proxy(this.__focusHandler, this));
-        this.pickList.focusout($.proxy(this.__blurHandler, this));
+        this.pickList.on("focusin", $.proxy(this.__focusHandler, this));
+        this.pickList.on("focusout", $.proxy(this.__blurHandler, this));
     };
 
     $.extend(rf.ui.PickList.prototype, (function () {

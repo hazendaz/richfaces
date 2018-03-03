@@ -26,7 +26,7 @@
 
         this.element = $(document.getElementById(id));
         this.editContainer = $(document.getElementById(id + "Edit"));
-        this.element.bind(this.editEvent, $.proxy(this.__editHandler, this));
+        this.element.on(this.editEvent, $.proxy(this.__editHandler, this));
         this.isSaved = false;
         this.useDefaultLabel = false;
         this.editState = false;

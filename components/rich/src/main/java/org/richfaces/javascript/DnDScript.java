@@ -41,11 +41,7 @@ public abstract class DnDScript implements ScriptWithDependencies {
         BASE_RESOURCES.add(new ResourceKey("richfaces.js", "org.richfaces"));
         BASE_RESOURCES.add(new ResourceKey("richfaces-base-component.js", "org.richfaces"));
         BASE_RESOURCES.add(new ResourceKey("richfaces-event.js", "org.richfaces"));
-        BASE_RESOURCES.add(new ResourceKey("core.js", "com.jqueryui"));
-        BASE_RESOURCES.add(new ResourceKey("widget.js", "com.jqueryui"));
-        BASE_RESOURCES.add(new ResourceKey("mouse.js", "com.jqueryui"));
-        BASE_RESOURCES.add(new ResourceKey("draggable.js", "com.jqueryui"));
-        BASE_RESOURCES.add(new ResourceKey("droppable.js", "com.jqueryui"));
+        BASE_RESOURCES.add(new ResourceKey("jquery-ui.js", "com.jqueryui"));        
     }
 
     private final String name;

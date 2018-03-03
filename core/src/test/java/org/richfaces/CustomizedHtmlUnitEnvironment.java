@@ -4,6 +4,8 @@ import org.jboss.test.faces.ServletHolder;
 import org.jboss.test.faces.htmlunit.HtmlUnitEnvironment;
 import org.richfaces.webapp.ResourceServlet;
 
+import com.gargoylesoftware.htmlunit.BrowserVersion;
+
 public class CustomizedHtmlUnitEnvironment extends HtmlUnitEnvironment {
 
     private static ThreadLocal<ResourceServletHolder> RESOURCE_SERVLET_HOLDER = new ThreadLocal<CustomizedHtmlUnitEnvironment.ResourceServletHolder>() {
@@ -14,6 +16,7 @@ public class CustomizedHtmlUnitEnvironment extends HtmlUnitEnvironment {
 
     public CustomizedHtmlUnitEnvironment() {
         this.getServer().addServlet(RESOURCE_SERVLET_HOLDER.get());
+        this.setBrowserVersion(BrowserVersion.INTERNET_EXPLORER);
     }
 
     private static class ResourceServletHolder extends ServletHolder {

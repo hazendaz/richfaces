@@ -104,7 +104,7 @@ RichFaces.jQuery = RichFaces.jQuery || window.jQuery;
     /*
      * jQuery selector ":editable" which selects only input elements which can be edited, are visible and enabled
      */
-    $.extend($.expr[':'], {
+    $.extend($.expr.pseudos, {
         editable : function(element) {
             return $(element).is(rf.EDITABLE_INPUT_SELECTOR);
         }
@@ -418,9 +418,9 @@ RichFaces.jQuery = RichFaces.jQuery || window.jQuery;
         try {
             if (dataString) {
                 if (JSON_STRING_START.test(dataString)) {
-                    return $.parseJSON(dataString);
+                    return JSON.parse(dataString);
                 } else {
-                    var parsedData = $.parseJSON("{\"root\": " + dataString + "}");
+                    var parsedData = JSON.parse("{\"root\": " + dataString + "}");
                     return parsedData.root;
                 }
             }

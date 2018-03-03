@@ -21,7 +21,7 @@
                 data.element = element;
                 data.fn = component.processClick;
     
-                element.bind('click', copy(data), fn);
+                element.on('click', copy(data), fn);
             }
         }
     };
@@ -75,7 +75,7 @@
 
         if (options.buttons) {
 
-            $(dataScrollerElement).delegate('.rf-ds-btn', 'mouseup mousedown mouseout', function(event) {
+            $(dataScrollerElement).on('mouseup mousedown mouseout', '.rf-ds-btn', function(event) {
                 if ($(this).hasClass('rf-ds-dis')) {
                     $(this).removeClass('rf-ds-press');
                 } else {
@@ -89,7 +89,7 @@
 
         if (options.digitals) {
 
-            $(dataScrollerElement).delegate('.rf-ds-nmb-btn', 'mouseup mousedown mouseout', function(event) {
+            $(dataScrollerElement).on('mouseup mousedown mouseout', '.rf-ds-nmb-btn', function(event) {
                 togglePressClass($(this), event);
             });
 

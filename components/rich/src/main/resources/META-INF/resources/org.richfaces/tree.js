@@ -366,13 +366,13 @@
 
                 this.__toggleNodeEvent = options.toggleNodeEvent;
                 if (this.__toggleNodeEvent) {
-                    this.__treeRootElt.delegate(".rf-trn", this.__toggleNodeEvent, this, this.__nodeToggleActivated);
+                    this.__treeRootElt.on( this.__toggleNodeEvent, ".rf-trn", this, this.__nodeToggleActivated);
                 }
                 if (!this.__toggleNodeEvent || this.__toggleNodeEvent != 'click') {
-                    this.__treeRootElt.delegate(".rf-trn-hnd", "click", this, this.__nodeToggleActivated);
+                    this.__treeRootElt.on( "click", ".rf-trn-hnd", this, this.__nodeToggleActivated);
                 }
 
-                this.__treeRootElt.delegate(".rf-trn-cnt", "mousedown", this, this.__nodeSelectionActivated);
+                this.__treeRootElt.on( "mousedown", ".rf-trn-cnt", this, this.__nodeSelectionActivated);
 
                 this.__findSelectionInput();
                 this.__selection = new rf.ui.TreeNodeSet(this.__selectionInput.val());
@@ -390,13 +390,13 @@
 
             destroy: function() {
                 if (this.__toggleNodeEvent) {
-                    this.__treeRootElt.undelegate(".rf-trn", this.__toggleNodeEvent, this, this.__nodeToggleActivated);
+                    this.__treeRootElt.off(this.__toggleNodeEvent, ".rf-trn",  this.__nodeToggleActivated);
                 }
                 if (!this.__toggleNodeEvent || this.__toggleNodeEvent != 'click') {
-                    this.__treeRootElt.undelegate(".rf-trn-hnd", "click", this, this.__nodeToggleActivated);
+                    this.__treeRootElt.off("click",".rf-trn-hnd",  this.__nodeToggleActivated);
                 }
 
-                this.__treeRootElt.undelegate(".rf-trn-cnt", "mousedown", this.__nodeSelectionActivated);
+                this.__treeRootElt.off("mousedown", ".rf-trn-cnt", this.__nodeSelectionActivated);
                 this.__treeRootElt = null;
 
                 this.__selectionInput = null;
