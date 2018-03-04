@@ -1,4 +1,7 @@
-4.6.0.ayg
+4.6.3.ayg-SNAPSHOT
+----------
+
+4.6.2.ayg
 ----------
 	[#15] upgrade showcase to point to this site instead original Richfaces site
 	[#14] Create page for documentation	 

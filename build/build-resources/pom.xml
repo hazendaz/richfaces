@@ -26,7 +26,7 @@
 
     <groupId>com.github.albfernandez.richfaces</groupId>
     <artifactId>richfaces-build-resources</artifactId>
-    <version>4.6.2.ayg</version>
+    <version>4.6.3.ayg-SNAPSHOT</version>
     <name>RichFaces Build Resources</name>
 
     <description>
@@ -58,7 +58,7 @@
 		<url>https://github.com/albfernandez/richfaces/issues</url>
 	</issueManagement>
     <properties>
-        <version.richfaces>4.6.2.ayg</version.richfaces>
+        <version.richfaces>4.6.3.ayg-SNAPSHOT</version.richfaces>
 
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
