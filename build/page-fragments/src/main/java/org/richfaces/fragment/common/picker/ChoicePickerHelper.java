@@ -334,17 +334,16 @@ public final class ChoicePickerHelper {
          *
          * Example:
          * This picker will be picking and comparing text from such divs:
-         * <code>
-         *  <div>
-         *      <span>text1</span>
-         *      <span>text2</span>
-         *  </div>
-         * </code> ,
+         * <pre>
+         *  &lt;div&gt;
+         *      &lt;span&gt;text1&lt;/span&gt;
+         *      &lt;span&gt;text2&lt;/span&gt;
+         *  &lt;/div&gt;
+         * </pre> ,
          * but you want to compare the text only with the second span.
          * The only thing you need to do is to add this function:
          * <code>
-         * new Function<WebElement, WebElement>() {
-         *      @Override
+         * new Function &lt;WebElement, WebElement&gt;() {
          *      public WebElement apply(WebElement input) {
          *          return input.findElements(By.tagName("span")).get(1);
          *      }

@@ -29,7 +29,7 @@ import org.richfaces.fragment.inplaceInput.ConfirmOrCancel;
 public interface InplaceSelect {
 
     /**
-     * Selects the first option according to the given <code>picker<code> param.
+     * Selects the first option according to the given <code>picker</code> param.
      *
      * In other words, it selects the first option which satisfies the choice picking rules defined in <code>picker</code>
      *

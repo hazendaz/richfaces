@@ -235,7 +235,6 @@ public abstract class AbstractPopupMenu implements PopupMenu, AdvancedVisibleCom
          * right click. To change this behavior use <code>setInvoker()</code> method. You have to have a target set before
          * invocation of this method.
          *
-         * @see #setInvoker(PopupMenuInvoker)
          * @see #setTarget(WebElement)
          */
         public void show() {
@@ -248,7 +247,6 @@ public abstract class AbstractPopupMenu implements PopupMenu, AdvancedVisibleCom
          * <code>showDelay == 50ms</code>. Use <code>#setShowDelay</code> if this value is different for this menu.
          *
          * @param givenTarget
-         * @see #setupInvoker(PopupMenuInvoker)
          * @see #setShowDelay(int)
          */
         public void show(WebElement givenTarget) {
@@ -265,7 +263,6 @@ public abstract class AbstractPopupMenu implements PopupMenu, AdvancedVisibleCom
          *
          * @param givenTarget
          * @param location
-         * @see #setupInvoker(PopupMenuInvoker)
          */
         public void show(WebElement givenTarget, Point location) {
             throw new UnsupportedOperationException("File a feature request to have this, or even better implement it:)");

@@ -37,7 +37,7 @@ import org.richfaces.fragment.message.Message.MessageType;
 public interface Messages<T extends Message & ListItem> extends ListComponent<T>, AdvancedInteractions<Messages.AdvancedMessagesInteractions> {
 
     /**
-     * Gets multiple messages which have given <code>type<code>.
+     * Gets multiple messages which have given <code>type</code>.
      *
      * @param type the message type (its severity) to determine which messages to return
      * @return     all messages with given type

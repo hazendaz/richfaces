@@ -65,7 +65,7 @@ public interface SelectOrConfirm {
     Autocomplete select(String match);
 
     /**
-     * Selects the first suggestion according to the given rules in <code>picker<code> param.
+     * Selects the first suggestion according to the given rules in <code>picker</code> param.
      *
      * In other words, it selects the first suggestion which satisfies the choice picking rules defined in <code>picker</code>
      *

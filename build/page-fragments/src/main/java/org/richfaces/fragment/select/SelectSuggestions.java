@@ -30,7 +30,7 @@ import org.richfaces.fragment.common.picker.ChoicePicker;
 public interface SelectSuggestions {
 
     /**
-     * Selects the first option according to the given rules in <code>picker<code> param.
+     * Selects the first option according to the given rules in <code>picker</code> param.
      *
      * @param picker
      */
