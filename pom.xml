@@ -33,7 +33,7 @@
     <groupId>com.github.albfernandez.richfaces</groupId>
     <artifactId>richfaces-parent</artifactId>
     <packaging>pom</packaging>
-    <version>4.6.0-SNAPSHOT</version>
+    <version>4.6.2.ayg</version>
     <name>RichFaces Parent</name>
 
     <modules>
@@ -51,6 +51,7 @@
 
         <module>dist</module>
 
+		<!-- 
         <module>examples/photoalbum</module>
         <module>examples/showcase</module>
         <module>examples/template</module>
@@ -58,6 +59,7 @@
         <module>examples/push-demo</module>
         <module>examples/irc-client</module>
         <module>examples/components-demo</module>
+         -->
     </modules>
 
     <description>
@@ -66,7 +68,7 @@
         change very rarely.
     </description>
 
-    <url>http://richfaces.org</url>
+    <url>https://github.com/albfernandez/richfaces</url>
 
     <licenses>
         <license>
@@ -82,41 +84,26 @@
         </developer>
     </developers>
 
-    <issueManagement>
-        <system>jira</system>
-        <url>https://jira.jboss.org/jira/browse/RF</url>
-    </issueManagement>
 
-    <mailingLists>
-        <mailingList>
-            <name>RichFaces User Forums</name>
-            <archive>http://community.jboss.org/en/richfaces</archive>
-        </mailingList>
-        <mailingList>
-            <name>RichFaces Developer Forums</name>
-            <archive>http://community.jboss.org/en/richfaces/dev</archive>
-        </mailingList>
-    </mailingLists>
 
-    <distributionManagement>
-        <!-- Other items inherited from jboss-parent -->
-        <downloadUrl>http://www.jboss.org/richfaces/download</downloadUrl>
-    </distributionManagement>
 
     <!-- SCM and distribution management -->
-    <scm>
-        <connection>scm:git:git://github.com/richfaces/richfaces.git</connection>
-        <developerConnection>scm:git:git@github.com:richfaces/richfaces.git</developerConnection>
-        <url>https://github.com/richfaces/richfaces</url>
-        <tag>HEAD</tag>
-    </scm>
+	<scm>
+		<connection>scm:git:git@github.com:albfernandez/richfaces.git</connection>
+		<developerConnection>scm:git:git@github.com:albfernandez/richfaces.git</developerConnection>
+		<url>git@github.com:albfernandez/richfaces.git</url>
+	</scm>
+	<issueManagement>
+		<system>GitHub</system>
+		<url>https://github.com/albfernandez/richfaces/issues</url>
+	</issueManagement>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 
         <!-- Base Dependencies Versions -->
-        <version.richfaces>4.6.0-SNAPSHOT</version.richfaces>
+        <version.richfaces>4.6.2.ayg</version.richfaces>
         <version.cdk>4.5.1-SNAPSHOT</version.cdk>
         <version.jboss-javaee>3.0.2.Final</version.jboss-javaee>
 
@@ -147,8 +134,8 @@
 
         <!-- maven-compiler-plugin -->
         <!-- Overide jboss-parent default version-->
-        <maven.compiler.target>1.6</maven.compiler.target>
-        <maven.compiler.source>1.6</maven.compiler.source>
+        <maven.compiler.target>1.7</maven.compiler.target>
+        <maven.compiler.source>1.7</maven.compiler.source>
 
         <!-- Release -->
         <regular.files.which.contains.version>core/src/main/java/org/richfaces/VersionBean.java,dist/src/main/resources/txt/readme.txt,dist/src/main/resources/txt/readme-examples.txt,build/build-resources/src/main/java/org/richfaces/arquillian/configuration/FundamentalTestConfiguration.java,build/resources-plugin/src/site/apt/usage.apt,examples/showcase/src/main/webapp/META-INF/MANIFEST.MF,examples/showcase/README.md,examples/irc-client/readme.txt</regular.files.which.contains.version>
@@ -405,6 +392,35 @@
                     <includes>${regular.files.which.contains.version}</includes>
                 </configuration>
             </plugin>
+            <plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-gpg-plugin</artifactId>
+				<version>1.6</version>
+				<configuration>
+					<keyname>${gpg.keyname}</keyname>
+					<passphraseServerId>${gpg.keyname}</passphraseServerId>
+				</configuration>
+				<executions>
+					<execution>
+						<id>sign-artifacts</id>
+						<phase>verify</phase>
+						<goals>
+							<goal>sign</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+			<plugin>
+				<groupId>org.sonatype.plugins</groupId>
+				<artifactId>nexus-staging-maven-plugin</artifactId>
+				<version>1.6.8</version>
+				<extensions>true</extensions>
+				<configuration>
+					<serverId>ossrh</serverId>
+					<nexusUrl>https://oss.sonatype.org/</nexusUrl>
+					<autoReleaseAfterClose>true</autoReleaseAfterClose>
+				</configuration>
+			</plugin>
         </plugins>
     </build>
 
@@ -603,6 +619,7 @@
                             </dependency>
                         </dependencies>
                     </plugin>
+
                 </plugins>
             </build>
         </profile>

@@ -34,7 +34,7 @@ To use the RichFaces framework in your JSF maven application, simply add the fol
 <dependency>
     <groupId>com.github.albfernandez.richfaces</groupId>
     <artifactId>richfaces</artifactId>
-    <version>4.6.0</version>
+    <version>4.6.2.ayg</version>
 </dependency>
 ----
 
@@ -66,9 +66,18 @@ For more information on how to get started with the project, see the http://docs
 
 === Prerequsities:
 
-* JDK 1.6 +
+* JDK 1.7 +
 * Maven 3.0.4 +
 * https://community.jboss.org/wiki/MavenGettingStarted-Developers[JBoss Maven Repository]
+
+=== Supported Browsers
+
+This is a fork with no time for testing, but it should work in this browsers:
+
+* IE11
+* Edge
+* Firefox (52+)
+* Chrome (49+)
 
 === Build the project
 

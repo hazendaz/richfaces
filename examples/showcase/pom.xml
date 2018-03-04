@@ -26,7 +26,7 @@
 
     <groupId>org.richfaces.examples</groupId>
     <artifactId>richfaces-showcase</artifactId>
-    <version>4.6.0-SNAPSHOT</version>
+    <version>4.6.2.ayg</version>
     <packaging>war</packaging>
     <name>RichFaces Showcase</name>
 
@@ -34,7 +34,7 @@
         RichFaces showcase is an application created to show RichFaces components in action. It contains a set of small use-cases implemented using RichFaces components.
     </description>
 
-    <url>http://richfaces.org</url>
+    <url>https://github.com/albfernandez/richfaces</url>
 
     <licenses>
         <license>
@@ -49,9 +49,19 @@
             <name>RichFaces committers</name>
         </developer>
     </developers>
-
+    
+	<scm>
+		<connection>scm:git:git@github.com:albfernandez/richfaces.git</connection>
+		<developerConnection>scm:git:git@github.com:albfernandez/richfaces.git</developerConnection>
+		<url>git@github.com:albfernandez/richfaces.git</url>
+	</scm>
+	<issueManagement>
+		<system>GitHub</system>
+		<url>https://github.com/albfernandez/richfaces/issues</url>
+	</issueManagement>
+	
     <properties>
-        <version.richfaces>4.6.0-SNAPSHOT</version.richfaces>
+        <version.richfaces>4.6.2.ayg</version.richfaces>
 
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
@@ -118,12 +128,9 @@
         <testCategory.included.default>NOT category.None</testCategory.included.default>
         <testCategory.excluded.default>category.Failing</testCategory.excluded.default>
 
-        <!-- Release repositories -->
-        <jboss.releases.repo.url>https://repository.jboss.org/nexus/service/local/staging/deploy/maven2/</jboss.releases.repo.url>
-        <jboss.snapshots.repo.url>https://repository.jboss.org/nexus/content/repositories/snapshots/</jboss.snapshots.repo.url>
-        
-        <maven.compiler.target>1.6</maven.compiler.target>
-        <maven.compiler.source>1.6</maven.compiler.source>
+          
+        <maven.compiler.target>1.7</maven.compiler.target>
+        <maven.compiler.source>1.7</maven.compiler.source>
         
         <!-- JVM values for surefire plugin -->
         <!-- Has a default value for Travis; MUST be set to smaller for 32-bit environment -->
@@ -1472,23 +1479,7 @@
         </profile>
     </profiles>
 
-    <scm>
-        <connection>scm:git:git://github.com/richfaces/richfaces.git</connection>
-        <developerConnection>scm:git:git@github.com:richfaces/richfaces.git</developerConnection>
-        <url>https://github.com/richfaces/richfaces</url>
-        <tag>HEAD</tag>
-    </scm>
 
-    <distributionManagement>
-        <repository>
-            <id>jboss-releases-repository</id>
-            <name>JBoss Releases Repository</name>
-            <url>${jboss.releases.repo.url}</url>
-        </repository>
-        <snapshotRepository>
-            <id>jboss-snapshots-repository</id>
-            <name>JBoss Snapshots Repository</name>
-            <url>${jboss.snapshots.repo.url}</url>
-        </snapshotRepository>
-    </distributionManagement>
+
+
 </project>

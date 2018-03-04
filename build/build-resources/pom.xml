@@ -26,14 +26,14 @@
 
     <groupId>com.github.albfernandez.richfaces</groupId>
     <artifactId>richfaces-build-resources</artifactId>
-    <version>4.6.0-SNAPSHOT</version>
+    <version>4.6.2.ayg</version>
     <name>RichFaces Build Resources</name>
 
     <description>
         Resources that are necessary for building RichFaces (used by plugins, tests, etc.)
     </description>
 
-    <url>http://richfaces.org</url>
+    <url>https://github.com/albfernandez/richfaces</url>
 
     <licenses>
         <license>
@@ -48,20 +48,25 @@
             <name>RichFaces committers</name>
         </developer>
     </developers>
-
+	<scm>
+		<connection>scm:git:git@github.com:albfernandez/richfaces.git</connection>
+		<developerConnection>scm:git:git@github.com:albfernandez/richfaces.git</developerConnection>
+		<url>git@github.com:albfernandez/richfaces.git</url>
+	</scm>
+	<issueManagement>
+		<system>GitHub</system>
+		<url>https://github.com/albfernandez/richfaces/issues</url>
+	</issueManagement>
     <properties>
-        <version.richfaces>4.6.0-SNAPSHOT</version.richfaces>
+        <version.richfaces>4.6.2.ayg</version.richfaces>
 
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         
-        <!-- Release repositories -->
-        <jboss.releases.repo.url>https://repository.jboss.org/nexus/service/local/staging/deploy/maven2/</jboss.releases.repo.url>
-        <jboss.snapshots.repo.url>https://repository.jboss.org/nexus/content/repositories/snapshots/</jboss.snapshots.repo.url>
 
         <maven.min.version>3.0</maven.min.version>
-        <maven.compiler.source>1.6</maven.compiler.source>
-        <maven.compiler.target>1.6</maven.compiler.target>
+        <maven.compiler.source>1.7</maven.compiler.source>
+        <maven.compiler.target>1.7</maven.compiler.target>
     </properties>
 
     <prerequisites>
@@ -157,7 +162,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-source-plugin</artifactId>
-                <version>3.0.0</version>
+                <version>3.0.1</version>
                 <executions>
                     <execution>
                         <id>attach-sources</id>
@@ -167,11 +172,19 @@
                     </execution>
                 </executions>
             </plugin>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-deploy-plugin</artifactId>
-                <version>2.8.2</version>
-            </plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-javadoc-plugin</artifactId>
+				<version>3.0.0</version>
+				<executions>
+					<execution>
+						<id>attach-javadocs</id>
+						<goals>
+							<goal>jar</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-clean-plugin</artifactId>
@@ -196,28 +209,41 @@
                 <artifactId>maven-surefire-plugin</artifactId>
                 <version>2.19.1</version>
             </plugin>
+            <plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-gpg-plugin</artifactId>
+				<version>1.6</version>
+				<configuration>
+					<keyname>${gpg.keyname}</keyname>
+					<passphraseServerId>${gpg.keyname}</passphraseServerId>
+				</configuration>
+				<executions>
+					<execution>
+						<id>sign-artifacts</id>
+						<phase>verify</phase>
+						<goals>
+							<goal>sign</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+			<plugin>
+				<groupId>org.sonatype.plugins</groupId>
+				<artifactId>nexus-staging-maven-plugin</artifactId>
+				<version>1.6.8</version>
+				<extensions>true</extensions>
+				<configuration>
+					<serverId>ossrh</serverId>
+					<nexusUrl>https://oss.sonatype.org/</nexusUrl>
+					<autoReleaseAfterClose>true</autoReleaseAfterClose>
+				</configuration>
+			</plugin>
         </plugins>
     </build>
 
-    <scm>
-        <connection>scm:git:git://github.com/richfaces/richfaces5.git</connection>
-        <developerConnection>scm:git:git@github.com:richfaces/richfaces5.git</developerConnection>
-        <url>https://github.com/richfaces/richfaces5</url>
-        <tag>HEAD</tag>
-    </scm>
 
-    <distributionManagement>
-        <repository>
-            <id>jboss-releases-repository</id>
-            <name>JBoss Releases Repository</name>
-            <url>${jboss.releases.repo.url}</url>
-        </repository>
-        <snapshotRepository>
-            <id>jboss-snapshots-repository</id>
-            <name>JBoss Snapshots Repository</name>
-            <url>${jboss.snapshots.repo.url}</url>
-        </snapshotRepository>
-    </distributionManagement>
+
+
     
     <repositories>
         <repository>

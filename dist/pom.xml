@@ -27,7 +27,7 @@
     <parent>
         <groupId>com.github.albfernandez.richfaces</groupId>
         <artifactId>richfaces-parent</artifactId>
-        <version>4.6.0-SNAPSHOT</version>
+        <version>4.6.2.ayg</version>
         <relativePath>../pom.xml</relativePath>
     </parent>
 
@@ -36,7 +36,7 @@
     <name>RichFaces Distribution Assembler</name>
 
     <properties>
-        <version.richfaces>4.6.0-SNAPSHOT</version.richfaces>
+        <version.richfaces>4.6.2.ayg</version.richfaces>
     </properties>
 
     <profiles>
@@ -109,13 +109,14 @@
                 </dependency>
 
                 <!-- Examples -->
+                <!-- 
                 <dependency>
                     <groupId>org.richfaces.examples</groupId>
                     <artifactId>richfaces-showcase</artifactId>
                     <version>${version.richfaces}</version>
                     <classifier>sources</classifier>
                 </dependency>
-
+ -->
                 <!-- JSF impl -->
                 <dependency>
                     <groupId>org.jboss.spec.javax.faces</groupId>
@@ -150,7 +151,7 @@
                                     <outputDirectory>${project.build.directory}/richfaces-sources</outputDirectory>
                                 </configuration>
                             </execution>
-
+<!-- 
                             <execution>
                                 <id>copy-examples</id>
                                 <goals>
@@ -165,7 +166,7 @@
                                     <outputDirectory>${project.build.directory}/examples/richfaces-showcase</outputDirectory>
                                 </configuration>
                             </execution>
-
+ -->
                         </executions>
                     </plugin>
 
@@ -189,6 +190,19 @@
                             </execution>
                         </executions>
                     </plugin>
+	<plugin>
+		<groupId>org.apache.maven.plugins</groupId>
+		<artifactId>maven-javadoc-plugin</artifactId>
+		<version>3.0.0</version>
+		<executions>
+			<execution>
+				<id>attach-javadocs</id>
+				<goals>
+					<goal>jar</goal>
+				</goals>
+			</execution>
+		</executions>
+	</plugin>
 
                     <!-- VDL DOC -->
                     <plugin>
