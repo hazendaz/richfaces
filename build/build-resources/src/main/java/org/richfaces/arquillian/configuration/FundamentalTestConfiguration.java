@@ -67,7 +67,7 @@ public class FundamentalTestConfiguration implements DroneConfiguration<Fundamen
 
     /**
      * Get the name of the container profile as specified by -Dintegration={container} execution
-     * @return
+     * @return the name of the container profile as specified by -Dintegration={container} execution
      */
     public String getContainer() {
         return container;

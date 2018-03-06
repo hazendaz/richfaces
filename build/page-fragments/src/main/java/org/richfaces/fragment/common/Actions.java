@@ -237,7 +237,6 @@ public class Actions extends org.openqa.selenium.interactions.Actions {
      *
      * @param event
      * @param element
-     * @return
      * @throws IllegalArgumentException when given event can not be triggered by webdriver API
      */
     public Actions triggerEventByWD(Event event, WebElement element) {

@@ -109,7 +109,7 @@ public class DayPicker {
 
     /**
      * @param weekDayPosition indexes from &lt;1;7&gt;.
-     * @return
+     * @return weekDayPosition indexes from 1 to 7
      */
     public List<? extends CalendarDay> getSpecificDays(Integer... weekDayPosition) {
         if (!isVisible()) {
@@ -293,7 +293,7 @@ public class DayPicker {
 
         /**
          * Checks if this day contains chosen styleClass
-         * @param styleClass
+         * @param styleClass true if this day contains chosen styleClass
          * @return
          */
         @Override
@@ -323,7 +323,7 @@ public class DayPicker {
 
         /**
          * Parses and returns the element's text representing day number.
-         * @return
+         * @return  the element's text representing day number.
          */
         @Override
         public Integer getDayNumber() {

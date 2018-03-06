@@ -580,7 +580,7 @@ public class RichFaces5Validator implements ModelValidator {
      *
      * @param component object to verify.
      * @param callback callback to corresponding naming conventions.
-     * @return
+	 *
      */
     protected boolean verifyTypes(GeneratedFacesComponent component, NamingConventionsCallback callback) {
         // Check JsfComponent type.

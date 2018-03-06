@@ -54,7 +54,7 @@ public interface DataTable<HEADER, ROW, FOOTER> {
     * table pagination.
     *
     * @param n zero based index of the row to be returned
-    * @return
+    * @return row
     */
     ROW getRow(int n);
 
@@ -64,7 +64,7 @@ public interface DataTable<HEADER, ROW, FOOTER> {
     * All indexes are relative to one page. It does not take into account
     * table pagination.
     *
-    * @return
+    * @return first row
     */
     ROW getFirstRow();
 
@@ -74,7 +74,7 @@ public interface DataTable<HEADER, ROW, FOOTER> {
     * All indexes are relative to one page. It does not take into account
     * table pagination.
     *
-    * @return
+    * @return last row
     */
     ROW getLastRow();
 
@@ -84,21 +84,21 @@ public interface DataTable<HEADER, ROW, FOOTER> {
     * All indexes are relative to one page. It does not take into account
     * table pagination.
     *
-    * @return
+    * @return rows
     */
     List<ROW> getAllRows();
 
     /**
     * Returns a <tt>HEADER</tt> page fragment of this table.
     *
-    * @return
+    * @return header
     */
     HEADER getHeader();
 
     /**
     * Returns a <tt>FOOTER</tt> page fragment of this table.
     *
-    * @return
+    * @return footer
     */
     FOOTER getFooter();
 }

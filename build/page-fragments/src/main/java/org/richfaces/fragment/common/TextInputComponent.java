@@ -45,14 +45,12 @@ public interface TextInputComponent {
      * Returns <code>int</code> value of this input.
      *
      * @throws NumberFormatException if the value of the input cannot be parsed as an integer
-     * @return
      */
     int getIntValue();
 
     /**
      * Returns <code>String</code> value of this input.
      *
-     * @return
      */
     String getStringValue();
 }

@@ -141,7 +141,7 @@ public final class Utils {
      *
      * @param rootOfComponent
      * @param option
-     * @return
+     * @return  the given option of the component determined by its root element.
      */
     @SuppressWarnings("unchecked")
     public static <T> Optional<T> getComponentOption(WebElement rootOfComponent, String option) {
@@ -388,7 +388,7 @@ public final class Utils {
      * Returns the default timeout for GUI waiting in milliseconds.
      *
      * @param browser
-     * @return
+     * @return the default timeout for GUI waiting in milliseconds.
      */
     public static long getWaitGUIDefaultTimeout(WebDriver browser) {
         return 1000 * ((GrapheneProxyInstance) browser).getGrapheneContext().getConfiguration().getWaitGuiInterval();
@@ -398,7 +398,7 @@ public final class Utils {
      * Returns the default timeout for Ajax waiting in milliseconds.
      *
      * @param browser
-     * @return
+     * @return the default timeout for Ajax waiting in milliseconds.
      */
     public static long getWaitAjaxDefaultTimeout(WebDriver browser) {
         return 1000 * ((GrapheneProxyInstance) browser).getGrapheneContext().getConfiguration().getWaitAjaxInterval();

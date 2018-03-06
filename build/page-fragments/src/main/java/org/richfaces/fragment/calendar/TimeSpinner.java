@@ -60,7 +60,7 @@ public abstract class TimeSpinner<T> {
 
     /**
      * Returns value set in this spinner
-     * @return
+     * @return value set in this spinner
      */
     public abstract T getValue();
 

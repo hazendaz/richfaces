@@ -66,7 +66,7 @@ public abstract class AbstractPopupMenu implements PopupMenu, AdvancedVisibleCom
     /**
      * Returns the name of the actual page fragment.
      *
-     * @return
+     * @return the name of the actual page fragment.
      */
     protected String getNameOfFragment() {
         return getClass().getSimpleName();
@@ -211,7 +211,7 @@ public abstract class AbstractPopupMenu implements PopupMenu, AdvancedVisibleCom
         /**
          * Returns all elements of this menu
          *
-         * @return
+         * @return all elements of this menu
          */
         public abstract List<WebElement> getMenuItemElements();
 
