@@ -203,10 +203,10 @@ public class CapturingELContext extends ELContext {
         public Class<?> getCommonPropertyType(ELContext context, Object base) {
             return delegate.getCommonPropertyType(context, base);
         }
-
+/*
         @Override
         public Object convertToType(ELContext context, Object obj, Class<?> targetType) {
             return delegate.convertToType(context, obj, targetType);
-        }
+        }*/
     }
 }
