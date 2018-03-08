@@ -62,7 +62,7 @@ public final class ServiceLoader {
      *
      * @param <S>
      * @param serviceClass
-     * @return
+     * @return all service implementations.
      * @throws ServiceException
      */
     public static <S> Collection<S> loadServices(Class<S> serviceClass) throws ServiceException {
@@ -110,7 +110,7 @@ public final class ServiceLoader {
      *
      * @param <S>
      * @param serviceClass
-     * @return
+     * @return service implementation classes.
      * @throws ServiceException
      */
     public static <S> Collection<Class<? extends S>> loadServiceClasses(Class<S> serviceClass) throws ServiceException {

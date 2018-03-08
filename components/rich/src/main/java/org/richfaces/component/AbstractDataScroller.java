@@ -135,7 +135,6 @@ public abstract class AbstractDataScroller extends UIComponentBase implements Da
     /**
      * The attribute indicates pages quantity to switch onto when fast scrolling is used. Default value is "1".
      *
-     * @return
      */
     @Attribute
     public abstract int getFastStep();

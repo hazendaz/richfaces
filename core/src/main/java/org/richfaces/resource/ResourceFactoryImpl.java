@@ -220,11 +220,10 @@ public class ResourceFactoryImpl implements ResourceFactory {
     }
 
     /**
-     * Should be called only if {@link #isResourceExists(String)} returns <code>true</code>
      *
      * @param resourceKey
      * @param parameters
-     * @return
+     * @return Resource
      */
     protected Resource createHandlerDependentResource(ResourceKey resourceKey, Map<String, String> parameters) {
         if (!Strings.isNullOrEmpty(resourceKey.getLibraryName())) {

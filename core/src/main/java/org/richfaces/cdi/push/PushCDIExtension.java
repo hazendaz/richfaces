@@ -89,7 +89,7 @@ public class PushCDIExtension implements Extension {
     }
 
     /**
-     * Register observer method {@link PushObserverMethod} for each {@link Push} annotation found in annotation scanning.
+     * Register observer method {@link PushCDIExtension.PushObserverMethod} for each {@link Push} annotation found in annotation scanning.
      *
      * @param event
      * @param beanManager

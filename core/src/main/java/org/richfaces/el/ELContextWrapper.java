@@ -54,27 +54,17 @@ public class ELContextWrapper extends ELContext {
         return resolver;
     }
 
-    /**
-     * @return
-     * @see javax.el.ELContext#getFunctionMapper()
-     */
+
     public FunctionMapper getFunctionMapper() {
         return parent.getFunctionMapper();
     }
 
-    /**
-     * @return
-     * @see javax.el.ELContext#getVariableMapper()
-     */
+
     public VariableMapper getVariableMapper() {
         return parent.getVariableMapper();
     }
 
-    /**
-     * @param key
-     * @return
-     * @see javax.el.ELContext#getContext(java.lang.Class)
-     */
+
     public Object getContext(Class key) {
         return parent.getContext(key);
     }

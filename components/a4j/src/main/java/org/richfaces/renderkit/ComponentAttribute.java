@@ -113,7 +113,6 @@ public class ComponentAttribute implements Comparable<ComponentAttribute> {
 
     /**
      * @param componentAttributeName the componentAttributeName to set
-     * @return
      */
     public ComponentAttribute setComponentAttributeName(String componentAttributeName) {
         this.componentAttributeName = componentAttributeName;
@@ -130,7 +129,6 @@ public class ComponentAttribute implements Comparable<ComponentAttribute> {
 
     /**
      * @param eventNames the eventNames to set
-     * @return
      */
     public ComponentAttribute setEventNames(String... eventNames) {
         this.eventNames = eventNames;

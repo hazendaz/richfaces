@@ -406,7 +406,6 @@ public class RendererUtils {
      * Convert HTML attribute name to component property name.
      *
      * @param key
-     * @return
      */
     protected Object getComponentAttributeName(Object key) {
         Object converted = SUBSTITUTIONS.get(key);
@@ -424,7 +423,6 @@ public class RendererUtils {
      *
      * @param name attribute name.
      * @param value
-     * @return
      */
     protected Object attributeValue(String name, Object value) {
         if (null == value || Arrays.binarySearch(HtmlConstants.PASS_THRU_BOOLEAN, name) < 0) {
@@ -472,8 +470,6 @@ public class RendererUtils {
      * formats given value to
      *
      * @param value
-     *
-     * @return
      */
     public String encodePctOrPx(String value) {
         if (value.indexOf('%') > 0) {
@@ -667,7 +663,7 @@ public class RendererUtils {
     }
 
     /**
-     * Simplified version of {@link encodeId(FacesContext, UIComponent)}
+     * Simplified version of {@link #encodeId(FacesContext, UIComponent)}
      *
      * @param context
      * @param component
@@ -752,7 +748,7 @@ public class RendererUtils {
      *
      * @param component
      * @param id
-     * @return
+     * @return components
      */
     public UIComponent findComponentFor(UIComponent component, String id) {
         if (id == null) {

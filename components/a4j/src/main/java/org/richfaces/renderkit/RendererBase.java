@@ -193,7 +193,7 @@ public abstract class RendererBase extends Renderer {
      * Calculate current Skin for rendering.
      *
      * @param context - current {@link FacesContext }
-     * @return
+     * @return current Skin for rendering.
      */
     protected Skin getSkin(FacesContext context) {
         if (skinFactory == null) {
@@ -216,9 +216,9 @@ public abstract class RendererBase extends Renderer {
     }
 
     /**
-     * Get base component slass , targetted for this renderer. Used for check arguments in decode/encode.
+     * Get base component class , targetted for this renderer. Used for check arguments in decode/encode.
      *
-     * @return
+     * @return base component class
      */
     protected Class<? extends UIComponent> getComponentClass() {
         // TODO - do we need this function?
@@ -226,8 +226,7 @@ public abstract class RendererBase extends Renderer {
     }
 
     /**
-     * Template method for custom decoding of concrete renderer. All parameters checking if performed in original {@see
-     * decode(FacesContext, UIComponent) }
+     * Template method for custom decoding of concrete renderer. All parameters checking if performed in original  {@link #decode(FacesContext, UIComponent)} 
      * method.
      *
      * @param context
@@ -238,7 +237,7 @@ public abstract class RendererBase extends Renderer {
 
     /**
      * Template method for custom start encoding of concrete renderer. All parameters checking and writer is performed in
-     * original {@link encodeBegin(FacesContext, UIComponent) } method.
+     * original {@link #encodeBegin(FacesContext, UIComponent)} method.
      *
      * @param writer
      * @param context
@@ -259,7 +258,7 @@ public abstract class RendererBase extends Renderer {
 
     /**
      * Template method for custom finish encoding of concrete renderer. All parameters checking and writer is performed in
-     * original {@link encodeEnd(FacesContext, UIComponent) } method.
+     * original {@link #encodeEnd(FacesContext, UIComponent) } method.
      *
      * @param writer
      * @param context

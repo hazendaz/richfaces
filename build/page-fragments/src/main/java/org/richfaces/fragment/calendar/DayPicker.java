@@ -294,7 +294,7 @@ public class DayPicker {
         /**
          * Checks if this day contains chosen styleClass
          * @param styleClass true if this day contains chosen styleClass
-         * @return
+         * @return true if this day contains chosen styleClass
          */
         @Override
         public boolean containsStyleClass(String styleClass) {

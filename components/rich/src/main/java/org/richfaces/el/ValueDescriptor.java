@@ -38,8 +38,6 @@ public class ValueDescriptor {
     /**
      * @param beanType
      * @param name
-     * @param propertyType
-     * @param readOnly
      */
     public ValueDescriptor(Class<?> beanType, String name) {
         this.beanType = beanType;
