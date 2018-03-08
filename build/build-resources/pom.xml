@@ -69,9 +69,6 @@
         <maven.compiler.target>1.6</maven.compiler.target>
     </properties>
 
-    <prerequisites>
-        <maven>${maven.min.version}</maven>
-    </prerequisites>
 
     <dependencyManagement>
         <dependencies>
@@ -119,6 +116,26 @@
 
     <build>
         <plugins>
+        	<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-enforcer-plugin</artifactId>
+				<version>3.0.0-M1</version>
+				<executions>
+					<execution>
+						<id>enforce-maven</id>
+						<goals>
+							<goal>enforce</goal>
+						</goals>
+						<configuration>
+							<rules>
+								<requireMavenVersion>
+									<version>${maven.min.version}</version>
+								</requireMavenVersion>
+							</rules>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
             <!-- Build -->
             <plugin>
                 <artifactId>maven-compiler-plugin</artifactId>
