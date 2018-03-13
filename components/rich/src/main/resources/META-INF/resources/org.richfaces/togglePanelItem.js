@@ -101,9 +101,10 @@
             },
 
             /**
+             * used in TogglePanel
+             * 
              * @private
              *
-             * used in TogglePanel
              * */
             __enter : function () {
                 rf.getDomElement(this.id).style.display = "block";
@@ -112,9 +113,10 @@
             },
 
             /**
+             * used in TogglePanel
+             * 
              * @private
              *
-             * used in TogglePanel
              * */
             __leave : function () {
                 var continueProcess = this.__fireLeave();

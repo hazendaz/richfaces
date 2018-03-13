@@ -127,9 +127,10 @@
         },
 
         /**
+         * Returns the form where this editor component is placed
+         * 
          * @private
          * 
-         * Returns the form where this editor component is placed
          */
         __getForm : function() {
             return $('form').has(this.__getTextarea()).get(0);

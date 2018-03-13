@@ -81,9 +81,10 @@
             },
 
             /**
+             * used in TogglePanel
+             * 
              * @private
              *
-             * used in TogglePanel
              * */
             __enter : function () {
                 var parentPanel = this.getTogglePanel();
@@ -118,9 +119,10 @@
             },
 
             /**
+             * used in TogglePanel
+             * 
              * @private
              *
-             * used in TogglePanel
              * */
             __leave : function () {
                 var continueProcess = this.__fireLeave();
