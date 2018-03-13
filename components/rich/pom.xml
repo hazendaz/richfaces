@@ -204,6 +204,10 @@
                             <excludedFiles>
                                 <exclude>^javax.faces</exclude>
                                 <exclude>^flot</exclude>
+                                <exclude>org.richfaces:jquery.js</exclude>
+                                <exclude>org.richfaces:jquery.min.js</exclude>
+                                <exclude>com.jqueryui:jquery-ui.js</exclude>
+                                <exclude>com.jqueryui:jquery-ui.min.js</exclude>
                                 <exclude>^\Qorg.richfaces.renderkit.html.images.\E.*</exclude>
                                 <exclude>^\Qorg.richfaces.renderkit.html.iconimages.\E.*</exclude>
                                 <exclude>^\Qorg.richfaces.ckeditor\E</exclude>
