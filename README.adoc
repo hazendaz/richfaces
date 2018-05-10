@@ -8,7 +8,7 @@ RichFaces 4.6 image:https://travis-ci.org/albfernandez/richfaces.png?branch=upgr
 
 > The RichFaces project is an advanced UI component framework for easily integrating Ajax capabilities into business applications using JSF.
 
-> This is a fork of the unmaintained Richfaces 4.5,  https://developer.jboss.org/wiki/RichFacesEnd-Of-LifeQuestionsAnswers[more info about Richfaces End of Life]
+> *This is a fork of the unmaintained Richfaces 4.5*,  https://developer.jboss.org/wiki/RichFacesEnd-Of-LifeQuestionsAnswers[more info about Richfaces End of Life]
 
 
 == Project Info
@@ -20,7 +20,7 @@ Build System::  Maven
 --
 
 * http://richfaces.org[Original Project Site]
-* http://docs.jboss.org/richfaces/[Documentation]
+* https://albfernandez.github.io/richfaces/docs/[Documentation]
 * https://github.com/albfernandez/richfaces/issues[Issue Tracker]
 * https://developer.jboss.org/en/richfaces/content[User Forums]
 * https://travis-ci.org/albfernandez/richfaces/builds[Continuous Integration] image:https://travis-ci.org/albfernandez/richfaces.png?branch=upgrade_to_jquery_3[alt="Build Status", link="https://travis-ci.org/albfernandez/richfaces"]
