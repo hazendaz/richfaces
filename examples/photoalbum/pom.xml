@@ -64,7 +64,7 @@ Software Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA
 
     <properties>
         <version.richfaces>4.6.4-SNAPSHOT</version.richfaces>
-        <version.metadata-extractor>2.6.2</version.metadata-extractor>
+        <version.metadata-extractor>2.10.0</version.metadata-extractor>
         <version.jackson>1.9.12</version.jackson>
         <javax.faces.PROJECT_STAGE>Development</javax.faces.PROJECT_STAGE>
 
@@ -508,7 +508,7 @@ Software Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA
                                         </goals>
                                     </pluginExecutionFilter>
                                     <action>
-                                        <ignore></ignore>
+                                        <ignore/>
                                     </action>
                                 </pluginExecution>
                             </pluginExecutions>
@@ -587,16 +587,16 @@ Software Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA
                 <arquillian.debug>false</arquillian.debug>
                 <arquillian.drone.browser>phantomjs</arquillian.drone.browser>
                 <arquillian.drone.reusable>false</arquillian.drone.reusable>
-                <arquillian.richfaces.version />
+                <arquillian.richfaces.version/>
                 <arquillian.richfaces.servletContainerSetup>false</arquillian.richfaces.servletContainerSetup>
                 <arquillian.richfaces.jsfProvider>mojarra</arquillian.richfaces.jsfProvider>
                 <arquillian.richfaces.jsfImplementation>org.glassfish:javax.faces</arquillian.richfaces.jsfImplementation>
-                <arquillian.container.home />
-                <arquillian.container.distribution />
-                <arquillian.container.configuration />
+                <arquillian.container.home/>
+                <arquillian.container.distribution/>
+                <arquillian.container.configuration/>
                 <arquillian.container.uninstall>true</arquillian.container.uninstall>
                 <arquillian.container.vmargs>-Xmx768m -XX:MaxPermSize=256m</arquillian.container.vmargs>
-                <arquillian.maven.settings />
+                <arquillian.maven.settings/>
                 
                 <!-- Container Selection -->
                 <arquillian.launch.wildfly90>false</arquillian.launch.wildfly90>
@@ -604,9 +604,9 @@ Software Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA
                 <arquillian.launch.wildfly82>false</arquillian.launch.wildfly82>
                 
                 <!-- JUnit Categories Selection -->
-                <testCategory.excluded.container />
+                <testCategory.excluded.container/>
                 <testCategory.excluded.browser>AND NOT category.FailingOnPhantomJS</testCategory.excluded.browser>
-                <testCategory.excluded.jsf />
+                <testCategory.excluded.jsf/>
             </properties>
             <dependencies>
                 <dependency>
@@ -795,7 +795,7 @@ Software Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA
             </activation>
             <properties>
                 <arquillian.drone.browser>chrome</arquillian.drone.browser>
-                <testCategory.excluded.browser />
+                <testCategory.excluded.browser/>
             </properties>
         </profile>
         <profile>
