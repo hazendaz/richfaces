@@ -1,6 +1,13 @@
 4.6.4-SNAPSHOT
 ----------
 
+	[  ] Remove mediaoutput to fix CVE-2018-12532
+	[  ] upgrade ckeditor to 4.9.1	
+
+4.6.3.ayg
+----------
+	[   ] Code cleanup
+
 4.6.2.ayg
 ----------
 	[#15] upgrade showcase to point to this site instead original Richfaces site
