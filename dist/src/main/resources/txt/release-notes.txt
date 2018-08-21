@@ -1,8 +1,9 @@
 4.6.4-SNAPSHOT
 ----------
 
-	[  ] Remove mediaoutput to fix CVE-2018-12532
-	[  ] upgrade ckeditor to 4.9.1	
+	[   ] Remove mediaoutput to fix CVE-2018-12532
+	[   ] upgrade ckeditor to 4.9.1
+	[#13] Remove jquery migrate, use minified version of jquery and jquery-ui 
 
 4.6.3.ayg
 ----------
