@@ -1,5 +1,9 @@
+4.6.6-SNAPSHOT
+----------
+
 4.6.5.ayg
 ----------
+	[   ] No changes for this release.
 
 4.6.4.ayg
 ----------
