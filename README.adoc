@@ -66,8 +66,8 @@ For more information on how to get started with the project, see the http://docs
 
 === Prerequsities:
 
-* JDK 1.6 +
-* Maven 3.0.4 +
+* JDK 1.8 +
+* Maven 3.2.0 +
 * https://community.jboss.org/wiki/MavenGettingStarted-Developers[JBoss Maven Repository]
 
 === Supported Browsers
