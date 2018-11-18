@@ -61,6 +61,7 @@ public class ComponentIdResolverTest {
             META_COMPONENT_ID_SUBSTITUTION));
 
         environment = FacesEnvironment.createEnvironment();
+        environment.getServer().addInitParameter("org.richfaces.push.jms.enabled", "false");
 
         environment.withResource("/test.xhtml", getClass().getResource("/org/richfaces/context/ComponentIdResolver.xhtml"));
 

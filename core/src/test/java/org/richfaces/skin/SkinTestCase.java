@@ -100,6 +100,7 @@ public class SkinTestCase {
     /*
      * Test method for 'org.richfaces.skin.SkinFactory.getSkin(FacesContext)'
      */
+    @Test
     @ContextInitParameters({ @ContextInitParameter(name = SKIN_PARAM_NAME, value = "test"),
             @ContextInitParameter(name = BASE_SKIN_PARAM_NAME, value = "DEFAULT") })
     public void testSkinReferences() {
@@ -149,7 +150,8 @@ public class SkinTestCase {
         assertEquals("itself", skin.getParameter(facesContext, "selfValue"));
         assertEquals("#AAA", skin.getParameter(facesContext, "customFormColor"));
 
-        Map<String, String> map = (Map<String, String>) facesContext.getExternalContext().getRequestMap().get("test");
+        @SuppressWarnings("unchecked")
+		Map<String, String> map = (Map<String, String>) facesContext.getExternalContext().getRequestMap().get("test");
 
         map.put("bean", "dynabase2");
         assertEquals("xxx", skin.getParameter(facesContext, "default"));

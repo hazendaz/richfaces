@@ -16,6 +16,7 @@ public class CustomizedHtmlUnitEnvironment extends HtmlUnitEnvironment {
 
     public CustomizedHtmlUnitEnvironment() {
         this.getServer().addServlet(RESOURCE_SERVLET_HOLDER.get());
+        this.getServer().addInitParameter("org.richfaces.push.jms.enabled", "false");
         this.setBrowserVersion(BrowserVersion.INTERNET_EXPLORER);
     }
 

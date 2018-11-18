@@ -59,7 +59,7 @@ public class AttachQueueHandlerTest {
     @Before
     public void setUp() throws Exception {
         environment = FacesEnvironment.createEnvironment();
-
+        environment.getServer().addInitParameter("org.richfaces.push.jms.enabled", "false");
         environment.withWebRoot(getClass().getResource("/org/richfaces/view/facelets/html/attachQueueWithNestedAjax.xhtml"));
 
         environment.start();

@@ -124,6 +124,7 @@ public class UserResourcesTestCase {
     public void setUp() throws Exception {
         environment = FacesEnvironment.createEnvironment();
         environment.getServer().addInitParameter("org.richfaces.resourceDefaultVersion", PACKAGE_VERSION);
+        environment.getServer().addInitParameter("org.richfaces.push.jms.enabled", "false");
         environment.start();
 
         facesRequest = environment.createFacesRequest();

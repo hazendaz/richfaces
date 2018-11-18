@@ -310,6 +310,7 @@ public class ExtendedPartialVisitContextTest {
     @Before
     public void setUp() throws Exception {
         environment = FacesEnvironment.createEnvironment();
+        environment.getServer().addInitParameter("org.richfaces.push.jms.enabled", "false");
         environment.start();
 
         facesRequest = environment.createFacesRequest();

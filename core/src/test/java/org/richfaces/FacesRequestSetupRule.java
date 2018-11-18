@@ -72,6 +72,9 @@ public class FacesRequestSetupRule implements MethodRule {
                 }
             }
         }
+        if (!result.containsKey("org.richfaces.push.jms.enabled")) {
+        	result.put("org.richfaces.push.jms.enabled", "false");
+        }
 
         return result;
     }

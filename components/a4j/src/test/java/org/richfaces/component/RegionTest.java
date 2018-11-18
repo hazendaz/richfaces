@@ -196,6 +196,7 @@ public class RegionTest {
     @Before
     public void setUp() throws Exception {
         environment = FacesEnvironment.createEnvironment();
+        environment.getServer().addInitParameter("org.richfaces.push.jms.enabled", "false");
         environment.start();
 
         request = environment.createFacesRequest();
