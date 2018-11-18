@@ -120,6 +120,12 @@ public class ResourceHandlerImplTest extends AbstractFacesTest {
         webClient = null;
     }
 
+    @Override
+    protected void setupJsfInitParameters() {
+        super.setupJsfInitParameters();
+        this.facesServer.addInitParameter("org.richfaces.push.jms.enabled", "false");
+    }
+
     public void testReadCacheableResource() throws Exception {
         WebRequest webRequest = new WebRequest(new URL(
             "http://localhost/rfRes/org.richfaces.resource.CacheableResourceImpl.jsf"));

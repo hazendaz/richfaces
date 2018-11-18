@@ -25,6 +25,7 @@ import org.jboss.test.faces.AbstractFacesTest;
 public class UIRangedNumberInputTest extends AbstractFacesTest {
     private UIRangedNumberInput input;
 
+    @Override
     public void setUp() throws Exception {
         super.setUp();
         setupFacesRequest();
@@ -62,9 +63,16 @@ public class UIRangedNumberInputTest extends AbstractFacesTest {
         input.setValid(true);
     }
 
+    @Override
     public void tearDown() throws Exception {
         super.tearDown();
         this.input = null;
+    }
+
+    @Override
+    protected void setupJsfInitParameters() {
+        super.setupJsfInitParameters();
+        this.facesServer.addInitParameter("org.richfaces.push.jms.enabled", "false");
     }
 
     private void checkValid() {

@@ -62,14 +62,15 @@ public class AbstractCacheableResourceTest extends AbstractFacesTest {
         setupFacesRequest();
     }
 
-    /*
-     * (non-Javadoc)
-     *
-     * @see org.richfaces.test.AbstractFacesTest#tearDown()
-     */
     @Override
     public void tearDown() throws Exception {
         super.tearDown();
+    }
+
+    @Override
+    protected void setupJsfInitParameters() {
+        super.setupJsfInitParameters();
+        this.facesServer.addInitParameter("org.richfaces.push.jms.enabled", "false");
     }
 
     public void testInitialRequest() throws Exception {

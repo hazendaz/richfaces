@@ -70,6 +70,12 @@ public class CachedResourceImplTest extends AbstractFacesTest {
         super.tearDown();
     }
 
+    @Override
+    protected void setupJsfInitParameters() {
+        super.setupJsfInitParameters();
+        this.facesServer.addInitParameter("org.richfaces.push.jms.enabled", "false");
+    }
+
     private CachedResourceImpl createCachedResource() throws IOException {
         return createCachedResource(createTestHeaders());
     }

@@ -114,6 +114,12 @@ public class DataAdaptorTestCase extends AbstractFacesTest {
         mockDataAdaptor = null;
     }
 
+    @Override
+    protected void setupJsfInitParameters() {
+        super.setupJsfInitParameters();
+        this.facesServer.addInitParameter("org.richfaces.push.jms.enabled", "false");
+    }
+
     private void resetCallbacks(TestCallback... callbacks) {
         for (TestCallback callback : callbacks) {
             callback.reset();

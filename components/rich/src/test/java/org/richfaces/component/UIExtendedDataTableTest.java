@@ -58,6 +58,12 @@ public class UIExtendedDataTableTest extends AbstractFacesTest {
         super.tearDown();
     }
 
+    @Override
+    protected void setupJsfInitParameters() {
+        super.setupJsfInitParameters();
+        this.facesServer.addInitParameter("org.richfaces.push.jms.enabled", "false");
+    }
+
     /**
      * Test method for
      * {@link org.richfaces.component.UIExtendedDataTable#visitDataChildren(javax .faces.component.visit.VisitContext, javax.faces.component.visit.VisitCallback, boolean)}

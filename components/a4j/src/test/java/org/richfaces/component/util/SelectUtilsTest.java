@@ -30,6 +30,12 @@ public class SelectUtilsTest extends AbstractFacesTest {
         super.tearDown();
     }
 
+    @Override
+    protected void setupJsfInitParameters() {
+        super.setupJsfInitParameters();
+        this.facesServer.addInitParameter("org.richfaces.push.jms.enabled", "false");
+    }
+
     private static <T> List<T> asList(Iterator<T> itr) {
         List<T> result = Lists.newArrayList();
         Iterators.addAll(result, itr);

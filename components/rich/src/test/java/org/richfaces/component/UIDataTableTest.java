@@ -129,6 +129,12 @@ public class UIDataTableTest extends AbstractFacesTest {
         super.tearDown();
     }
 
+    @Override
+    protected void setupJsfInitParameters() {
+        super.setupJsfInitParameters();
+        this.facesServer.addInitParameter("org.richfaces.push.jms.enabled", "false");
+    }
+
     /**
      * Test method for {@link org.richfaces.component.UIDataTableBase#getRendersChildren()}.
      */

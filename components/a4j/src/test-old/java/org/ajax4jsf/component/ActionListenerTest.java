@@ -39,21 +39,22 @@ import org.richfaces.test.AbstractFacesTest;
  *
  */
 public class ActionListenerTest extends AbstractFacesTest {
-    /*
-    *  (non-Javadoc)
-    * @see junit.framework.TestCase#setUp()
-    */
+    
+    @Override
     public void setUp() throws Exception {
         super.setUp();
         setupFacesRequest();
     }
 
-    /*
-     *  (non-Javadoc)
-     * @see junit.framework.TestCase#tearDown()
-     */
+    @Override
     public void tearDown() throws Exception {
         super.tearDown();
+    }
+
+    @Override
+    protected void setupJsfInitParameters() {
+        super.setupJsfInitParameters();
+        this.facesServer.addInitParameter("org.richfaces.push.jms.enabled", "false");
     }
 
     /**

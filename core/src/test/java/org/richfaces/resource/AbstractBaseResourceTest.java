@@ -60,6 +60,12 @@ public class AbstractBaseResourceTest extends AbstractFacesTest {
         super.tearDown();
     }
 
+    @Override
+    protected void setupJsfInitParameters() {
+        super.setupJsfInitParameters();
+        this.facesServer.addInitParameter("org.richfaces.push.jms.enabled", "false");
+    }
+
     public void testGetHeaders() throws Exception {
         MockResourceImpl mockResource = new MockResourceImpl();
 

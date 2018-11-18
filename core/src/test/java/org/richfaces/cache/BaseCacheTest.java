@@ -51,6 +51,7 @@ public abstract class BaseCacheTest extends AbstractFacesTest {
         super.setupJsfInitParameters();
         this.facesServer.addInitParameter(CacheManager.CACHE_MANAGER_FACTORY_CLASS, cacheManagerFactoryClassName);
         this.facesServer.addInitParameter(CoreConfiguration.RESOURCES_CACHE_SIZE_PARAM_NAME, Integer.toString(sizeLimit));
+        this.facesServer.addInitParameter("org.richfaces.push.jms.enabled", "false");
     }
 
     protected Cache getCache() {
