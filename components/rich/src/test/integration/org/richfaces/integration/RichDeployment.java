@@ -27,15 +27,15 @@ public class RichDeployment extends BaseDeployment {
             addCurrentProjectClasses();
 
             this.addMavenDependency(
-                "org.richfaces:richfaces-core",
-                "org.richfaces:richfaces-a4j");
+                "com.github.albfernandez.richfaces:richfaces-core",
+                "com.github.albfernandez.richfaces:richfaces-a4j");
 
         } else {
             String version = configuration.getRichFacesVersion();
             this.addMavenDependency(
-                "org.richfaces:richfaces-core:" + version,
-                "org.richfaces:richfaces-a4j:" + version,
-                "org.richfaces:richfaces:" + version);
+                "com.github.albfernandez.richfaces:richfaces-core:" + version,
+                "com.github.albfernandez.richfaces:richfaces-a4j:" + version,
+                "com.github.albfernandez.richfaces:richfaces:" + version);
         }
 
     }

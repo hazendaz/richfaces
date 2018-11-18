@@ -79,7 +79,7 @@ public class ITJavaScriptServiceAjax {
         guardAjax(jsfAjax).click();
 
         assertThat(driver.getTitle(),
-            equalTo("ajaxbeforedomupdate javascriptServiceInProgress javascriptServiceComplete ajaxcomplete"));
+            equalTo("ajaxbeforedomupdate javascriptServiceInProgress ajaxcomplete javascriptServiceComplete"));
     }
 
     @Test
@@ -89,7 +89,7 @@ public class ITJavaScriptServiceAjax {
 
         assertThat(
             driver.getTitle(),
-            equalTo("onbeforedomupdate ajaxbeforedomupdate javascriptServiceInProgress javascriptServiceComplete oncomplete ajaxcomplete"));
+            equalTo("onbeforedomupdate ajaxbeforedomupdate javascriptServiceInProgress oncomplete ajaxcomplete javascriptServiceComplete"));
     }
 
     private static void addIndexPage(CoreDeployment deployment) {

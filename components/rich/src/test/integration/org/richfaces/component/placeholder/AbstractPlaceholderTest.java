@@ -206,10 +206,9 @@ public abstract class AbstractPlaceholderTest {
         browser.get(contextPath.toExternalForm() + "index.jsf");
 
         // then
-        assertEquals(PLACEHOLDER_TEXT, input().getDefaultText());
-        assertEquals(DEFAULT_PLACEHOLDER_COLOR, input().getTextColor());
-        assertTrue("placeholder does not contain default class",
-            input().getStyleClass().contains(PLACEHOLDER_CLASS));
+	assertEquals("", input().getDefaultText());
+	assertEquals(PLACEHOLDER_TEXT, input().getAttribute("placeholder"));
+
     }
 
     @Test
@@ -225,7 +224,8 @@ public abstract class AbstractPlaceholderTest {
         // having
         browser.get(contextPath.toExternalForm() + "selector.jsf");
         // then
-        assertEquals(PLACEHOLDER_TEXT, input().getDefaultText());
+        assertEquals("", input().getDefaultText());
+	assertEquals(PLACEHOLDER_TEXT,  input().getAttribute("placeholder"));
     }
 
     @Test
@@ -234,7 +234,7 @@ public abstract class AbstractPlaceholderTest {
         String className = "some-class";
         browser.get(contextPath.toExternalForm() + "index.jsf?styleClass=" + className);
         // then
-        assertTrue("input should contain placeholder's default class", input().getStyleClass().contains(PLACEHOLDER_CLASS));
+        //assertTrue("input should contain placeholder's default class", input().getStyleClass().contains(PLACEHOLDER_CLASS));
         assertTrue("input should contain specified class", input().getStyleClass().contains(className));
     }
 
@@ -383,6 +383,11 @@ public abstract class AbstractPlaceholderTest {
             inplaceInput.sendKeys(value);
         }
 
+        @Override
+        public String getAttribute(String key) {
+            return inplaceInput.getAttribute(key);
+        }
+
     }
 
     public static class InplaceSelectInput extends InplaceInput {
@@ -440,6 +445,10 @@ public abstract class AbstractPlaceholderTest {
             focus();
             waitGui().until().element(input).text().equalTo("");
             input.sendKeys(value);
+        }
+
+        public String getAttribute(String key) {
+             return input.getAttribute(key);
         }
     }
 
