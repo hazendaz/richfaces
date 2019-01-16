@@ -1,6 +1,7 @@
-4.6.6-SNAPSHOT
+4.6.6.ayg
 ----------
-
+	[#22] Smoke tests fail without any changes 
+	[#21] Remove serialization code  
 4.6.5.ayg
 ----------
 	[   ] No changes for this release.
