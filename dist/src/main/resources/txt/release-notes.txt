@@ -1,22 +1,29 @@
-4.6.6.ayg
+4.6.7.ayg 2019-02-17
+---------
+	[#23] NullPointerException ResourceHandlerImpl.java:299 on WildFly15
+	[#27] upgrade CKEditor to 4.11.2
+
+
+4.6.6.ayg 2019-01-17
 ----------
 	[#22] Smoke tests fail without any changes 
 	[#21] Remove serialization code  
-4.6.5.ayg
+	
+4.6.5.ayg 2018-08-22
 ----------
 	[   ] No changes for this release.
 
-4.6.4.ayg
+4.6.4.ayg 2018-08-21
 ----------
 	[   ] Remove mediaoutput to fix CVE-2018-12532
 	[   ] upgrade ckeditor to 4.9.1
 	[#13] Remove jquery migrate, use minified version of jquery and jquery-ui 
 
-4.6.3.ayg
+4.6.3.ayg 2018-03-13
 ----------
 	[   ] Code cleanup
 
-4.6.2.ayg
+4.6.2.ayg 2018-03-04
 ----------
 	[#15] upgrade showcase to point to this site instead original Richfaces site
 	[#14] Create page for documentation	 
@@ -25,19 +32,22 @@
 	[   ] Upgrade cssparser to 0.9.25
 	[   ] Use moono-lisa theme by default on ckeditor
 
+
+---------------------------------------------------------------------------------------------------
+
 4.5.20.ayg
 ----------
 	[  ] Remove old prefixed css attributtes
 	[  ] Downgrade ehcache to 2.4.3 to match hiberante-ehcache 5.0.10
 
-4.5.19.ayg
+4.5.19.ayg 2017-06-05
 ----------
 
 	[  ] Upgrade cssparser to 0.9.23
 	[  ] Fix tableSubfooterBackgroundColor color on wine theme
 
 
-4.5.18.ayg
+4.5.18.ayg 2017-04-04
 ----------
 
     [  ] Upgrade cssparser to 0.9.22
@@ -45,7 +55,10 @@
 	[  ] Upgrade ckeditor to 4.6.2 
 	[#1] Create new default log implementation for log4j
 
-4.5.17.Final
+
+---------------------------------------------------------------------------------------------------
+
+4.5.17.Final 2016-06-20
 ------------
 
     Bug
@@ -97,7 +110,7 @@
     [RF-14278] - Update documentation of panelMenu JS API
     [RF-14300] - select: vdl-doc: specify attributes status, onbegin, oncomplete, onbeforedomupdate can only be used in an auto-completing mode
 
-4.5.16.Final
+4.5.16.Final 2016-04-29
 ------------
 
     Bug
@@ -130,7 +143,7 @@
     Sub-task
     [RF-14260] - fileUpload: @onsizerejected: update attribute description (VDL doc)
 
-4.5.15.Final
+4.5.15.Final 2016-06-30
 ------------
 
     Bug
@@ -155,7 +168,7 @@
     Task
     [RF-14246] - photoalbum: tests: fix logging in with g+
 
-4.5.14.Final
+4.5.14.Final 2016-02-22
 ------------
 
     Bug
@@ -191,7 +204,8 @@
     Sub-task
     [RF-14232] - Document @showColumnControl and add example to showcase
 
-4.5.13.Final
+
+4.5.13.Final 2016-01-26
 ------------
 
     Bug
@@ -230,7 +244,7 @@
     [RF-14220] - component reference: select: add sample and more informations about using select in auto-completing mode
     [RF-14223] - showcase: stabilize integration tests
 
-4.5.12.Final
+4.5.12.Final 2015-12-14
 ------------
 
     Bug
@@ -264,7 +278,8 @@
     Sub-task
     [RF-14208] - update component reference and add a showcase example for default node
 
-4.5.11.Final
+
+4.5.11.Final 2015-11-12
 ------------
 
     Bug
@@ -312,7 +327,8 @@
     [RF-14187] - calendar: document keyboard support for closing the popup
     [RF-14195] - vdl-doc: tables + dataGrid: add description to attributes
 
-4.5.10.Final
+
+4.5.10.Final 2015-10-02
 ------------
 
     Bug
@@ -346,7 +362,7 @@
     [RF-14140] - Stabilize integration tests on Tomcat
     [RF-14145] - Clean up showcase
 
-4.5.9.Final
+4.5.9.Final 2015-09-07
 -----------
 
     Bug
@@ -383,7 +399,7 @@
     [RF-14125] - Add focus() to JS API documentation
     [RF-14131] - Document @dragOptions for rich:dragSource
 
-4.5.8.Final
+4.5.8.Final 2015-08-06
 -----------
 
     Bug
@@ -428,7 +444,7 @@
     Sub-task
     [RF-14103] - Update rich:calendar documentation for keyboard navigation
 
-4.5.7.Final
+4.5.7.Final 2015-06-19
 -----------
 
     Bug
@@ -452,7 +468,8 @@
     [RF-14051] - photoalbum: fix TestAddImage tests
     [RF-14052] - Update TESTS.md with WildFly 9 profile
 
-4.5.6.Final
+
+4.5.6.Final 2015-05-27
 -----------
 
     Bug
@@ -481,7 +498,8 @@
     [RF-13882] - Showcase-test failed on phantomJS
     [RF-14042] - Create Arquillian profile for WildFly 9
 
-4.5.5.Final
+
+4.5.5.Final 2015-04-28
 -----------
 
     Bug
@@ -513,7 +531,7 @@
     [RF-13996] - Travis build failures due to VM termination
     [RF-14009] - log: document @mode=console
 
-4.5.4.Final
+4.5.4.Final 2015-03-25
 -----------
 
     Bug
@@ -547,7 +565,7 @@
     Sub-task
     [RF-13998] - Add documentation for keyboard navigation
 
-4.5.3.Final
+4.5.3.Final 2015-03-03
 -----------
 
     Bug
@@ -590,7 +608,7 @@
     [RF-13939] - Rich:chart plotClick shouldn't be restricted to series points.
     [RF-13964] - Pom Cleanup
 
-4.5.2.Final
+4.5.2.Final 2015-01-09
 -----------
 
     Bug
@@ -626,7 +644,7 @@
     Task
     [RF-13934] - Create Arquillian profile for WildFly 8.2
 
-4.5.1.Final
+4.5.1.Final 2014-11-27
 -----------
 
     Bug
@@ -664,7 +682,7 @@
     [RF-13861] - rich:chart doesn't preserve ordering of data
     [RF-13900] - rich:select should support selection by first character if enableManualInput is not used
 
-4.5.0.Final
+4.5.0.Final 2014-10-23
 -----------
 
     Bug
