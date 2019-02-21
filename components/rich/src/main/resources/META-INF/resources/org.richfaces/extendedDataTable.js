@@ -353,6 +353,11 @@
             },
 
             updateLayout: function() {
+            	// Skip updateLayout in case the object was not properly initialize, otherwise the method will crash.
+            	// I assume this is not too offensive as, it does not make any sense updating the layout of a non initialized object
+            	if (!this.contentDivElement) {
+            		return;
+            	}
                 this.deActivateResizeListener();
                 this.headerCells.height("auto");
                 var headerCellHeight = 0;
