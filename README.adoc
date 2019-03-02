@@ -34,7 +34,7 @@ To use the RichFaces framework in your JSF maven application, simply add the fol
 <dependency>
     <groupId>com.github.albfernandez.richfaces</groupId>
     <artifactId>richfaces</artifactId>
-    <version>4.6.7.ayg</version>
+    <version>4.6.8.ayg</version>
 </dependency>
 ----
 
@@ -139,6 +139,8 @@ This will download WildFly and run the project tests against a managed instance 
 For a detailed explanation of additional testing configurations and options, refer to the link:TESTS.md[Testing guide].
 
 These smoke tests are also executed in the https://travis-ci.org/albfernandez/richfaces/builds[continuous integration job].
+
+Note for Debian users, you must `export OPENSSL_CONF=/etc/ssl/` before in order to run
 
 === Building showcase
 
