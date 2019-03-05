@@ -64,7 +64,7 @@
     <properties>
         <version.oscache>2.4.1</version.oscache>
         <version.jbosscache>3.2.5.GA</version.jbosscache>
-        <version.ehcache>2.10.3</version.ehcache>
+        <version.ehcache>2.10.6</version.ehcache>
 
         <maven.min.version>3.0</maven.min.version>
     </properties>
@@ -87,7 +87,7 @@
             </dependency>
             <dependency>
                 <groupId>net.sf.ehcache</groupId>
-                <artifactId>ehcache-core</artifactId>
+                <artifactId>ehcache</artifactId>
                 <version>${version.ehcache}</version>
             </dependency>
         </dependencies>
