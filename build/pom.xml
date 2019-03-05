@@ -83,8 +83,8 @@
         <version.atmosphere>2.4.9</version.atmosphere>
 
         <!-- Example Dependency Libraries Versions -->
-        <version.slf4j>1.7.22</version.slf4j>
         <version.hsqldb>2.3.4</version.hsqldb>
+        <version.slf4j>1.7.26</version.slf4j>
         <version.hornetq>2.2.7.Final</version.hornetq>
         <version.netty>3.2.5.Final</version.netty>
         <version.weld>2.2.16.SP1</version.weld>
