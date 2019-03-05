@@ -69,8 +69,8 @@
         <version.jboss-javaee>3.0.2.Final</version.jboss-javaee>
 
         <!-- Project Versions -->
-        <version.google-guava>20.0</version.google-guava>
         <version.cssparser>0.9.25</version.cssparser>
+        <version.google-guava>27.0.1-android</version.google-guava>
 
         <!-- JSF Implementations Versions-->
         <version.javax.faces-api>2.2</version.javax.faces-api>
