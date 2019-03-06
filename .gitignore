@@ -29,3 +29,4 @@ arquillian.xml
 /components/rich/lib/
 /core/lib/
 
+.mvn/wrapper/maven-wrapper.jar
