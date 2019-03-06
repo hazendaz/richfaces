@@ -32,7 +32,7 @@ import javax.faces.event.AbortProcessingException;
 import javax.faces.event.ComponentSystemEvent;
 import javax.faces.event.FacesEvent;
 import javax.faces.event.ListenerFor;
-import javax.faces.event.PostAddToViewEvent;
+import javax.faces.event.PreRenderComponentEvent;
 
 import org.richfaces.cdk.annotations.Attribute;
 import org.richfaces.cdk.annotations.EventName;
@@ -63,7 +63,7 @@ import org.richfaces.view.facelets.FileUploadHandler;
  * @author Simone Cinti
  */
 @JsfComponent(tag = @Tag(generate = false, handlerClass = FileUploadHandler.class), renderer = @JsfRenderer(type = "org.richfaces.FileUploadRenderer"))
-@ListenerFor(systemEventClass = PostAddToViewEvent.class)
+@ListenerFor(systemEventClass = PreRenderComponentEvent.class)
 public abstract class AbstractFileUpload extends UIComponentBase implements AjaxProps, CoreProps, DisabledProps,
     EventsKeyProps, EventsMouseProps, ErrorProps, I18nProps {
 
@@ -233,10 +233,8 @@ public abstract class AbstractFileUpload extends UIComponentBase implements Ajax
     public void processEvent(ComponentSystemEvent event) throws AbortProcessingException {
         super.processEvent(event);
 
-        if (event.getSource() == this) {
-            if (event instanceof PostAddToViewEvent) {
-                this.getAttributes().put("queuedFileUploadEvents", new AtomicInteger(0));
-            }
+        if (event.getSource() == this && event instanceof PreRenderComponentEvent) {
+            getAttributes().put(QUEUED_FILE_UPLOAD_EVENTS_ATTR, new AtomicInteger());
         }
     }
 
@@ -308,7 +306,7 @@ public abstract class AbstractFileUpload extends UIComponentBase implements Ajax
         final int maxFilesQuantity = this.getMaxFilesQuantity();
         final List<String> acceptedTypes = this.getAcceptedTypesList();
 
-        if ((maxFilesQuantity > 0) && (queuedFileUploadEvents().get() >= maxFilesQuantity)) {
+        if ((maxFilesQuantity > 0) && (getQueuedFileUploadEvents().get() >= maxFilesQuantity)) {
             return false;
         }
 
@@ -331,7 +329,7 @@ public abstract class AbstractFileUpload extends UIComponentBase implements Ajax
     @Override
     public void queueEvent(FacesEvent event) {
         if (event instanceof FileUploadEvent) {
-            queuedFileUploadEvents().addAndGet(1);
+            getQueuedFileUploadEvents().incrementAndGet();
         }
         super.queueEvent(event);
     }
@@ -339,8 +337,7 @@ public abstract class AbstractFileUpload extends UIComponentBase implements Ajax
     /**
      * Returns a number of {@link FileUploadEvent} which were already queued for this component
      */
-    private AtomicInteger queuedFileUploadEvents() {
-        AtomicInteger i = (AtomicInteger) this.getAttributes().get(QUEUED_FILE_UPLOAD_EVENTS_ATTR);
-        return i;
+    private AtomicInteger getQueuedFileUploadEvents() {
+        return (AtomicInteger) getAttributes().get(QUEUED_FILE_UPLOAD_EVENTS_ATTR);
     }
 }
