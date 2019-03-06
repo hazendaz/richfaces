@@ -3,5 +3,5 @@ language: java
 install: ./mvnw clean install -B -Dgpg.skip=true -DskipTests=true -s /home/travis/build/albfernandez/richfaces/buildhive-settings.xml
 
 jdk: 
-  - oraclejdk11
+  - openjdk8
   - oraclejdk8
