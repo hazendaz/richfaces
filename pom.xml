@@ -103,7 +103,7 @@
         <!-- Base Dependencies Versions -->
         <version.richfaces>4.6.9-SNAPSHOT</version.richfaces>
         <version.cdk>4.5.0.Final</version.cdk>
-        <version.jboss-javaee>3.0.2.Final</version.jboss-javaee>
+        <version.jboss-javaee>3.0.3.Final</version.jboss-javaee>
 
         <!-- Container Versions -->
         <version.wildfly100>10.1.0.Final</version.wildfly100>
