@@ -49,17 +49,17 @@
             <name>RichFaces committers</name>
         </developer>
     </developers>
-    
-	<scm>
-		<connection>scm:git:git@github.com:albfernandez/richfaces.git</connection>
-		<developerConnection>scm:git:git@github.com:albfernandez/richfaces.git</developerConnection>
-		<url>git@github.com:albfernandez/richfaces.git</url>
-	</scm>
-	<issueManagement>
-		<system>GitHub</system>
-		<url>https://github.com/albfernandez/richfaces/issues</url>
-	</issueManagement>
-	
+
+    <scm>
+        <connection>scm:git:git@github.com:albfernandez/richfaces.git</connection>
+        <developerConnection>scm:git:git@github.com:albfernandez/richfaces.git</developerConnection>
+        <url>git@github.com:albfernandez/richfaces.git</url>
+    </scm>
+    <issueManagement>
+        <system>GitHub</system>
+        <url>https://github.com/albfernandez/richfaces/issues</url>
+    </issueManagement>
+
     <properties>
         <version.richfaces>4.6.9-SNAPSHOT</version.richfaces>
 
@@ -128,10 +128,9 @@
         <testCategory.included.default>NOT category.None</testCategory.included.default>
         <testCategory.excluded.default>category.Failing</testCategory.excluded.default>
 
-          
         <maven.compiler.target>1.6</maven.compiler.target>
         <maven.compiler.source>1.6</maven.compiler.source>
-        
+
         <!-- JVM values for surefire plugin -->
         <!-- Has a default value for Travis; MUST be set to smaller for 32-bit environment -->
         <surefire.jvm.params>-Xms1024m -Xmx2048m</surefire.jvm.params>

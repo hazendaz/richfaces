@@ -50,21 +50,21 @@
         </developer>
     </developers>
 
-	<scm>
-		<connection>scm:git:git@github.com:albfernandez/richfaces.git</connection>
-		<developerConnection>scm:git:git@github.com:albfernandez/richfaces.git</developerConnection>
-		<url>git@github.com:albfernandez/richfaces.git</url>
-	</scm>
-	<issueManagement>
-		<system>GitHub</system>
-		<url>https://github.com/albfernandez/richfaces/issues</url>
-	</issueManagement>
+    <scm>
+        <connection>scm:git:git@github.com:albfernandez/richfaces.git</connection>
+        <developerConnection>scm:git:git@github.com:albfernandez/richfaces.git</developerConnection>
+        <url>git@github.com:albfernandez/richfaces.git</url>
+    </scm>
+    <issueManagement>
+        <system>GitHub</system>
+        <url>https://github.com/albfernandez/richfaces/issues</url>
+    </issueManagement>
 
     <properties>
         <version.richfaces>4.6.9-SNAPSHOT</version.richfaces>
 
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>     
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
     </properties>
 
     <dependencyManagement>
@@ -157,8 +157,4 @@
         </plugins>
     </build>
 
-
-
-
-    
  </project>

@@ -51,16 +51,16 @@ Software Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA
             <name>RichFaces committers</name>
         </developer>
     </developers>
-    
+
     <scm>
-		<connection>scm:git:git@github.com:albfernandez/richfaces.git</connection>
-		<developerConnection>scm:git:git@github.com:albfernandez/richfaces.git</developerConnection>
-		<url>git@github.com:albfernandez/richfaces.git</url>
-	</scm>
-	<issueManagement>
-		<system>GitHub</system>
-		<url>https://github.com/albfernandez/richfaces/issues</url>
-	</issueManagement>
+        <connection>scm:git:git@github.com:albfernandez/richfaces.git</connection>
+        <developerConnection>scm:git:git@github.com:albfernandez/richfaces.git</developerConnection>
+        <url>git@github.com:albfernandez/richfaces.git</url>
+    </scm>
+    <issueManagement>
+        <system>GitHub</system>
+        <url>https://github.com/albfernandez/richfaces/issues</url>
+    </issueManagement>
 
     <properties>
         <version.richfaces>4.6.9-SNAPSHOT</version.richfaces>
@@ -96,15 +96,14 @@ Software Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA
             -Djboss.bind.address.management=${arquillian.container.jbossas.7-1.node0}
             -Djboss.bind.address.unsecure=${arquillian.container.jbossas.7-1.node0}</arquillian.container.jbossas.7-1.jvm.args>
         <arquillian.container.wildfly.8-1.jvm.args>-Xmx768m -XX:MaxPermSize=256m</arquillian.container.wildfly.8-1.jvm.args>
-        
-       
+
         <testCategory.included.default>NOT category.None</testCategory.included.default>
         <testCategory.excluded.default>category.Failing</testCategory.excluded.default>
-        
+
         <!-- JVM values for surefire plugin -->
         <!-- Has a default value for Travis; MUST be set to smaller for 32-bit environment -->
         <surefire.jvm.params>-Xms1024m -Xmx2048m</surefire.jvm.params>
-        
+
         <!-- G+ login credentials, default is undefined -->
         <!-- if not provided, any tests requiring G+ login will fail -->
         <googlePlus.username>undefined</googlePlus.username>
@@ -582,7 +581,7 @@ Software Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA
             </activation>
             <properties>
                 <integration.test.source>src/test/java/</integration.test.source>
-                
+
                 <!-- Arquillian Configuration -->
                 <arquillian.debug>false</arquillian.debug>
                 <arquillian.drone.browser>phantomjs</arquillian.drone.browser>
@@ -597,12 +596,12 @@ Software Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA
                 <arquillian.container.uninstall>true</arquillian.container.uninstall>
                 <arquillian.container.vmargs>-Xmx768m -XX:MaxPermSize=256m</arquillian.container.vmargs>
                 <arquillian.maven.settings/>
-                
+
                 <!-- Container Selection -->
                 <arquillian.launch.wildfly90>false</arquillian.launch.wildfly90>
                 <arquillian.launch.wildfly81>false</arquillian.launch.wildfly81>
                 <arquillian.launch.wildfly82>false</arquillian.launch.wildfly82>
-                
+
                 <!-- JUnit Categories Selection -->
                 <testCategory.excluded.container/>
                 <testCategory.excluded.browser>AND NOT category.FailingOnPhantomJS</testCategory.excluded.browser>
@@ -655,18 +654,18 @@ Software Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA
                         <groupId>org.codehaus.mojo</groupId>
                         <artifactId>build-helper-maven-plugin</artifactId>
                         <executions>
-                            <!--                             <execution> -->
-                            <!--                                 <id>add-integration-test-sources</id> -->
-                            <!--                                 <phase>process-test-sources</phase> -->
-                            <!--                                 <goals> -->
-                            <!--                                     <goal>add-test-source</goal> -->
-                            <!--                                 </goals> -->
-                            <!--                                 <configuration> -->
-                            <!--                                     <sources> -->
-                            <!--                                         <source>${integration.test.source}</source> -->
-                            <!--                                     </sources> -->
-                            <!--                                 </configuration> -->
-                            <!--                             </execution> -->
+                            <!-- <execution> -->
+                            <!--    <id>add-integration-test-sources</id> -->
+                            <!--    <phase>process-test-sources</phase> -->
+                            <!--    <goals> -->
+                            <!--        <goal>add-test-source</goal> -->
+                            <!--    </goals> -->
+                            <!--    <configuration> -->
+                            <!--        <sources> -->
+                            <!--            <source>${integration.test.source}</source> -->
+                            <!--        </sources> -->
+                            <!--    </configuration> -->
+                            <!-- </execution> -->
                             <execution>
                                 <id>add-integration-test-resources</id>
                                 <phase>process-test-resources</phase>
@@ -1078,6 +1077,5 @@ Software Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA
             </dependencies>
         </profile>
     </profiles>
-
 
 </project>
