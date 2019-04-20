@@ -1,6 +1,6 @@
 language: java
 
-install: ./mvnw clean install -B -Dgpg.skip=true -DskipTests=true -s /home/travis/build/albfernandez/richfaces/buildhive-settings.xml
+install: ./mvnw clean install -B -Dgpg.skip=true -DskipTests=true -s buildhive-settings.xml
 
 jdk: 
   - openjdk8
