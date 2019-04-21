@@ -119,7 +119,7 @@
         <version.commons-codec>1.10</version.commons-codec>
 
         <!-- Integration Tests Versions -->
-        <version.arquillian.core>1.1.11.Final</version.arquillian.core>
+        <version.arquillian.core>1.1.15.Final</version.arquillian.core>
         <version.arquillian.drone>2.0.0.Final</version.arquillian.drone>
         <version.arquillian.graphene>2.1.0.CR1</version.arquillian.graphene>
         <version.selenium>2.53.0</version.selenium>
