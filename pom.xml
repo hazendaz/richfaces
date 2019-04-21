@@ -27,7 +27,7 @@
     <parent>
         <groupId>org.jboss</groupId>
         <artifactId>jboss-parent</artifactId>
-        <version>11</version>
+        <version>34</version>
         <relativePath />
     </parent>
 
@@ -52,7 +52,7 @@
 
         <module>dist</module>
 
-		<!-- 
+        <!-- 
         <module>examples/photoalbum</module>
         <module>examples/showcase</module>
         <module>examples/template</module>
@@ -86,15 +86,15 @@
     </developers>
 
     <!-- SCM and distribution management -->
-	<scm>
-		<connection>scm:git:git@github.com:albfernandez/richfaces.git</connection>
-		<developerConnection>scm:git:git@github.com:albfernandez/richfaces.git</developerConnection>
-		<url>git@github.com:albfernandez/richfaces.git</url>
-	</scm>
-	<issueManagement>
-		<system>GitHub</system>
-		<url>https://github.com/albfernandez/richfaces/issues</url>
-	</issueManagement>
+    <scm>
+        <connection>scm:git:git@github.com:albfernandez/richfaces.git</connection>
+        <developerConnection>scm:git:git@github.com:albfernandez/richfaces.git</developerConnection>
+        <url>git@github.com:albfernandez/richfaces.git</url>
+    </scm>
+    <issueManagement>
+        <system>GitHub</system>
+        <url>https://github.com/albfernandez/richfaces/issues</url>
+    </issueManagement>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -103,15 +103,17 @@
         <!-- Base Dependencies Versions -->
         <version.richfaces>4.6.9-SNAPSHOT</version.richfaces>
         <version.cdk>4.5.0.Final</version.cdk>
-        <version.jboss-javaee>3.0.2.Final</version.jboss-javaee>
+        <version.jboss-javaee>3.0.3.Final</version.jboss-javaee>
 
         <!-- Container Versions -->
         <version.wildfly100>10.1.0.Final</version.wildfly100>
         <version.wildfly90>9.0.2.Final</version.wildfly90>
         <version.wildfly81>8.1.0.Final</version.wildfly81>
         <version.wildfly82>8.2.1.Final</version.wildfly82>
-        <version.tomcat7>7.0.73</version.tomcat7>
-        <version.tomcat8>8.0.39</version.tomcat8>
+        <version.tomcat7>7.0.94</version.tomcat7>
+        <version.tomcat8>8.0.53</version.tomcat8>
+        <version.tomcat85>8.5.40</version.tomcat85>
+        <version.tomcat9>9.0.19</version.tomcat9>
 
         <!-- Plugin Management: versions -->
         <version.assembly.plugin>3.1.1</version.assembly.plugin>
@@ -119,11 +121,11 @@
         <version.compiler.plugin>3.8.0</version.compiler.plugin>
         <version.install.plugin>3.0.0-M1</version.install.plugin>
         <version.jacoco.plugin>0.8.3</version.jacoco.plugin>
-        <version.jrebel.plugin>1.1.3</version.jrebel.plugin>
+        <version.jrebel.plugin>1.1.9</version.jrebel.plugin>
         <version.release.plugin>2.5.3</version.release.plugin>
         <version.replacer.plugin>1.5.3</version.replacer.plugin>
         <version.resources.plugin>3.1.0</version.resources.plugin>
-        <version.scm.plugin>1.11.1</version.scm.plugin>
+        <version.scm.plugin>1.11.2</version.scm.plugin>
         <version.source.plugin>3.0.1</version.source.plugin>
         <version.surefire.plugin>3.0.0-M3</version.surefire.plugin>
         <version.vdldoc>1.2</version.vdldoc>
@@ -142,8 +144,6 @@
         <!-- Has a default value for Travis; MUST be set to smaller for 32-bit environment -->
         <surefire.jvm.params>-Xms1024m -Xmx2048m</surefire.jvm.params>
     </properties>
-
-
 
     <dependencyManagement>
         <dependencies>
@@ -194,28 +194,28 @@
             contain and stable plugin settings, and versions to be used
             by all part of the project.
         -->
-	<pluginManagement>
-		<plugins>
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-enforcer-plugin</artifactId>
-				<version>3.0.0-M1</version>
-				<executions>
-					<execution>
-						<id>enforce-maven</id>
-						<goals>
-							<goal>enforce</goal>
-						</goals>
-						<configuration>
-							<rules>
-								<requireMavenVersion>
-									<version>${maven.min.version}</version>
-								</requireMavenVersion>
-							</rules>
-						</configuration>
-					</execution>
-				</executions>
-			</plugin>
+    <pluginManagement>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-enforcer-plugin</artifactId>
+                <version>3.0.0-M1</version>
+                <executions>
+                    <execution>
+                        <id>enforce-maven</id>
+                        <goals>
+                            <goal>enforce</goal>
+                        </goals>
+                        <configuration>
+                            <rules>
+                                <requireMavenVersion>
+                                    <version>${maven.min.version}</version>
+                                </requireMavenVersion>
+                            </rules>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
                 <!-- Build -->
                 <plugin>
                     <artifactId>maven-compiler-plugin</artifactId>
@@ -409,34 +409,34 @@
                 </configuration>
             </plugin>
             <plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-gpg-plugin</artifactId>
-				<version>1.6</version>
-				<configuration>
-					<keyname>${gpg.keyname}</keyname>
-					<passphraseServerId>${gpg.keyname}</passphraseServerId>
-				</configuration>
-				<executions>
-					<execution>
-						<id>sign-artifacts</id>
-						<phase>verify</phase>
-						<goals>
-							<goal>sign</goal>
-						</goals>
-					</execution>
-				</executions>
-			</plugin>
-			<plugin>
-				<groupId>org.sonatype.plugins</groupId>
-				<artifactId>nexus-staging-maven-plugin</artifactId>
-				<version>1.6.8</version>
-				<extensions>true</extensions>
-				<configuration>
-					<serverId>ossrh</serverId>
-					<nexusUrl>https://oss.sonatype.org/</nexusUrl>
-					<autoReleaseAfterClose>true</autoReleaseAfterClose>
-				</configuration>
-			</plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-gpg-plugin</artifactId>
+                <version>1.6</version>
+                <configuration>
+                    <keyname>${gpg.keyname}</keyname>
+                    <passphraseServerId>${gpg.keyname}</passphraseServerId>
+                </configuration>
+                <executions>
+                    <execution>
+                        <id>sign-artifacts</id>
+                        <phase>verify</phase>
+                        <goals>
+                            <goal>sign</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.sonatype.plugins</groupId>
+                <artifactId>nexus-staging-maven-plugin</artifactId>
+                <version>1.6.8</version>
+                <extensions>true</extensions>
+                <configuration>
+                    <serverId>ossrh</serverId>
+                    <nexusUrl>https://oss.sonatype.org/</nexusUrl>
+                    <autoReleaseAfterClose>true</autoReleaseAfterClose>
+                </configuration>
+            </plugin>
         </plugins>
     </build>
 
@@ -1135,6 +1135,94 @@
                 </dependency>
             </dependencies>
         </profile>
+        <profile>
+            <id>tomcat-remote-85</id>
+            <activation>
+                <property>
+                    <name>integration</name>
+                    <value>tomcat8-remote</value>
+                </property>
+            </activation>
+            <properties>
+                <arquillian.launch.tomcat8>true</arquillian.launch.tomcat8>
+                <arquillian.richfaces.servletContainerSetup>true</arquillian.richfaces.servletContainerSetup>
+            </properties>
+            <dependencies>
+                <dependency>
+                    <groupId>org.jboss.arquillian.container</groupId>
+                    <artifactId>arquillian-tomcat-remote-7</artifactId>
+                    <scope>test</scope>
+                </dependency>
+            </dependencies>
+        </profile>
+        <profile>
+            <id>tomcat-managed-85</id>
+            <activation>
+                <property>
+                    <name>integration</name>
+                    <value>tomcat8</value>
+                </property>
+            </activation>
+            <properties>
+                <catalinaHome>${project.build.directory}/apache-tomcat-${version.tomcat85}</catalinaHome>
+                <arquillian.launch.tomcat8>true</arquillian.launch.tomcat8>
+                <arquillian.richfaces.servletContainerSetup>true</arquillian.richfaces.servletContainerSetup>
+                <arquillian.container.home>${project.build.directory}/apache-tomcat-${version.tomcat85}</arquillian.container.home>
+                <arquillian.container.distribution>org.apache.tomcat:tomcat:zip:${version.tomcat85}</arquillian.container.distribution>
+                <arquillian.container.configuration>org.richfaces:richfaces-build-resources:zip:configuration-tomcat:${version.richfaces}</arquillian.container.configuration>
+            </properties>
+            <dependencies>
+                <dependency>
+                    <groupId>org.jboss.arquillian.container</groupId>
+                    <artifactId>arquillian-tomcat-managed-7</artifactId>
+                    <scope>test</scope>
+                </dependency>
+            </dependencies>
+        </profile>
+        <profile>
+            <id>tomcat-remote-9</id>
+            <activation>
+                <property>
+                    <name>integration</name>
+                    <value>tomcat8-remote</value>
+                </property>
+            </activation>
+            <properties>
+                <arquillian.launch.tomcat8>true</arquillian.launch.tomcat8>
+                <arquillian.richfaces.servletContainerSetup>true</arquillian.richfaces.servletContainerSetup>
+            </properties>
+            <dependencies>
+                <dependency>
+                    <groupId>org.jboss.arquillian.container</groupId>
+                    <artifactId>arquillian-tomcat-remote-7</artifactId>
+                    <scope>test</scope>
+                </dependency>
+            </dependencies>
+        </profile>
+        <profile>
+            <id>tomcat-managed-9</id>
+            <activation>
+                <property>
+                    <name>integration</name>
+                    <value>tomcat8</value>
+                </property>
+            </activation>
+            <properties>
+                <catalinaHome>${project.build.directory}/apache-tomcat-${version.tomcat9}</catalinaHome>
+                <arquillian.launch.tomcat8>true</arquillian.launch.tomcat8>
+                <arquillian.richfaces.servletContainerSetup>true</arquillian.richfaces.servletContainerSetup>
+                <arquillian.container.home>${project.build.directory}/apache-tomcat-${version.tomcat9}</arquillian.container.home>
+                <arquillian.container.distribution>org.apache.tomcat:tomcat:zip:${version.tomcat9}</arquillian.container.distribution>
+                <arquillian.container.configuration>org.richfaces:richfaces-build-resources:zip:configuration-tomcat:${version.richfaces}</arquillian.container.configuration>
+            </properties>
+            <dependencies>
+                <dependency>
+                    <groupId>org.jboss.arquillian.container</groupId>
+                    <artifactId>arquillian-tomcat-managed-7</artifactId>
+                    <scope>test</scope>
+                </dependency>
+            </dependencies>
+        </profile>
 
         <profile>
             <id>take-screenshots</id>
@@ -1270,7 +1358,7 @@
         </profile>
 
     </profiles>
-    
+
      <repositories>
         <repository>
           <id>jboss-public-repository-group</id>

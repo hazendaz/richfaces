@@ -171,31 +171,31 @@
                     </plugin>
 
                     <!-- JavaDoc -->
-	<plugin>
-		<groupId>org.apache.maven.plugins</groupId>
-		<artifactId>maven-javadoc-plugin</artifactId>
-		<executions>
-			<execution>
-				<configuration>
-					<sourcepath>${project.build.directory}/richfaces-sources</sourcepath>
-					<reportOutputDirectory>${project.reporting.outputDirectory}</reportOutputDirectory>
-					<destDir>javadoc</destDir>
-					<failOnError>false</failOnError>
-				</configuration>
-				<id>generate-javadoc</id>
-				<phase>package</phase>
-				<goals>
-					<goal>javadoc</goal>
-				</goals>
-			</execution>
-			<execution>
-				<id>attach-javadocs</id>
-				<goals>
-					<goal>jar</goal>
-				</goals>
-			</execution>
-		</executions>
-	</plugin>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-javadoc-plugin</artifactId>
+                        <executions>
+                            <execution>
+                                <configuration>
+                                    <sourcepath>${project.build.directory}/richfaces-sources</sourcepath>
+                                    <reportOutputDirectory>${project.reporting.outputDirectory}</reportOutputDirectory>
+                                    <destDir>javadoc</destDir>
+                                    <failOnError>false</failOnError>
+                                </configuration>
+                                <id>generate-javadoc</id>
+                                <phase>package</phase>
+                                <goals>
+                                    <goal>javadoc</goal>
+                                </goals>
+                            </execution>
+                            <execution>
+                                <id>attach-javadocs</id>
+                                <goals>
+                                    <goal>jar</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                    </plugin>
 
                     <!-- VDL DOC -->
                     <plugin>

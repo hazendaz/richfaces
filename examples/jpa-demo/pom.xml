@@ -50,15 +50,15 @@
         </developer>
     </developers>
 
-	<scm>
-		<connection>scm:git:git@github.com:albfernandez/richfaces.git</connection>
-		<developerConnection>scm:git:git@github.com:albfernandez/richfaces.git</developerConnection>
-		<url>git@github.com:albfernandez/richfaces.git</url>
-	</scm>
-	<issueManagement>
-		<system>GitHub</system>
-		<url>https://github.com/albfernandez/richfaces/issues</url>
-	</issueManagement>
+    <scm>
+        <connection>scm:git:git@github.com:albfernandez/richfaces.git</connection>
+        <developerConnection>scm:git:git@github.com:albfernandez/richfaces.git</developerConnection>
+        <url>git@github.com:albfernandez/richfaces.git</url>
+    </scm>
+    <issueManagement>
+        <system>GitHub</system>
+        <url>https://github.com/albfernandez/richfaces/issues</url>
+    </issueManagement>
 
     <properties>
         <version.richfaces>4.6.9-SNAPSHOT</version.richfaces>
@@ -127,30 +127,29 @@
         <plugins>
             <plugin>
                 <artifactId>maven-clean-plugin</artifactId>
-                <version>3.0.0</version>
+                <version>3.1.0</version>
             </plugin>
             <plugin>
                 <artifactId>maven-compiler-plugin</artifactId>
-                <version>3.6.0</version>
+                <version>3.8.0</version>
             </plugin>
             <plugin>
                 <artifactId>maven-install-plugin</artifactId>
-                <version>2.5.2</version>
+                <version>3.0.0-M1</version>
             </plugin>
             <plugin>
                 <artifactId>maven-resources-plugin</artifactId>
-                <version>3.0.2</version>
+                <version>3.1.0</version>
             </plugin>
             <plugin>
                 <artifactId>maven-surefire-plugin</artifactId>
-                <version>2.19.1</version>
+                <version>3.0.0-M3</version>
             </plugin>
             <plugin>
                 <artifactId>maven-war-plugin</artifactId>
-                <version>3.0.0</version>
+                <version>3.2.2</version>
             </plugin>
         </plugins>
     </build>
 
-   
 </project>

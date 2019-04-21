@@ -49,17 +49,17 @@
             <name>RichFaces committers</name>
         </developer>
     </developers>
-    
-	<scm>
-		<connection>scm:git:git@github.com:albfernandez/richfaces.git</connection>
-		<developerConnection>scm:git:git@github.com:albfernandez/richfaces.git</developerConnection>
-		<url>git@github.com:albfernandez/richfaces.git</url>
-	</scm>
-	<issueManagement>
-		<system>GitHub</system>
-		<url>https://github.com/albfernandez/richfaces/issues</url>
-	</issueManagement>
-	
+
+    <scm>
+        <connection>scm:git:git@github.com:albfernandez/richfaces.git</connection>
+        <developerConnection>scm:git:git@github.com:albfernandez/richfaces.git</developerConnection>
+        <url>git@github.com:albfernandez/richfaces.git</url>
+    </scm>
+    <issueManagement>
+        <system>GitHub</system>
+        <url>https://github.com/albfernandez/richfaces/issues</url>
+    </issueManagement>
+
     <properties>
         <version.richfaces>4.6.9-SNAPSHOT</version.richfaces>
 
@@ -71,8 +71,10 @@
         <version.wildfly90>9.0.2.Final</version.wildfly90>
         <version.wildfly81>8.1.0.Final</version.wildfly81>
         <version.wildfly82>8.2.1.Final</version.wildfly82>
-        <version.tomcat7>7.0.93</version.tomcat7>
+        <version.tomcat7>7.0.94</version.tomcat7>
         <version.tomcat8>8.0.53</version.tomcat8>
+        <version.tomcat85>8.5.40</version.tomcat85>
+        <version.tomcat9>9.0.19</version.tomcat9>
 
         <dependency.scope>compile</dependency.scope>
         <container.resources>${project.basedir}/src/main/resources-tomcat</container.resources>
@@ -128,10 +130,9 @@
         <testCategory.included.default>NOT category.None</testCategory.included.default>
         <testCategory.excluded.default>category.Failing</testCategory.excluded.default>
 
-          
         <maven.compiler.target>1.6</maven.compiler.target>
         <maven.compiler.source>1.6</maven.compiler.source>
-        
+
         <!-- JVM values for surefire plugin -->
         <!-- Has a default value for Travis; MUST be set to smaller for 32-bit environment -->
         <surefire.jvm.params>-Xms1024m -Xmx2048m</surefire.jvm.params>
@@ -365,27 +366,27 @@
             <plugins>
                 <plugin>
                     <artifactId>maven-assembly-plugin</artifactId>
-                    <version>3.0.0</version>
+                    <version>3.1.1</version>
                 </plugin>
                 <plugin>
                     <artifactId>maven-clean-plugin</artifactId>
-                    <version>3.0.0</version>
+                    <version>3.1.0</version>
                 </plugin>
                 <plugin>
                     <artifactId>maven-compiler-plugin</artifactId>
-                    <version>3.6.0</version>
+                    <version>3.8.0</version>
                 </plugin>
                 <plugin>
                     <artifactId>maven-install-plugin</artifactId>
-                    <version>2.5.2</version>
+                    <version>3.0.0-M1</version>
                 </plugin>
                 <plugin>
                     <artifactId>maven-resources-plugin</artifactId>
-                    <version>3.0.2</version>
+                    <version>3.1.0</version>
                 </plugin>
                 <plugin>
                     <artifactId>maven-surefire-plugin</artifactId>
-                    <version>2.19.1</version>
+                    <version>3.0.0-M3</version>
                     <configuration>
                         <!-- Travis build workaround -->
                         <argLine>${surefire.jvm.params}</argLine>
@@ -393,21 +394,21 @@
                 </plugin>
                 <plugin>
                     <artifactId>maven-war-plugin</artifactId>
-                    <version>3.0.0</version>
+                    <version>3.2.2</version>
                 </plugin>
                 <plugin>
                     <artifactId>maven-dependency-plugin</artifactId>
-                    <version>3.0.0</version>
+                    <version>3.1.1</version>
                 </plugin>
                 <plugin>
                     <artifactId>maven-jar-plugin</artifactId>
-                    <version>3.0.2</version>
+                    <version>3.1.1</version>
                 </plugin>
 
                 <plugin>
                     <groupId>org.codehaus.mojo</groupId>
                     <artifactId>build-helper-maven-plugin</artifactId>
-                    <version>1.12</version>
+                    <version>3.0.0</version>
                 </plugin>
             </plugins>
         </pluginManagement>
@@ -791,6 +792,8 @@
                 <arquillian.launch.jbosseap6>false</arquillian.launch.jbosseap6>
                 <arquillian.launch.tomcat7>false</arquillian.launch.tomcat7>
                 <arquillian.launch.tomcat8>false</arquillian.launch.tomcat8>
+                <arquillian.launch.tomcat85>false</arquillian.launch.tomcat85>
+                <arquillian.launch.tomcat9>false</arquillian.launch.tomcat9>
 
                 <!-- HTTPS testing -->
                 <firefoxProfileTemplate />
@@ -1373,6 +1376,98 @@
             </dependencies>
         </profile>
         <profile>
+            <id>tomcat-managed-9</id>
+            <activation>
+                <property>
+                    <name>integration</name>
+                    <value>tomcat9</value>
+                </property>
+            </activation>
+            <properties>
+                <catalinaHome>${project.build.directory}/apache-tomcat-${version.tomcat9}</catalinaHome>
+                <arquillian.launch.tomcat9>true</arquillian.launch.tomcat9>
+                <arquillian.richfaces.servletContainerSetup>true</arquillian.richfaces.servletContainerSetup>
+                <arquillian.container.home>${project.build.directory}/apache-tomcat-${version.tomcat9}</arquillian.container.home>
+                <arquillian.container.distribution>org.apache.tomcat:tomcat:zip:${version.tomcat9}</arquillian.container.distribution>
+                <arquillian.container.configuration>org.richfaces:richfaces-build-resources:zip:configuration-tomcat:${version.richfaces}</arquillian.container.configuration>
+                <showcase.war.classifier>tomcat-mojarra</showcase.war.classifier>
+            </properties>
+            <dependencies>
+                <dependency>
+                    <groupId>org.jboss.arquillian.container</groupId>
+                    <artifactId>arquillian-tomcat-managed-8</artifactId>
+                    <scope>test</scope>
+                </dependency>
+            </dependencies>
+        </profile>
+        <profile>
+            <id>tomcat-remote-9</id>
+            <activation>
+                <property>
+                    <name>integration</name>
+                    <value>tomcat9-remote</value>
+                </property>
+            </activation>
+            <properties>
+                <arquillian.launch.tomcat9>true</arquillian.launch.tomcat9>
+                <arquillian.richfaces.servletContainerSetup>true</arquillian.richfaces.servletContainerSetup>
+                <showcase.war.classifier>tomcat-mojarra</showcase.war.classifier>
+            </properties>
+            <dependencies>
+                <dependency>
+                    <groupId>org.jboss.arquillian.container</groupId>
+                    <artifactId>arquillian-tomcat-remote-8</artifactId>
+                    <scope>test</scope>
+                </dependency>
+            </dependencies>
+        </profile>
+        <profile>
+            <id>tomcat-managed-85</id>
+            <activation>
+                <property>
+                    <name>integration</name>
+                    <value>tomcat85</value>
+                </property>
+            </activation>
+            <properties>
+                <catalinaHome>${project.build.directory}/apache-tomcat-${version.tomcat85}</catalinaHome>
+                <arquillian.launch.tomcat85>true</arquillian.launch.tomcat85>
+                <arquillian.richfaces.servletContainerSetup>true</arquillian.richfaces.servletContainerSetup>
+                <arquillian.container.home>${project.build.directory}/apache-tomcat-${version.tomcat85}</arquillian.container.home>
+                <arquillian.container.distribution>org.apache.tomcat:tomcat:zip:${version.tomcat85}</arquillian.container.distribution>
+                <arquillian.container.configuration>org.richfaces:richfaces-build-resources:zip:configuration-tomcat:${version.richfaces}</arquillian.container.configuration>
+                <showcase.war.classifier>tomcat-mojarra</showcase.war.classifier>
+            </properties>
+            <dependencies>
+                <dependency>
+                    <groupId>org.jboss.arquillian.container</groupId>
+                    <artifactId>arquillian-tomcat-managed-8</artifactId>
+                    <scope>test</scope>
+                </dependency>
+            </dependencies>
+        </profile>
+        <profile>
+            <id>tomcat-remote-85</id>
+            <activation>
+                <property>
+                    <name>integration</name>
+                    <value>tomcat85-remote</value>
+                </property>
+            </activation>
+            <properties>
+                <arquillian.launch.tomcat85>true</arquillian.launch.tomcat85>
+                <arquillian.richfaces.servletContainerSetup>true</arquillian.richfaces.servletContainerSetup>
+                <showcase.war.classifier>tomcat-mojarra</showcase.war.classifier>
+            </properties>
+            <dependencies>
+                <dependency>
+                    <groupId>org.jboss.arquillian.container</groupId>
+                    <artifactId>arquillian-tomcat-remote-8</artifactId>
+                    <scope>test</scope>
+                </dependency>
+            </dependencies>
+        </profile>
+        <profile>
             <id>tomcat-managed-8</id>
             <activation>
                 <property>
@@ -1392,7 +1487,7 @@
             <dependencies>
                 <dependency>
                     <groupId>org.jboss.arquillian.container</groupId>
-                    <artifactId>arquillian-tomcat-managed-7</artifactId>
+                    <artifactId>arquillian-tomcat-managed-8</artifactId>
                     <scope>test</scope>
                 </dependency>
             </dependencies>
@@ -1413,7 +1508,7 @@
             <dependencies>
                 <dependency>
                     <groupId>org.jboss.arquillian.container</groupId>
-                    <artifactId>arquillian-tomcat-remote-7</artifactId>
+                    <artifactId>arquillian-tomcat-remote-8</artifactId>
                     <scope>test</scope>
                 </dependency>
             </dependencies>
