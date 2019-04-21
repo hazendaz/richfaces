@@ -112,6 +112,8 @@
         <version.wildfly82>8.2.1.Final</version.wildfly82>
         <version.tomcat7>7.0.94</version.tomcat7>
         <version.tomcat8>8.0.53</version.tomcat8>
+        <version.tomcat85>8.5.40</version.tomcat85>
+        <version.tomcat9>9.0.19</version.tomcat9>
 
         <!-- Plugin Management: versions -->
         <version.assembly.plugin>3.1.1</version.assembly.plugin>
@@ -1123,6 +1125,94 @@
                 <arquillian.richfaces.servletContainerSetup>true</arquillian.richfaces.servletContainerSetup>
                 <arquillian.container.home>${project.build.directory}/apache-tomcat-${version.tomcat8}</arquillian.container.home>
                 <arquillian.container.distribution>org.apache.tomcat:tomcat:zip:${version.tomcat8}</arquillian.container.distribution>
+                <arquillian.container.configuration>org.richfaces:richfaces-build-resources:zip:configuration-tomcat:${version.richfaces}</arquillian.container.configuration>
+            </properties>
+            <dependencies>
+                <dependency>
+                    <groupId>org.jboss.arquillian.container</groupId>
+                    <artifactId>arquillian-tomcat-managed-7</artifactId>
+                    <scope>test</scope>
+                </dependency>
+            </dependencies>
+        </profile>
+        <profile>
+            <id>tomcat-remote-85</id>
+            <activation>
+                <property>
+                    <name>integration</name>
+                    <value>tomcat8-remote</value>
+                </property>
+            </activation>
+            <properties>
+                <arquillian.launch.tomcat8>true</arquillian.launch.tomcat8>
+                <arquillian.richfaces.servletContainerSetup>true</arquillian.richfaces.servletContainerSetup>
+            </properties>
+            <dependencies>
+                <dependency>
+                    <groupId>org.jboss.arquillian.container</groupId>
+                    <artifactId>arquillian-tomcat-remote-7</artifactId>
+                    <scope>test</scope>
+                </dependency>
+            </dependencies>
+        </profile>
+        <profile>
+            <id>tomcat-managed-85</id>
+            <activation>
+                <property>
+                    <name>integration</name>
+                    <value>tomcat8</value>
+                </property>
+            </activation>
+            <properties>
+                <catalinaHome>${project.build.directory}/apache-tomcat-${version.tomcat85}</catalinaHome>
+                <arquillian.launch.tomcat8>true</arquillian.launch.tomcat8>
+                <arquillian.richfaces.servletContainerSetup>true</arquillian.richfaces.servletContainerSetup>
+                <arquillian.container.home>${project.build.directory}/apache-tomcat-${version.tomcat85}</arquillian.container.home>
+                <arquillian.container.distribution>org.apache.tomcat:tomcat:zip:${version.tomcat85}</arquillian.container.distribution>
+                <arquillian.container.configuration>org.richfaces:richfaces-build-resources:zip:configuration-tomcat:${version.richfaces}</arquillian.container.configuration>
+            </properties>
+            <dependencies>
+                <dependency>
+                    <groupId>org.jboss.arquillian.container</groupId>
+                    <artifactId>arquillian-tomcat-managed-7</artifactId>
+                    <scope>test</scope>
+                </dependency>
+            </dependencies>
+        </profile>
+        <profile>
+            <id>tomcat-remote-9</id>
+            <activation>
+                <property>
+                    <name>integration</name>
+                    <value>tomcat8-remote</value>
+                </property>
+            </activation>
+            <properties>
+                <arquillian.launch.tomcat8>true</arquillian.launch.tomcat8>
+                <arquillian.richfaces.servletContainerSetup>true</arquillian.richfaces.servletContainerSetup>
+            </properties>
+            <dependencies>
+                <dependency>
+                    <groupId>org.jboss.arquillian.container</groupId>
+                    <artifactId>arquillian-tomcat-remote-7</artifactId>
+                    <scope>test</scope>
+                </dependency>
+            </dependencies>
+        </profile>
+        <profile>
+            <id>tomcat-managed-9</id>
+            <activation>
+                <property>
+                    <name>integration</name>
+                    <value>tomcat8</value>
+                </property>
+            </activation>
+            <properties>
+                <catalinaHome>${project.build.directory}/apache-tomcat-${version.tomcat9}</catalinaHome>
+                <arquillian.launch.tomcat8>true</arquillian.launch.tomcat8>
+                <arquillian.richfaces.servletContainerSetup>true</arquillian.richfaces.servletContainerSetup>
+                <arquillian.container.home>${project.build.directory}/apache-tomcat-${version.tomcat9}</arquillian.container.home>
+                <arquillian.container.distribution>org.apache.tomcat:tomcat:zip:${version.tomcat9}</arquillian.container.distribution>
                 <arquillian.container.configuration>org.richfaces:richfaces-build-resources:zip:configuration-tomcat:${version.richfaces}</arquillian.container.configuration>
             </properties>
             <dependencies>
