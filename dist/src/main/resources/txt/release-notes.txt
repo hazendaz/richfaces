@@ -1,6 +1,10 @@
-4.6.9-SNAPSHOT
+4.6.9.ayg 2019-05-05
 ---------
-
+	[   ] JQuery upgraded to 3.4.1
+    [#34] Update plugins/dependencies, add support for tomcat 85 / 9 
+    [#30] Fixed: maxFilesQuantity attribute server-side validation does nothing 
+    [#19] Lots of plugins/dependencies updated.
+    
 4.6.8.ayg 2019-03-02
 ---------
 	[#25] a4j onComplete functions do not work properly (in combination with PrimeFaces)
