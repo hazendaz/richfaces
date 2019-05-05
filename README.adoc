@@ -68,13 +68,12 @@ For more information on how to get started with the project, see the http://docs
 
 * JDK 1.8 +
 * Maven 3.2.0 +
-* https://community.jboss.org/wiki/MavenGettingStarted-Developers[JBoss Maven Repository]
 
 === Supported Browsers
 
 This is a fork with no time for testing, but it should work in this browsers:
 
-* IE11
+* IE 11
 * Edge
 * Firefox (52+)
 * Chrome (49+)
