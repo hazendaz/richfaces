@@ -257,10 +257,16 @@
                             </execution>
                         </executions>
                     </plugin>
-	<!-- 
+	
                     <plugin>
                         <groupId>org.apache.maven.plugins</groupId>
                         <artifactId>maven-assembly-plugin</artifactId>
+                        <configuration>
+                              <appendAssemblyId>false</appendAssemblyId>
+                              <descriptors>
+                                   <descriptor>${project.basedir}/src/main/resources/xml/richfaces.xml</descriptor>
+                              </descriptors>
+                        </configuration>
                         <executions>
                             <execution>
                                 <id>richfaces-assembly</id>
@@ -268,14 +274,11 @@
                                 <goals>
                                     <goal>single</goal>
                                 </goals>
-                                <configuration>
-                                    <appendAssemblyId>false</appendAssemblyId>
-                                    <descriptor>${project.basedir}/src/main/resources/xml/richfaces.xml</descriptor>
-                                </configuration>
+
                             </execution>
                         </executions>
                     </plugin>
-                     -->
+                     
                 </plugins>
             </build>
         </profile>
