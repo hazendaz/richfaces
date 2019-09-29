@@ -4,4 +4,3 @@ install: ./mvnw clean install -B -Dgpg.skip=true -DskipTests=true -s buildhive-s
 
 jdk: 
   - openjdk8
-  - oraclejdk8
