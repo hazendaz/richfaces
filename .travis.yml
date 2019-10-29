@@ -1,6 +1,31 @@
 language: java
 
-install: ./mvnw clean install -B -Dgpg.skip=true -DskipTests=true -s buildhive-settings.xml
+dist: trusty
 
-jdk: 
+# speed up travis with repo caching https://docs.travis-ci.com/user/caching/
+cache:
+  directories:
+    - $HOME/.m2
+
+jdk:
   - openjdk8
+  - openjdk11
+
+env:
+  - MAVEN_OPTS="-P quickrun"
+  - MAVEN_OPTS="-Dintegration=wildfly100 -P wildfly-managed-10-0"
+  - MAVEN_OPTS="-Dintegration=wildfly90"
+  - MAVEN_OPTS="-Dintegration=wildfly81"
+  - MAVEN_OPTS="-Dintegration=wildfly82-https"
+  - MAVEN_OPTS="-Dintegration=jbosseap62"
+  - MAVEN_OPTS="-Dintegration=jbosseap63"
+  - MAVEN_OPTS="-Dintegration=tomcat7"
+  - MAVEN_OPTS="-Dintegration=tomcat8"
+  - MAVEN_OPTS="-Dintegration=tomcat9"
+
+#  browser:
+#    - phantomjs
+#    - chrome
+#    - firefox
+install: "mvn test-compile -DskipTests=true -Dgpg.skip=true -B -V -q"
+script: "mvn verify -Dgpg.skip=true -B -V"
