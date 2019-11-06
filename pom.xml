@@ -250,6 +250,10 @@
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-javadoc-plugin</artifactId>
                     <configuration>
+                    	<source>7</source>
+						<links>
+	                        <link>https://docs.oracle.com/javase/7/docs/api/</link>
+	                    </links>
                         <keywords>true</keywords>
                         <quiet>true</quiet>
                         <!-- Solves issues related to link lookups for all
