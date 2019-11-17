@@ -1308,6 +1308,19 @@
         </profile>
 
         <profile>
+            <id>examples</id>
+            <modules>
+                <module>examples/photoalbum</module>
+                <module>examples/showcase</module>
+                <module>examples/template</module>
+                <module>examples/jpa-demo</module>
+                <module>examples/push-demo</module>
+                <module>examples/irc-client</module>
+                <module>examples/components-demo</module>
+            </modules>
+        </profile>
+
+        <profile>
             <id>release-completion</id>
             <build>
                 <plugins>
