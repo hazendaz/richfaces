@@ -63,6 +63,7 @@ Software Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA
     </issueManagement>
 
     <properties>
+        <java.version>1.8</java.version>
         <version.richfaces>4.6.10-SNAPSHOT</version.richfaces>
         <version.metadata-extractor>2.10.0</version.metadata-extractor>
         <version.jackson>1.9.13</version.jackson>
@@ -75,8 +76,8 @@ Software Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA
         <version.jboss-as7>7.2.0.Final</version.jboss-as7>
 
         <maven.min.version>3.0.3</maven.min.version>
-        <maven.compiler.source>1.6</maven.compiler.source>
-        <maven.compiler.target>1.6</maven.compiler.target>
+        <maven.compiler.source>${java.version}</maven.compiler.source>
+        <maven.compiler.target>${java.version}</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 
