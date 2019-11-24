@@ -110,7 +110,7 @@ public class SwingTreeNodeImpl<T> implements TreeNode, Serializable {
         return children.isEmpty();
     }
 
-    public Enumeration<?> children() {
+    public Enumeration<? extends javax.swing.tree.TreeNode> children() {
         return Iterators.asEnumeration(children.iterator());
     }
 
