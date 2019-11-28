@@ -58,6 +58,7 @@
         <url>https://github.com/albfernandez/richfaces/issues</url>
     </issueManagement>
     <properties>
+    	<java.version>1.8</java.version>
         <version.richfaces>4.6.10-SNAPSHOT</version.richfaces>
 
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
