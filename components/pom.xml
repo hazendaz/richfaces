@@ -65,7 +65,7 @@
                     </executions>
                 </plugin>
                 <plugin>
-                    <groupId>org.richfaces.cdk</groupId>
+                    <groupId>com.github.albfernandez.richfaces.cdk</groupId>
                     <artifactId>richfaces-cdk-maven-plugin</artifactId>
                     <executions>
                         <execution>
@@ -76,6 +76,13 @@
                             </goals>
                         </execution>
                     </executions>
+                    <dependencies>
+                        <dependency>
+                            <groupId>javax.xml.bind</groupId>
+                            <artifactId>jaxb-api</artifactId>
+                            <version>2.3.1</version>
+                        </dependency>
+                    </dependencies>
                 </plugin>
                 <plugin>
                     <groupId>org.codehaus.mojo</groupId>
@@ -109,7 +116,7 @@
                         <requirePluginVersions>
                             <!-- During development SNAPSHOT versions of the CDK plugin are used.
                                  This setting ignores the no SNAPSHOT rule for the CDK  -->
-                            <unCheckedPluginList>org.richfaces.cdk:richfaces-cdk-maven-plugin, com.github.albfernandez.richfaces:richfaces-resource-optimizer-maven-plugin</unCheckedPluginList>
+                            <unCheckedPluginList>com.github.albfernandez.richfaces.cdk:richfaces-cdk-maven-plugin, com.github.albfernandez.richfaces:richfaces-resource-optimizer-maven-plugin</unCheckedPluginList>
                         </requirePluginVersions>
                     </rules>
                 </configuration>

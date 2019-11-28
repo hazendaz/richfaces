@@ -1,7 +1,96 @@
 language: java
 
-install: ./mvnw clean install -B -Dgpg.skip=true -DskipTests=true -s buildhive-settings.xml
+dist: trusty
 
-jdk: 
+# speed up travis with repo caching https://docs.travis-ci.com/user/caching/
+cache:
+  directories:
+    - $HOME/.m2
+
+#using jobs instead
+#install: mvn install -DskipTests=true -Dgpg.skip=true -B -q
+
+jdk:
   - openjdk8
   - openjdk11
+
+before_script:
+  - echo $HOME
+  - echo $JAVA_OPTS
+  - echo $MAVEN_OPTS
+
+install: true
+
+jobs:
+  fast_finish: true
+  include:
+    - stage: quick
+      script:  "mvn clean test-compile -Dcheckstyle.skip=true -Dgpg.skip=true -B -V -Pquickrun"
+      name: "Richfaces: test-compile - jdk8"
+      jdk: openjdk8
+    - script:  "mvn clean test-compile -Dcheckstyle.skip=true -Dgpg.skip=true -B -V -Pquickrun"
+      name: "Richfaces: test-compile - jdk11"
+      env: CANFAIL=true
+      jdk: openjdk11
+
+    - stage: long
+      script: "mvn verify -Dcheckstyle.skip=true -Dgpg.skip=true -B -V -Pquickrun"
+      name: "Richfaces: verify - jdk8"
+      jdk: openjdk8
+    - script: "mvn verify -Dcheckstyle.skip=true -Dgpg.skip=true -B -V -Pquickrun"
+      name: "Richfaces: verify -jdk11"
+      env: CANFAIL=true
+      jdk: openjdk11
+    #examples
+    - script: "mvn verify -Dcheckstyle.skip=true -Dgpg.skip=true -B -V -Pquickrun,examples"
+      name: "Richfaces + examples: verify"
+      env: CANFAIL=true
+      jdk: openjdk8
+    #Integation tests per application server type below
+    - script: "mvn verify -Dcheckstyle.skip=true -Dgpg.skip=true -B -V -Pquickrun -Dintegration=wildfly100"
+      name: "Richfaces + integration wildfly100: verify"
+      env: CANFAIL=true
+      jdk: openjdk8
+    - script: "mvn verify -Dcheckstyle.skip=true -Dgpg.skip=true -B -V -Pquickrun -Dintegration=wildfly90"
+      name: "Richfaces + integration wildfly90: verify"
+      env: CANFAIL=true
+      jdk: openjdk8
+    - script: "mvn verify -Dcheckstyle.skip=true -Dgpg.skip=true -B -V -Pquickrun -Dintegration=wildfly81"
+      name: "Richfaces + integration wildfly81: verify"
+      env: CANFAIL=true
+      jdk: openjdk8
+    - script: "mvn verify -Dcheckstyle.skip=true -Dgpg.skip=true -B -V -Pquickrun -Dintegration=wildfly82-https"
+      name: "Richfaces + integration wildfly82-https: verify"
+      env: CANFAIL=true
+      jdk: openjdk8
+    - script: "mvn verify -Dcheckstyle.skip=true -Dgpg.skip=true -B -V -Pquickrun -Dintegration=Richfaceseap62"
+      name: "Richfaces + integration Richfaceseap62: verify"
+      env: CANFAIL=true
+      jdk: openjdk8
+    - script: "mvn verify -Dcheckstyle.skip=true -Dgpg.skip=true -B -V -Pquickrun -Dintegration=Richfaceseap63"
+      name: "Richfaces + integration Richfaceseap63: verify"
+      env: CANFAIL=true
+      jdk: openjdk8
+    - script: "mvn verify -Dcheckstyle.skip=true -Dgpg.skip=true -B -V -Pquickrun -Dintegration=tomcat7"
+      name: "Richfaces + integration tomcat7: verify"
+      env: CANFAIL=true
+      jdk: openjdk8
+    - script: "mvn verify -Dcheckstyle.skip=true -Dgpg.skip=true -B -V -Pquickrun -Dintegration=tomcat8"
+      name: "Richfaces + integration tomcat8: verify"
+      env: CANFAIL=true
+      jdk: openjdk8
+    - script: "mvn verify -Dcheckstyle.skip=true -Dgpg.skip=true -B -V -Pquickrun -Dintegration=tomcat9"
+      name: "Richfaces + integration tomcat9: verify"
+      env: CANFAIL=true
+      jdk: openjdk8
+
+  allow_failures:
+    - jdk: openjdk8
+      env: CANFAIL=true
+    - jdk: openjdk11
+      env: CANFAIL=true
+
+
+stages:
+  - quick
+  - long

@@ -97,12 +97,13 @@
     </issueManagement>
 
     <properties>
+        <java.version>1.8</java.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 
         <!-- Base Dependencies Versions -->
         <version.richfaces>4.6.10-SNAPSHOT</version.richfaces>
-        <version.cdk>4.5.0.Final</version.cdk>
+        <version.cdk>4.6.0.ayg</version.cdk>
         <version.jboss-javaee>3.0.3.Final</version.jboss-javaee>
 
         <!-- Container Versions -->
@@ -132,10 +133,11 @@
 
         <version.screenshooter>2.1.0.Alpha1</version.screenshooter>
 
+
         <!-- maven-compiler-plugin -->
         <!-- Overide jboss-parent default version-->
-        <maven.compiler.target>1.6</maven.compiler.target>
-        <maven.compiler.source>1.6</maven.compiler.source>
+        <maven.compiler.target>${java.version}</maven.compiler.target>
+        <maven.compiler.source>${java.version}</maven.compiler.source>
 
         <!-- Release -->
         <regular.files.which.contains.version>core/src/main/java/org/richfaces/VersionBean.java,dist/src/main/resources/txt/readme.txt,dist/src/main/resources/txt/readme-examples.txt,build/build-resources/src/main/java/org/richfaces/arquillian/configuration/FundamentalTestConfiguration.java,build/resources-plugin/src/site/apt/usage.apt,examples/showcase/src/main/webapp/META-INF/MANIFEST.MF,examples/showcase/README.md,examples/irc-client/readme.txt</regular.files.which.contains.version>
@@ -301,9 +303,16 @@
                     <version>${version.jacoco.plugin}</version>
                 </plugin>
                 <plugin>
-                    <groupId>org.richfaces.cdk</groupId>
+                    <groupId>com.github.albfernandez.richfaces.cdk</groupId>
                     <artifactId>richfaces-cdk-maven-plugin</artifactId>
                     <version>${version.cdk}</version>
+                    <!--<dependencies>
+                        <dependency>
+                            <groupId>javax.xml.bind</groupId>
+                            <artifactId>jaxb-api</artifactId>
+                            <version>2.3.1</version>
+                        </dependency>
+                    </dependencies>-->
                 </plugin>
                 <plugin>
                     <groupId>com.google.code.maven-replacer-plugin</groupId>
@@ -326,7 +335,7 @@
                             <pluginExecutions>
                                 <pluginExecution>
                                     <pluginExecutionFilter>
-                                        <groupId>org.richfaces.cdk</groupId>
+                                        <groupId>com.github.albfernandez.richfaces.cdk</groupId>
                                         <artifactId>richfaces-cdk-maven-plugin</artifactId>
                                         <versionRange>[4.5.2.Final,)</versionRange>
                                         <goals>
@@ -1188,11 +1197,11 @@
             <activation>
                 <property>
                     <name>integration</name>
-                    <value>tomcat8-remote</value>
+                    <value>tomcat9-remote</value>
                 </property>
             </activation>
             <properties>
-                <arquillian.launch.tomcat8>true</arquillian.launch.tomcat8>
+                <arquillian.launch.tomcat9>true</arquillian.launch.tomcat9>
                 <arquillian.richfaces.servletContainerSetup>true</arquillian.richfaces.servletContainerSetup>
             </properties>
             <dependencies>
@@ -1208,12 +1217,12 @@
             <activation>
                 <property>
                     <name>integration</name>
-                    <value>tomcat8</value>
+                    <value>tomcat9</value>
                 </property>
             </activation>
             <properties>
                 <catalinaHome>${project.build.directory}/apache-tomcat-${version.tomcat9}</catalinaHome>
-                <arquillian.launch.tomcat8>true</arquillian.launch.tomcat8>
+                <arquillian.launch.tomcat9>true</arquillian.launch.tomcat9>
                 <arquillian.richfaces.servletContainerSetup>true</arquillian.richfaces.servletContainerSetup>
                 <arquillian.container.home>${project.build.directory}/apache-tomcat-${version.tomcat9}</arquillian.container.home>
                 <arquillian.container.distribution>org.apache.tomcat:tomcat:zip:${version.tomcat9}</arquillian.container.distribution>
@@ -1302,6 +1311,19 @@
                     </plugin>
                 </plugins>
             </build>
+        </profile>
+
+        <profile>
+            <id>examples</id>
+            <modules>
+                <module>examples/photoalbum</module>
+                <module>examples/showcase</module>
+                <module>examples/template</module>
+                <module>examples/jpa-demo</module>
+                <module>examples/push-demo</module>
+                <module>examples/irc-client</module>
+                <module>examples/components-demo</module>
+            </modules>
         </profile>
 
         <profile>
