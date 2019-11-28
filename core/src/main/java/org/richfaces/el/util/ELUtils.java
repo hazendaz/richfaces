@@ -162,7 +162,12 @@ public final class ELUtils {
                 editor.setAsText((String) value);
                 return targetType.cast(editor.getValue());
             } else if (targetType.isEnum()) {
-                return targetType.cast(Enum.valueOf((Class<Enum>) targetType, (String) value));
+            	Class<Enum> enumClass = (Class<Enum>) targetType;
+            	String stringVal = (String) value;
+            	Object o = Enum.valueOf(enumClass, stringVal);
+                return targetType.cast(o);
+                
+                
             }
         }
 
