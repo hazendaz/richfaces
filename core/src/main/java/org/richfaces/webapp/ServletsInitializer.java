@@ -55,7 +55,7 @@ public class ServletsInitializer implements ServletContainerInitializer {
             ServletContainerInitializer initializer = null;
 
             try {
-                initializer = (ServletContainerInitializer) clazz.newInstance();
+                initializer = (ServletContainerInitializer) clazz.getDeclaredConstructor().newInstance();
             } catch (Exception e) {
                 LOGGER.error("Failed to instantiate servlet initializer " + clazz.getName(), e);
             }

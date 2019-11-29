@@ -92,7 +92,7 @@ public class CacheManager {
         for (String factoryName : factories) {
             try {
                 Class<?> spiClass = Class.forName(factoryName, true, loader);
-                cacheFactory = CacheFactory.class.cast(spiClass.newInstance());
+                cacheFactory = CacheFactory.class.cast(spiClass.getDeclaredConstructor().newInstance());
                 LOG.info(MessageFormat.format("Selected [{0}]", factoryName));
                 break;
             } catch (LinkageError iae) {

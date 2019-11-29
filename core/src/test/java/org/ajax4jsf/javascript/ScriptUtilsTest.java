@@ -183,11 +183,11 @@ public class ScriptUtilsTest extends TestCase {
     public void testListToScript() {
         List<Integer> obj = new ArrayList<Integer>();
 
-        obj.add(new Integer(1));
-        obj.add(new Integer(2));
-        obj.add(new Integer(3));
-        obj.add(new Integer(4));
-        obj.add(new Integer(5));
+        obj.add(Integer.valueOf(1));
+        obj.add(Integer.valueOf(2));
+        obj.add(Integer.valueOf(3));
+        obj.add(Integer.valueOf(4));
+        obj.add(Integer.valueOf(5));
         assertEquals("[1,2,3,4,5] ", ScriptUtils.toScript(obj));
     }
 
@@ -197,11 +197,11 @@ public class ScriptUtilsTest extends TestCase {
     public void testSetToScript() {
         Set<Integer> obj = new TreeSet<Integer>();
 
-        obj.add(new Integer(1));
-        obj.add(new Integer(2));
-        obj.add(new Integer(3));
-        obj.add(new Integer(4));
-        obj.add(new Integer(5));
+        obj.add(Integer.valueOf(1));
+        obj.add(Integer.valueOf(2));
+        obj.add(Integer.valueOf(3));
+        obj.add(Integer.valueOf(4));
+        obj.add(Integer.valueOf(5));
         assertEquals("[1,2,3,4,5] ", ScriptUtils.toScript(obj));
     }
 

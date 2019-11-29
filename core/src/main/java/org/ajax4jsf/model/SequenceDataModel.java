@@ -63,7 +63,7 @@ public class SequenceDataModel<E> extends ExtendedDataModel<E> {
             wrappedModel.setRowIndex(currentRow);
 
             if (wrappedModel.isRowAvailable()) {
-                visitResult = visitor.process(context, new Integer(currentRow), argument);
+                visitResult = visitor.process(context, Integer.valueOf(currentRow), argument);
 
                 if (DataVisitResult.STOP.equals(visitResult)) {
                     break;
@@ -88,7 +88,7 @@ public class SequenceDataModel<E> extends ExtendedDataModel<E> {
             return null;
         }
 
-        return new Integer(index);
+        return Integer.valueOf(index);
     }
 
     /*

@@ -51,7 +51,7 @@ public final class HtmlUtil {
         Double doubleDelta = HtmlDimensions.decode(delta);
         Double decoded = HtmlDimensions.decode(declaration);
 
-        return HtmlDimensions.formatPx(new Double(decoded.doubleValue() + doubleDelta.doubleValue()));
+        return HtmlDimensions.formatPx(Double.valueOf(decoded.doubleValue() + doubleDelta.doubleValue()));
     }
 
     private static String escapeReplacement(String s) {

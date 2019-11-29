@@ -591,7 +591,7 @@ public class JSONObject implements Serializable {
         try {
             Object o = opt(key);
 
-            return (o instanceof Number) ? ((Number) o).doubleValue() : new Double((String) o).doubleValue();
+            return (o instanceof Number) ? ((Number) o).doubleValue() : Double.parseDouble((String) o);
         } catch (Exception e) {
             return defaultValue;
         }
@@ -724,7 +724,7 @@ public class JSONObject implements Serializable {
      * @throws JSONException If the key is null or if the number is invalid.
      */
     public JSONObject put(String key, double value) throws JSONException {
-        put(key, new Double(value));
+        put(key, Double.valueOf(value));
 
         return this;
     }
@@ -738,7 +738,7 @@ public class JSONObject implements Serializable {
      * @throws JSONException If the key is null.
      */
     public JSONObject put(String key, int value) throws JSONException {
-        put(key, new Integer(value));
+        put(key, Integer.valueOf(value));
 
         return this;
     }
@@ -752,7 +752,7 @@ public class JSONObject implements Serializable {
      * @throws JSONException If the key is null.
      */
     public JSONObject put(String key, long value) throws JSONException {
-        put(key, new Long(value));
+        put(key, Long.valueOf(value));
 
         return this;
     }

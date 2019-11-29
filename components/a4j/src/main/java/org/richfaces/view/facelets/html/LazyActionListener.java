@@ -65,7 +65,7 @@ class LazyActionListener implements ActionListener, Serializable {
 
         if (instance == null && this.type != null) {
             try {
-                instance = TagHandlerUtils.loadClass(this.type, ActionListener.class).newInstance();
+                instance = TagHandlerUtils.loadClass(this.type, ActionListener.class).getDeclaredConstructor().newInstance();
             } catch (Exception e) {
                 throw new AbortProcessingException("Couldn't lazily instantiate ActionListener", e);
             }

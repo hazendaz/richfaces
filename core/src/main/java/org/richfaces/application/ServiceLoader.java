@@ -25,6 +25,7 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.lang.reflect.InvocationTargetException;
 import java.net.URL;
 import java.net.URLConnection;
 import java.util.ArrayList;
@@ -95,12 +96,20 @@ public final class ServiceLoader {
 
     private static <S> S createInstance(Class<? extends S> implementationClass) {
         try {
-            return implementationClass.newInstance();
+            return implementationClass.getDeclaredConstructor().newInstance();
         } catch (InstantiationException e) {
             throw new ServiceException("Cannot instantiate service class, does it have default constructor ?", e);
         } catch (IllegalAccessException e) {
             throw new ServiceException("Cannot instantiate service class, illegal access", e);
-        }
+        } catch (IllegalArgumentException e) {
+        	throw new ServiceException("Cannot instantiate service class", e);
+		} catch (InvocationTargetException e) {
+			throw new ServiceException("Cannot instantiate service class", e);
+		} catch (NoSuchMethodException e) {
+			throw new ServiceException("Cannot instantiate service class", e);
+		} catch (SecurityException e) {
+			throw new ServiceException("Cannot instantiate service class", e);
+		}
     }
 
     /**

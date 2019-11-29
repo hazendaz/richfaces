@@ -21,6 +21,7 @@
  */
 package org.richfaces.resource;
 
+import java.lang.reflect.InvocationTargetException;
 import java.util.Map;
 import java.util.concurrent.ExecutionException;
 
@@ -75,14 +76,22 @@ public class ResourceLibraryFactoryImpl implements ResourceLibraryFactory {
                 try {
                     Class<?> clazz = Class.forName(libraryClass.trim(), false, Thread.currentThread()
                         .getContextClassLoader());
-                    return (ResourceLibrary) clazz.newInstance();
+                    return (ResourceLibrary) clazz.getDeclaredConstructor().newInstance();
                 } catch (ClassNotFoundException e) {
                     LOGGER.error(e.getMessage(), e);
                 } catch (InstantiationException e) {
                     LOGGER.error(e.getMessage(), e);
                 } catch (IllegalAccessException e) {
                     LOGGER.error(e.getMessage(), e);
-                }
+                } catch (IllegalArgumentException e) {
+                	LOGGER.error(e.getMessage(), e);
+				} catch (InvocationTargetException e) {
+					LOGGER.error(e.getMessage(), e);
+				} catch (NoSuchMethodException e) {
+					LOGGER.error(e.getMessage(), e);
+				} catch (SecurityException e) {
+					LOGGER.error(e.getMessage(), e);
+				}
             } else if (resources != null) {
                 Iterable<ResourceKey> keys = Iterables.transform(COMA_SPLITTER.split(resources), ResourceKey.FACTORY);
                 return new StaticResourceLibrary(Iterables.toArray(keys, ResourceKey.class));

@@ -180,10 +180,10 @@ public class ResourceFactoryImpl implements ResourceFactory {
         Resource result = null;
 
         if (Java2DUserResource.class.isAssignableFrom(loadedClass)) {
-            Java2DUserResource java2DUserResource = (Java2DUserResource) loadedClass.newInstance();
+            Java2DUserResource java2DUserResource = (Java2DUserResource) loadedClass.getDeclaredConstructor().newInstance();
             result = createResource(java2DUserResource);
         } else if (UserResource.class.isAssignableFrom(loadedClass)) {
-            UserResource userResource = (UserResource) loadedClass.newInstance();
+            UserResource userResource = (UserResource) loadedClass.getDeclaredConstructor().newInstance();
             result = createResource(userResource);
         }
 
@@ -214,7 +214,7 @@ public class ResourceFactoryImpl implements ResourceFactory {
         }
 
         Class<? extends Resource> resourceClass = loadedClass.asSubclass(Resource.class);
-        Resource result = (Resource) resourceClass.newInstance();
+        Resource result = (Resource) resourceClass.getDeclaredConstructor().newInstance();
 
         return result;
     }

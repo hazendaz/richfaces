@@ -86,7 +86,7 @@ public final class HtmlColor {
     }
 
     public static Integer integerValue(String color) {
-        return new Integer(decode(color).getRGB());
+        return Integer.valueOf(decode(color).getRGB());
     }
 
     public static String encodeRGB(Color color) {

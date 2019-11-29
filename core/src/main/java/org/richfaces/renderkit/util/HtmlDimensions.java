@@ -78,7 +78,7 @@ public final class HtmlDimensions {
                     size, e.getMessage() }));
         }
 
-        return new Double(d);
+        return Double.valueOf(d);
     }
 
     public static String formatPx(Double value) {
