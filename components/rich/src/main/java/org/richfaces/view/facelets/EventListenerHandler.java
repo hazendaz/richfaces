@@ -69,7 +69,7 @@ public abstract class EventListenerHandler extends TagHandler implements Attache
             }
             if (instance == null && this.type != null) {
                 try {
-                    instance = (L) TagHandlerUtils.loadClass(this.type, Object.class).newInstance();
+                    instance = (L) TagHandlerUtils.loadClass(this.type, Object.class).getDeclaredConstructor().newInstance();
                 } catch (Exception e) {
                     throw new AbortProcessingException("Couldn't Lazily instantiate EventListener", e);
                 }

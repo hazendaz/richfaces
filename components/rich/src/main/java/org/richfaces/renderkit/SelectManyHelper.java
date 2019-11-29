@@ -289,7 +289,7 @@ public class SelectManyHelper {
                     // Let targetForConvertedValues be a new instance of Collection implemented by the concrete class specified in collectionType
                     Class<?> collectionClass = getCollectionClass(collectionType);
                     try {
-                        targetForConvertedValues = collectionClass.newInstance();
+                        targetForConvertedValues = collectionClass.getDeclaredConstructor().newInstance();
                     } catch (Exception e) {
                         throw new FacesException(e);
                     }
@@ -313,7 +313,7 @@ public class SelectManyHelper {
                         Class<?> collectionClass = value == null ? modelType : value.getClass();
                         try {
                             // If modelType is a concrete class, let targetForConvertedValues be a new instance of that class.
-                            targetForConvertedValues = collectionClass.newInstance();
+                            targetForConvertedValues = collectionClass.getDeclaredConstructor().newInstance();
                             ((Collection) targetForConvertedValues).clear();
                         } catch (Exception e) {
                             // Otherwise, the concrete type for targetForConvertedValues is taken from the following table
