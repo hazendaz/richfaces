@@ -32,7 +32,7 @@ public class ByteConverterTest extends ConverterTestBase {
         assertTrue(jsConvertedValue instanceof Double);
         assertTrue(convertedValue instanceof Byte);
         Double jsDouble = (Double) jsConvertedValue;
-        Double jsfDouble = new Double((Byte) convertedValue);
+        Double jsfDouble = Double.valueOf((Byte) convertedValue);
         assertEquals(jsfDouble, jsDouble, 0.0000001);
     }
 
