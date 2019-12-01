@@ -84,12 +84,12 @@ public class MultipartRequest25 extends BaseMultipartRequest {
         }
     }
 
-    @SuppressWarnings({ "rawtypes", "unchecked" })
-    @Override
-    public Enumeration getParameterNames() {
-        Collection<Object> result = Sets.newHashSet();
 
-        Enumeration names = super.getParameterNames();
+    @Override
+    public Enumeration<String> getParameterNames() {
+        Collection<String> result = Sets.newHashSet();
+
+        Enumeration<String> names = super.getParameterNames();
         while (names.hasMoreElements()) {
             String name = (String) names.nextElement();
 
