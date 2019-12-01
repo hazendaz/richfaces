@@ -115,6 +115,6 @@ public abstract class UIRangedNumberInput extends UIInput {
             return null;
         }
 
-        return new Double(object.toString());
+        return Double.valueOf(object.toString());
     }
 }
