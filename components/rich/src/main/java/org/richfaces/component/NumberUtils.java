@@ -40,6 +40,6 @@ public final class NumberUtils {
             }
             return result;
         }
-        return new Integer.valueOf(0);
+        return Integer.valueOf(0);
     }
 }
