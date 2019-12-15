@@ -25,6 +25,7 @@ package org.richfaces.photoalbum.manager;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.Serializable;
+import java.util.Collection;
 import java.util.Date;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -208,17 +209,17 @@ public class FileUploadManager implements Serializable {
             in = fileHandler.getInputStream();
             Metadata metadata = JpegMetadataReader.readMetadata(in);
             in.close();
-            Directory exifIFD0Directory = metadata.getDirectory(ExifIFD0Directory.class);
-            Directory exifSubIFDDirectory = metadata.getDirectory(ExifSubIFDDirectory.class);
-            Directory jpgDirectory = metadata.getDirectory(JpegDirectory.class);
-            if (exifIFD0Directory != null) {
-                setupCameraModel(image, exifIFD0Directory);
+            Collection<? extends Directory> exifd0Directories = metadata.getDirectoriesOfType(ExifIFD0Directory.class);
+            Collection<? extends Directory> exifSubIFDDirectories = metadata.getDirectoriesOfType(ExifSubIFDDirectory.class);
+            Collection<? extends Directory> jpgDirectories = metadata.getDirectoriesOfType(JpegDirectory.class);
+            if (!exifd0Directories.isEmpty()) {
+                setupCameraModel(image, exifd0Directories.iterator().next());
             }
-            if (exifSubIFDDirectory != null) {
-                setupCreatedDate(image, exifSubIFDDirectory);
+            if (!exifSubIFDDirectories.isEmpty()) {
+                setupCreatedDate(image, exifSubIFDDirectories.iterator().next());
             }
-            if (jpgDirectory != null) {
-                setupDimensions(image, exifSubIFDDirectory, jpgDirectory);
+            if (!jpgDirectories.isEmpty()) {
+                setupDimensions(image, exifSubIFDDirectories.iterator().next(), jpgDirectories.iterator().next());
             }
         } catch (Exception e) {
             addError(fileHandler, image, Constants.IMAGE_SAVING_ERROR);
@@ -247,10 +248,10 @@ public class FileUploadManager implements Serializable {
                 int height = exifDirectory.getInt(ExifSubIFDDirectory.TAG_EXIF_IMAGE_HEIGHT);
                 image.setHeight(height);
             } else {
-                if (jpgDirectory.containsTag(JpegDirectory.TAG_JPEG_IMAGE_HEIGHT)) {
-                    int width = jpgDirectory.getInt(JpegDirectory.TAG_JPEG_IMAGE_WIDTH);
+                if (jpgDirectory.containsTag(JpegDirectory.TAG_IMAGE_HEIGHT)) {
+                    int width = jpgDirectory.getInt(JpegDirectory.TAG_IMAGE_WIDTH);
                     image.setWidth(width);
-                    int height = jpgDirectory.getInt(JpegDirectory.TAG_JPEG_IMAGE_HEIGHT);
+                    int height = jpgDirectory.getInt(JpegDirectory.TAG_IMAGE_HEIGHT);
                     image.setHeight(height);
                 }
             }
