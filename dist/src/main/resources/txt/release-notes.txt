@@ -1,3 +1,8 @@
+4.6.11-SNAPSHOT Unreleased
+
+	[  ] richfaces-cdk-maven-plugin Upgraded to com.github.albfernandez.richfaces.cdk:richfaces-cdk-maven-plugin:4.6.1.ayg
+
+
 4.6.10.ayg 2020-04-09
 ---------
 
