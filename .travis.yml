@@ -23,12 +23,11 @@ jobs:
   fast_finish: true
   include:
     - stage: quick
-      script:  "mvn clean test-compile -Dcheckstyle.skip=true -Dgpg.skip=true -B -V -Pquickrun"
+      script:  "mvn clean test-compile install -Dcheckstyle.skip=true -Dgpg.skip=true -B -V -Pquickrun"
       name: "Richfaces: test-compile - jdk8"
       jdk: openjdk8
     - script:  "mvn clean test-compile -Dcheckstyle.skip=true -Dgpg.skip=true -B -V -Pquickrun"
       name: "Richfaces: test-compile - jdk11"
-      env: CANFAIL=true
       jdk: openjdk11
 
     - stage: long
