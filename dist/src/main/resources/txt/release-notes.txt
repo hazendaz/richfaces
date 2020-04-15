@@ -1,5 +1,6 @@
-4.6.12-SNAPSHOT Unreleased
+4.6.12.ayg 2020-04-16
 ---------
+	[  ] Fix delete link not rendered in fileupload after jQuery migration.
 
 
 4.6.11.ayg 2020-04-14
