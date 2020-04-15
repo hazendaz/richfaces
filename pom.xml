@@ -243,7 +243,7 @@
                             <manifestEntries>
                                 <mode>development</mode>
                                 <Build-Number>${buildNumber}</Build-Number>
-                                <Automatic-Module-Name>org.richfaces.${project.artifactId}</Automatic-Module-Name>
+                                <Automatic-Module-Name>com.github.albfernandez.richfaces.${project.artifactId}</Automatic-Module-Name>
                             </manifestEntries>
                         </archive>
                     </configuration>
@@ -350,7 +350,7 @@
                                 </pluginExecution>
                                 <pluginExecution>
                                     <pluginExecutionFilter>
-                                        <groupId>org.richfaces.cdk</groupId>
+                                        <groupId>com.github.albfernandez.richfaces.cdk</groupId>
                                         <artifactId>richfaces-resource-optimizer-maven-plugin</artifactId>
                                         <versionRange>[4.5.2.Final,)</versionRange>
                                         <goals>
@@ -836,7 +836,7 @@
                 <arquillian.launch.wildfly8>true</arquillian.launch.wildfly8>
                 <arquillian.container.home>${project.build.directory}/wildfly-${version.wildfly82}</arquillian.container.home>
                 <arquillian.container.distribution>org.wildfly:wildfly-dist:zip:${version.wildfly82}</arquillian.container.distribution>
-                <arquillian.container.configuration>org.richfaces:richfaces-build-resources:zip:configuration-wildfly82-https:${version.richfaces}</arquillian.container.configuration>
+                <arquillian.container.configuration>com.github.albfernandez.richfaces:richfaces-build-resources:zip:configuration-wildfly82-https:${version.richfaces}</arquillian.container.configuration>
             </properties>
             <dependencies>
                 <dependency>
@@ -1094,7 +1094,7 @@
                 <arquillian.richfaces.servletContainerSetup>true</arquillian.richfaces.servletContainerSetup>
                 <arquillian.container.home>${project.build.directory}/apache-tomcat-${version.tomcat7}</arquillian.container.home>
                 <arquillian.container.distribution>org.apache.tomcat:tomcat:zip:${version.tomcat7}</arquillian.container.distribution>
-                <arquillian.container.configuration>org.richfaces:richfaces-build-resources:zip:configuration-tomcat:${version.richfaces}</arquillian.container.configuration>
+                <arquillian.container.configuration>com.github.albfernandez.richfaces:richfaces-build-resources:zip:configuration-tomcat:${version.richfaces}</arquillian.container.configuration>
             </properties>
             <dependencies>
                 <dependency>
@@ -1138,7 +1138,7 @@
                 <arquillian.richfaces.servletContainerSetup>true</arquillian.richfaces.servletContainerSetup>
                 <arquillian.container.home>${project.build.directory}/apache-tomcat-${version.tomcat8}</arquillian.container.home>
                 <arquillian.container.distribution>org.apache.tomcat:tomcat:zip:${version.tomcat8}</arquillian.container.distribution>
-                <arquillian.container.configuration>org.richfaces:richfaces-build-resources:zip:configuration-tomcat:${version.richfaces}</arquillian.container.configuration>
+                <arquillian.container.configuration>com.github.albfernandez.richfaces:richfaces-build-resources:zip:configuration-tomcat:${version.richfaces}</arquillian.container.configuration>
             </properties>
             <dependencies>
                 <dependency>
@@ -1182,7 +1182,7 @@
                 <arquillian.richfaces.servletContainerSetup>true</arquillian.richfaces.servletContainerSetup>
                 <arquillian.container.home>${project.build.directory}/apache-tomcat-${version.tomcat85}</arquillian.container.home>
                 <arquillian.container.distribution>org.apache.tomcat:tomcat:zip:${version.tomcat85}</arquillian.container.distribution>
-                <arquillian.container.configuration>org.richfaces:richfaces-build-resources:zip:configuration-tomcat:${version.richfaces}</arquillian.container.configuration>
+                <arquillian.container.configuration>com.github.albfernandez.richfaces:richfaces-build-resources:zip:configuration-tomcat:${version.richfaces}</arquillian.container.configuration>
             </properties>
             <dependencies>
                 <dependency>
@@ -1226,7 +1226,7 @@
                 <arquillian.richfaces.servletContainerSetup>true</arquillian.richfaces.servletContainerSetup>
                 <arquillian.container.home>${project.build.directory}/apache-tomcat-${version.tomcat9}</arquillian.container.home>
                 <arquillian.container.distribution>org.apache.tomcat:tomcat:zip:${version.tomcat9}</arquillian.container.distribution>
-                <arquillian.container.configuration>org.richfaces:richfaces-build-resources:zip:configuration-tomcat:${version.richfaces}</arquillian.container.configuration>
+                <arquillian.container.configuration>com.github.albfernandez.richfaces:richfaces-build-resources:zip:configuration-tomcat:${version.richfaces}</arquillian.container.configuration>
             </properties>
             <dependencies>
                 <dependency>
