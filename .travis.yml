@@ -52,7 +52,7 @@ jobs:
       name: "Richfaces + integration wildfly90: verify"
       env: CANFAIL=true
       jdk: openjdk8
-    - script: "mvn verify -Dcheckstyle.skip=true -Dgpg.skip=true -B -V -Pquickrun -Dintegration=wildfly81"
+    - script: "mvn clean install verify -Dcheckstyle.skip=true -Dgpg.skip=true -B -V -Pquickrun -Dintegration=wildfly81"
       name: "Richfaces + integration wildfly81: verify"
       env: CANFAIL=true
       jdk: openjdk8
