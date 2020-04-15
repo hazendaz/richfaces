@@ -92,8 +92,8 @@
     var UID_ALT = "rf_fu_uid_alt";
     var FAKE_PATH = "C:\\fakepath\\";
     var ITEM_HTML = '<div class="rf-fu-itm">'
-        + '<span class="rf-fu-itm-lft"><span class="rf-fu-itm-lbl"/><span class="rf-fu-itm-st" /></span>'
-        + '<span class="rf-fu-itm-rgh"><a href="javascript:void(0)" class="rf-fu-itm-lnk"/></span></div>';
+        + '<span class="rf-fu-itm-lft"><span class="rf-fu-itm-lbl"></span><span class="rf-fu-itm-st"></span></span>'
+        + '<span class="rf-fu-itm-rgh"><a href="javascript:void(0)" class="rf-fu-itm-lnk"></a></span></div>';
 
     var ITEM_STATE = {
         NEW: "new",
