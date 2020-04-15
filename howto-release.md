@@ -18,7 +18,7 @@ mvn clean install -Dintegration=wildfly81 -Dsmoke
 ```bash
 bash components/change_version.sh -r -o <4.5.0-SNAPSHOT> -n <4.5.0>
 git add -A
-git commit -m 'Release <4.5.0>'
+git commit -S -m 'Release <4.5.0>'
 mvn clean install verify -Prelease
 export OPENSSL_CONF=/etc/ssl/
 mvn clean install -Dintegration=wildfly81 -Dsmoke
@@ -39,7 +39,7 @@ mvn clean package -Prelease
 ```bash
 bash components/change_version.sh -r -o <4.5.0> -n <4.5.1-SNAPSHOT>
 git add -A
-git commit -m 'changing version to <4.5.0>'
+git commit -m 'Next release cycle'
 ```
 
 ## Create release and upload artifacts to github
