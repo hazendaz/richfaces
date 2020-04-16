@@ -36,32 +36,25 @@ jobs:
       jdk: openjdk8
     - script: "mvn verify -Dcheckstyle.skip=true -Dgpg.skip=true -B -V -Pquickrun"
       name: "Richfaces: verify -jdk11"
-      env: CANFAIL=true
       jdk: openjdk11
     #examples
     - script: "mvn verify -Dcheckstyle.skip=true -Dgpg.skip=true -B -V -Pquickrun,examples"
-      name: "Richfaces + examples: verify"
-      env: CANFAIL=true
+      name: "Richfaces + examples: verify -jdk8"
       jdk: openjdk8
+    - script: "mvn verify -Dcheckstyle.skip=true -Dgpg.skip=true -B -V -Pquickrun,examples"
+      name: "Richfaces + examples: verify -jdk11"
+      jdk: openjdk11
     #Integation tests per application server type below
-    - script: "mvn clean install -Dcheckstyle.skip=true -Dgpg.skip=true -B -V && mvn clean install -Dcheckstyle.skip=true -Dgpg.skip=true -B -V && mvn verify -Dcheckstyle.skip=true -Dgpg.skip=true -B -V -Pquickrun -Dintegration=wildfly100"
-      name: "Richfaces + integration wildfly100: verify"
-      env: CANFAIL=true
-      jdk: openjdk8
-    - script: "mvn clean install -Dcheckstyle.skip=true -Dgpg.skip=true -B -V && mvn verify -Dcheckstyle.skip=true -Dgpg.skip=true -B -V -Pquickrun -Dintegration=wildfly90"
-      name: "Richfaces + integration wildfly90: verify"
-      env: CANFAIL=true
-      jdk: openjdk8
-    - script: "mvn clean install -Dcheckstyle.skip=true -Dgpg.skip=true -B -V && mvn clean install verify -Dcheckstyle.skip=true -Dgpg.skip=true -B -V -Pquickrun -Dintegration=wildfly81"
-      name: "Richfaces + integration wildfly81: verify"
+    - script: "mvn clean install -Dcheckstyle.skip=true -Dgpg.skip=true -B -V && mvn clean install -Dcheckstyle.skip=true -Dgpg.skip=true -B -V && mvn verify -Dcheckstyle.skip=true -Dgpg.skip=true -B -V -Pquickrun -Dintegration=wildfly10"
+      name: "Richfaces + integration wildfly 10: verify"
       env: CANFAIL=true
       jdk: openjdk8
     - script: "mvn clean install -Dcheckstyle.skip=true -Dgpg.skip=true -B -V && mvn verify -Dcheckstyle.skip=true -Dgpg.skip=true -B -V -Pquickrun -Dintegration=wildfly82-https"
-      name: "Richfaces + integration wildfly82-https: verify"
+      name: "Richfaces + integration wildfly 8.2 https: verify"
       env: CANFAIL=true
       jdk: openjdk8
-    - script: "mvn clean install -Dcheckstyle.skip=true -Dgpg.skip=true -B -V && mvn verify -Dcheckstyle.skip=true -Dgpg.skip=true -B -V -Pquickrun -Dintegration=tomcat7"
-      name: "Richfaces + integration tomcat7: verify"
+    - script: "mvn clean install -Dcheckstyle.skip=true -Dgpg.skip=true -B -V && mvn clean install verify -Dcheckstyle.skip=true -Dgpg.skip=true -B -V -Pquickrun -Dintegration=wildfly81"
+      name: "Richfaces + integration wildfly 8.1: verify"
       env: CANFAIL=true
       jdk: openjdk8
     - script: "mvn clean install -Dcheckstyle.skip=true -Dgpg.skip=true -B -V && mvn verify -Dcheckstyle.skip=true -Dgpg.skip=true -B -V -Pquickrun -Dintegration=tomcat8"

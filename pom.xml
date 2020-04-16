@@ -107,8 +107,9 @@
         <version.jboss-javaee>3.0.3.Final</version.jboss-javaee>
 
         <!-- Container Versions -->
-        <version.wildfly100>10.1.0.Final</version.wildfly100>
-        <version.wildfly90>9.0.2.Final</version.wildfly90>
+        <version.wildfly18>18.0.1.Final</version.wildfly18>
+        <version.wildfly10>10.1.0.Final</version.wildfly10>
+        <version.wildfly9>9.0.2.Final</version.wildfly9>
         <version.wildfly81>8.1.0.Final</version.wildfly81>
         <version.wildfly82>8.2.1.Final</version.wildfly82>
         <version.tomcat7>7.0.94</version.tomcat7>
@@ -708,18 +709,41 @@
         </profile>
 
         <!-- Containers -->
+        
+        <profile>
+            <id>wildfly-managed-18-0</id>
+            <activation>
+                <property>
+                    <name>integration</name>
+                    <value>wildfly18</value>
+                </property>
+            </activation>
+            <properties>
+                <arquillian.launch.wildfly>true</arquillian.launch.wildfly>
+                <arquillian.container.home>${project.build.directory}/wildfly-${version.wildfly18}</arquillian.container.home>
+                <arquillian.container.distribution>org.wildfly:wildfly-dist:zip:${version.wildfly18}</arquillian.container.distribution>
+            </properties>
+            <dependencies>
+                <dependency>
+                    <groupId>org.wildfly.arquillian</groupId>
+                    <artifactId>wildfly-arquillian-container-managed</artifactId>
+                    <scope>test</scope>                    
+                </dependency>
+            </dependencies>
+        </profile>
+        
         <profile>
             <id>wildfly-managed-10-0</id>
             <activation>
                 <property>
                     <name>integration</name>
-                    <value>wildfly100</value>
+                    <value>wildfly10</value>
                 </property>
             </activation>
             <properties>
                 <arquillian.launch.wildfly>true</arquillian.launch.wildfly>
-                <arquillian.container.home>${project.build.directory}/wildfly-${version.wildfly100}</arquillian.container.home>
-                <arquillian.container.distribution>org.wildfly:wildfly-dist:zip:${version.wildfly100}</arquillian.container.distribution>
+                <arquillian.container.home>${project.build.directory}/wildfly-${version.wildfly10}</arquillian.container.home>
+                <arquillian.container.distribution>org.wildfly:wildfly-dist:zip:${version.wildfly10}</arquillian.container.distribution>
             </properties>
             <dependencies>
                 <dependency>
@@ -730,72 +754,7 @@
             </dependencies>
         </profile>
 
-        <profile>
-            <id>wildfly-managed-9-0</id>
-            <activation>
-                <property>
-                    <name>integration</name>
-                    <value>wildfly90</value>
-                </property>
-            </activation>
-            <properties>
-                <arquillian.launch.wildfly>true</arquillian.launch.wildfly>
-                <arquillian.container.home>${project.build.directory}/wildfly-${version.wildfly90}</arquillian.container.home>
-                <arquillian.container.distribution>org.wildfly:wildfly-dist:zip:${version.wildfly90}</arquillian.container.distribution>
-            </properties>
-            <dependencies>
-                <dependency>
-                    <groupId>org.wildfly</groupId>
-                    <artifactId>wildfly-arquillian-container-managed</artifactId>
-                    <scope>test</scope>
-                </dependency>
-            </dependencies>
-        </profile>
-      
-        <profile>
-            <id>wildfly-managed-8-1</id>
-            <activation>
-                <property>
-                    <name>integration</name>
-                    <value>wildfly81</value>
-                </property>
-            </activation>
-            <properties>
-                <arquillian.launch.wildfly>true</arquillian.launch.wildfly>
-                <arquillian.container.home>${project.build.directory}/wildfly-${version.wildfly81}</arquillian.container.home>
-                <arquillian.container.distribution>org.wildfly:wildfly-dist:zip:${version.wildfly81}</arquillian.container.distribution>
-            </properties>
-            <dependencies>
-                <dependency>
-                    <groupId>org.wildfly</groupId>
-                    <artifactId>wildfly-arquillian-container-managed</artifactId>
-                    <version>${version.wildfly81}</version>
-                    <scope>test</scope>
-                </dependency>
-            </dependencies>
-        </profile>
-        <profile>
-            <id>wildfly-managed-8-2</id>
-            <activation>
-                <property>
-                    <name>integration</name>
-                    <value>wildfly82</value>
-                </property>
-            </activation>
-            <properties>
-                <arquillian.launch.wildfly>true</arquillian.launch.wildfly>
-                <arquillian.container.home>${project.build.directory}/wildfly-${version.wildfly82}</arquillian.container.home>
-                <arquillian.container.distribution>org.wildfly:wildfly-dist:zip:${version.wildfly82}</arquillian.container.distribution>
-            </properties>
-            <dependencies>
-                <dependency>
-                    <groupId>org.wildfly</groupId>
-                    <artifactId>wildfly-arquillian-container-managed</artifactId>
-                    <version>${version.wildfly82}</version>
-                    <scope>test</scope>
-                </dependency>
-            </dependencies>
-        </profile>
+
         <profile>
             <id>wildfly-managed-8-2-https</id>
             <activation>
@@ -834,47 +793,46 @@
             </build>
         </profile>
         
-        
-
         <profile>
-            <id>tomcat-managed-7</id>
+            <id>wildfly-managed-8-1</id>
             <activation>
                 <property>
                     <name>integration</name>
-                    <value>tomcat7</value>
+                    <value>wildfly81</value>
                 </property>
             </activation>
             <properties>
-                <catalinaHome>${project.build.directory}/apache-tomcat-${version.tomcat7}</catalinaHome>
-                <arquillian.launch.tomcat>true</arquillian.launch.tomcat>
-                <arquillian.richfaces.servletContainerSetup>true</arquillian.richfaces.servletContainerSetup>
-                <arquillian.container.home>${project.build.directory}/apache-tomcat-${version.tomcat7}</arquillian.container.home>
-                <arquillian.container.distribution>org.apache.tomcat:tomcat:zip:${version.tomcat7}</arquillian.container.distribution>
-                <arquillian.container.configuration>com.github.albfernandez.richfaces:richfaces-build-resources:zip:configuration-tomcat:${version.richfaces}</arquillian.container.configuration>
+                <arquillian.launch.wildfly>true</arquillian.launch.wildfly>
+                <arquillian.container.home>${project.build.directory}/wildfly-${version.wildfly81}</arquillian.container.home>
+                <arquillian.container.distribution>org.wildfly:wildfly-dist:zip:${version.wildfly81}</arquillian.container.distribution>
             </properties>
             <dependencies>
                 <dependency>
-                    <groupId>org.jboss.arquillian.container</groupId>
-                    <artifactId>arquillian-tomcat-managed-7</artifactId>
+                    <groupId>org.wildfly</groupId>
+                    <artifactId>wildfly-arquillian-container-managed</artifactId>
+                    <version>${version.wildfly81}</version>
                     <scope>test</scope>
                 </dependency>
             </dependencies>
         </profile>
+        
+        
+
       
-        <profile>
-            <id>tomcat-managed-8</id>
+         <profile>
+            <id>tomcat-managed-9</id>
             <activation>
                 <property>
                     <name>integration</name>
-                    <value>tomcat8</value>
+                    <value>tomcat9</value>
                 </property>
             </activation>
             <properties>
-                <catalinaHome>${project.build.directory}/apache-tomcat-${version.tomcat8}</catalinaHome>
+                <catalinaHome>${project.build.directory}/apache-tomcat-${version.tomcat9}</catalinaHome>
                 <arquillian.launch.tomcat>true</arquillian.launch.tomcat>
                 <arquillian.richfaces.servletContainerSetup>true</arquillian.richfaces.servletContainerSetup>
-                <arquillian.container.home>${project.build.directory}/apache-tomcat-${version.tomcat8}</arquillian.container.home>
-                <arquillian.container.distribution>org.apache.tomcat:tomcat:zip:${version.tomcat8}</arquillian.container.distribution>
+                <arquillian.container.home>${project.build.directory}/apache-tomcat-${version.tomcat9}</arquillian.container.home>
+                <arquillian.container.distribution>org.apache.tomcat:tomcat:zip:${version.tomcat9}</arquillian.container.distribution>
                 <arquillian.container.configuration>com.github.albfernandez.richfaces:richfaces-build-resources:zip:configuration-tomcat:${version.richfaces}</arquillian.container.configuration>
             </properties>
             <dependencies>
@@ -909,21 +867,20 @@
                 </dependency>
             </dependencies>
         </profile>
-        
-        <profile>
-            <id>tomcat-managed-9</id>
+         <profile>
+            <id>tomcat-managed-8</id>
             <activation>
                 <property>
                     <name>integration</name>
-                    <value>tomcat9</value>
+                    <value>tomcat8</value>
                 </property>
             </activation>
             <properties>
-                <catalinaHome>${project.build.directory}/apache-tomcat-${version.tomcat9}</catalinaHome>
+                <catalinaHome>${project.build.directory}/apache-tomcat-${version.tomcat8}</catalinaHome>
                 <arquillian.launch.tomcat>true</arquillian.launch.tomcat>
                 <arquillian.richfaces.servletContainerSetup>true</arquillian.richfaces.servletContainerSetup>
-                <arquillian.container.home>${project.build.directory}/apache-tomcat-${version.tomcat9}</arquillian.container.home>
-                <arquillian.container.distribution>org.apache.tomcat:tomcat:zip:${version.tomcat9}</arquillian.container.distribution>
+                <arquillian.container.home>${project.build.directory}/apache-tomcat-${version.tomcat8}</arquillian.container.home>
+                <arquillian.container.distribution>org.apache.tomcat:tomcat:zip:${version.tomcat8}</arquillian.container.distribution>
                 <arquillian.container.configuration>com.github.albfernandez.richfaces:richfaces-build-resources:zip:configuration-tomcat:${version.richfaces}</arquillian.container.configuration>
             </properties>
             <dependencies>
@@ -934,28 +891,8 @@
                 </dependency>
             </dependencies>
         </profile>
-        <profile>
-        <id>payara-managed-4-1</id>
-            <activation>
-                <property>
-                    <name>integration</name>
-                    <value>payara4</value>
-                </property>
-            </activation>
-            <properties>
-                <arquillian.launch.payara>true</arquillian.launch.payara>
-                <arquillian.container.home>${project.build.directory}/payara41</arquillian.container.home>
-                <arquillian.container.distribution>fish.payara.distributions:payara-web:zip:${version.payara4}</arquillian.container.distribution>
-            </properties>
-            <dependencies>
-                <dependency>
-                    <groupId>fish.payara.arquillian</groupId>
-                    <artifactId>arquillian-payara-server-managed</artifactId>
-                    <version>1.4</version>
-                    <scope>test</scope>
-                </dependency>
-            </dependencies>
-        </profile>
+
+        
         <profile>
         	<id>payara-managed-5</id>
             <activation>
@@ -973,7 +910,27 @@
                 <dependency>
                     <groupId>fish.payara.arquillian</groupId>
                     <artifactId>arquillian-payara-server-managed</artifactId>
-                    <version>2.2</version>
+                    <scope>test</scope>
+                </dependency>
+            </dependencies>
+        </profile>
+        <profile>
+        	<id>payara-managed-4-1</id>
+            <activation>
+                <property>
+                    <name>integration</name>
+                    <value>payara4</value>
+                </property>
+            </activation>
+            <properties>
+                <arquillian.launch.payara>true</arquillian.launch.payara>
+                <arquillian.container.home>${project.build.directory}/payara41</arquillian.container.home>
+                <arquillian.container.distribution>fish.payara.distributions:payara-web:zip:${version.payara4}</arquillian.container.distribution>
+            </properties>
+            <dependencies>
+                <dependency>
+                    <groupId>fish.payara.arquillian</groupId>
+                    <artifactId>arquillian-payara-server-managed</artifactId>
                     <scope>test</scope>
                 </dependency>
             </dependencies>

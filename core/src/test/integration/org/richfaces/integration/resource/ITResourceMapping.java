@@ -127,7 +127,7 @@ public class ITResourceMapping {
         driver.navigate().to(contextPath + "aggregation.jsf");
 
         List<WebElement> elements = driver.findElements(By.cssSelector("head > link[rel=stylesheet]"));
-
+        
         assertEquals("There must be exactly one resource link rendered", 1, elements.size());
 
         WebElement element = elements.get(0);
