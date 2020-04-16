@@ -29,13 +29,13 @@ jobs:
     - script:  "mvn clean test-compile -Dcheckstyle.skip=true -Dgpg.skip=true -B -V -Pquickrun"
       name: "Richfaces: test-compile - jdk11"
       jdk: openjdk11
-
     - stage: long
       script: "mvn verify -Dcheckstyle.skip=true -Dgpg.skip=true -B -V -Pquickrun"
       name: "Richfaces: verify - jdk8"
       jdk: openjdk8
     - script: "mvn verify -Dcheckstyle.skip=true -Dgpg.skip=true -B -V -Pquickrun"
       name: "Richfaces: verify -jdk11"
+      env: CANFAIL=true
       jdk: openjdk11
     #examples
     - script: "mvn verify -Dcheckstyle.skip=true -Dgpg.skip=true -B -V -Pquickrun,examples"
