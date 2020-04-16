@@ -42,7 +42,6 @@ jobs:
       jdk: openjdk8
     - script: "mvn verify -Dcheckstyle.skip=true -Dgpg.skip=true -B -V -Pquickrun,examples"
       name: "Richfaces + examples: verify -jdk11"
-      env: CANFAIL=true
       jdk: openjdk11
     #Integation tests per application server type below
     - script: "mvn clean install -Dcheckstyle.skip=true -Dgpg.skip=true -B -V && mvn clean install -Dcheckstyle.skip=true -Dgpg.skip=true -B -V && mvn verify -Dcheckstyle.skip=true -Dgpg.skip=true -B -V -Pquickrun -Dintegration=wildfly10"
