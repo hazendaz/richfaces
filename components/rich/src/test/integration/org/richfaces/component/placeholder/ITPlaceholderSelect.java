@@ -99,6 +99,7 @@ public class ITPlaceholderSelect extends AbstractPlaceholderTest {
      * The select component can't send invalid value by AJAX
      */
     @Test
+    @Ignore("current implementation uses native browser placeholder")
     @Override
     @Category(Failing.class)
     public void testAjaxSendsEmptyValue() {
@@ -108,6 +109,7 @@ public class ITPlaceholderSelect extends AbstractPlaceholderTest {
      * The select component does behave differently - delegates to defaultLabel implementation
      */
     @Test
+    @Ignore("current implementation uses native browser placeholder")
     @Override
     @Category(Failing.class)
     public void testWhenTextIsChanged_textChangesColorToDefaultAndRemovesPlaceholderStyleClasses() {

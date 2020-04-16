@@ -91,10 +91,12 @@ public class ITPlaceholderInplaceInput extends AbstractPlaceholderTest {
     @Test
     @Override
     @Category(Failing.class)
+    @Ignore("current implementation uses native browser placeholder")
     public void testDefaultAttributes() {
     }
 
     @Test
+    @Ignore("current implementation uses native browser placeholder")
     public void testRendered() {
         // having
         getBrowser().get(getContextPath().toExternalForm() + "rendered.jsf");
@@ -107,6 +109,7 @@ public class ITPlaceholderInplaceInput extends AbstractPlaceholderTest {
      */
     @Test
     @Category(Failing.class)
+    @Ignore("current implementation uses native browser placeholder")
     public void testSelector() {
     }
 
@@ -115,10 +118,12 @@ public class ITPlaceholderInplaceInput extends AbstractPlaceholderTest {
      */
     @Test
     @Category(Failing.class)
+    @Ignore("current implementation uses native browser placeholder")
     public void testStyleClass() {
     }
 
     @Test
+    @Ignore("current implementation uses native browser placeholder")
     public void testWhenPlaceholderIsNotRenderedAndDefaultLabelIsDefined_defaultLabelShouldBeUsed() {
         // having
         getBrowser().get(getContextPath().toExternalForm() + "rendered.jsf?defaultLabel=defaultLabel");
@@ -131,6 +136,7 @@ public class ITPlaceholderInplaceInput extends AbstractPlaceholderTest {
      */
     @Test
     @Category(Failing.class)
+    @Ignore("current implementation uses native browser placeholder")
     @Override
     public void testWhenTextIsChanged_textChangesColorToDefaultAndRemovesPlaceholderStyleClasses() {
     }
@@ -140,6 +146,7 @@ public class ITPlaceholderInplaceInput extends AbstractPlaceholderTest {
      */
     @Test
     @Override
+    @Ignore("current implementation uses native browser placeholder")
     @Category(Failing.class)
     public void testWhenTextIsCleared_inputGetsPlaceholderTextAndStyleAgain() {
     }

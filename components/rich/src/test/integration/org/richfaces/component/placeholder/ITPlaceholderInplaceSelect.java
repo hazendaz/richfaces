@@ -99,6 +99,7 @@ public class ITPlaceholderInplaceSelect extends AbstractPlaceholderTest {
     }
 
     @Test
+    @Ignore("current implementation uses native browser placeholder")
     @Override
     public void testAjaxSendsEmptyValue() {
         // given
@@ -115,12 +116,14 @@ public class ITPlaceholderInplaceSelect extends AbstractPlaceholderTest {
      * {@link https://issues.jboss.org/browse/RF-12651}
      */
     @Test
+    @Ignore("current implementation uses native browser placeholder")
     @Override
     @Category(Failing.class)
     public void testDefaultAttributes() {
     }
 
     @Test
+    @Ignore("current implementation uses native browser placeholder")
     @Override
     public void testRendered() {
         // having
@@ -133,6 +136,7 @@ public class ITPlaceholderInplaceSelect extends AbstractPlaceholderTest {
      * {@link https://issues.jboss.org/browse/RF-12651}
      */
     @Test
+    @Ignore("current implementation uses native browser placeholder")
     @Category(Failing.class)
     @Override
     public void testSelector() {
@@ -142,12 +146,14 @@ public class ITPlaceholderInplaceSelect extends AbstractPlaceholderTest {
      * {@link https://issues.jboss.org/browse/RF-12651}
      */
     @Test
+    @Ignore("current implementation uses native browser placeholder")
     @Category(Failing.class)
     @Override
     public void testStyleClass() {
     }
 
     @Test
+    @Ignore("current implementation uses native browser placeholder")
     public void testWhenPlaceholderIsNotRenderedAndDefaultLabelIsDefined_defaultLabelShouldBeUsed() {
         // having
         getBrowser().get(getContextPath().toExternalForm() + "rendered.jsf?defaultLabel=defaultLabel");
@@ -159,6 +165,7 @@ public class ITPlaceholderInplaceSelect extends AbstractPlaceholderTest {
      * {@link https://issues.jboss.org/browse/RF-12651}
      */
     @Test
+    @Ignore("current implementation uses native browser placeholder")
     @Category(Failing.class)
     @Override
     public void testWhenTextIsChanged_textChangesColorToDefaultAndRemovesPlaceholderStyleClasses() {
@@ -168,6 +175,7 @@ public class ITPlaceholderInplaceSelect extends AbstractPlaceholderTest {
      * {@link https://issues.jboss.org/browse/RF-12651}
      */
     @Test
+    @Ignore("current implementation uses native browser placeholder")
     @Override
     @Category(Failing.class)
     public void testWhenTextIsCleared_inputGetsPlaceholderTextAndStyleAgain() {

@@ -100,6 +100,7 @@ public class ITPlaceholderInputText extends AbstractPlaceholderTest {
 
     @Test
     @Category(Smoke.class)
+    @Ignore("current implementation uses native browser placeholder")
     public void testComponentSourceWithSelector() throws Exception {
         URL url = new URL(getContextPath(), "selector.jsf?selector=input");
 	try {
@@ -112,6 +113,7 @@ public class ITPlaceholderInputText extends AbstractPlaceholderTest {
 
     @Test
     @Category(Smoke.class)
+    @Ignore("current implementation uses native browser placeholder")
     public void testComponentSourceWithoutSelector() throws Exception {
         URL url = new URL(getContextPath().toExternalForm() + "index.jsf");
 	try {

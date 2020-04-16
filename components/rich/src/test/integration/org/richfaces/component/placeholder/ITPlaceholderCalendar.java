@@ -100,6 +100,7 @@ public class ITPlaceholderCalendar extends AbstractPlaceholderTest {
      */
     @Category(Failing.class)
     @Test
+    @Ignore("current implementation uses native browser placeholder")
     public void testSubmitTextValue() {
         super.testSubmitTextValue();
     }
