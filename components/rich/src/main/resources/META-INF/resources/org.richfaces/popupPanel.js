@@ -238,7 +238,6 @@
                 }
 
                 if ("transparent" == $(document.body).css("background-color")) {
-                    $(this).css('filter', "alpha(opacity=0)");
                     $(this).css('opacity', "0");
                 }
             },
