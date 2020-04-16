@@ -115,6 +115,8 @@
         <version.tomcat8>8.0.53</version.tomcat8>
         <version.tomcat85>8.5.40</version.tomcat85>
         <version.tomcat9>9.0.19</version.tomcat9>
+        <version.payara4>4.1.2.181</version.payara4>
+        <version.payara5>5.201</version.payara5>
 
         <!-- Plugin Management: versions -->
         <version.assembly.plugin>3.1.1</version.assembly.plugin>
@@ -482,9 +484,9 @@
                 <arquillian.maven.settings />
 
                 <!-- Container Selection -->
-                <arquillian.launch.jbosseap6>false</arquillian.launch.jbosseap6>
-                <arquillian.launch.tomcat7>false</arquillian.launch.tomcat7>
-                <arquillian.launch.tomcat8>false</arquillian.launch.tomcat8>
+                <arquillian.launch.wildfly>fasle</arquillian.launch.wildfly>
+                <arquillian.launch.tomcat>false</arquillian.launch.tomcat>
+                <arquillian.launch.payara>false</arquillian.launch.payara>
 
                 <!-- HTTPS testing -->
                 <firefoxProfileTemplate />
@@ -715,7 +717,7 @@
                 </property>
             </activation>
             <properties>
-                <arquillian.launch.wildfly10>true</arquillian.launch.wildfly10>
+                <arquillian.launch.wildfly>true</arquillian.launch.wildfly>
                 <arquillian.container.home>${project.build.directory}/wildfly-${version.wildfly100}</arquillian.container.home>
                 <arquillian.container.distribution>org.wildfly:wildfly-dist:zip:${version.wildfly100}</arquillian.container.distribution>
             </properties>
@@ -752,7 +754,7 @@
                 </property>
             </activation>
             <properties>
-                <arquillian.launch.wildfly9>true</arquillian.launch.wildfly9>
+                <arquillian.launch.wildfly>true</arquillian.launch.wildfly>
                 <arquillian.container.home>${project.build.directory}/wildfly-${version.wildfly90}</arquillian.container.home>
                 <arquillian.container.distribution>org.wildfly:wildfly-dist:zip:${version.wildfly90}</arquillian.container.distribution>
             </properties>
@@ -789,7 +791,7 @@
                 </property>
             </activation>
             <properties>
-                <arquillian.launch.wildfly8>true</arquillian.launch.wildfly8>
+                <arquillian.launch.wildfly>true</arquillian.launch.wildfly>
                 <arquillian.container.home>${project.build.directory}/wildfly-${version.wildfly81}</arquillian.container.home>
                 <arquillian.container.distribution>org.wildfly:wildfly-dist:zip:${version.wildfly81}</arquillian.container.distribution>
             </properties>
@@ -811,7 +813,7 @@
                 </property>
             </activation>
             <properties>
-                <arquillian.launch.wildfly8>true</arquillian.launch.wildfly8>
+                <arquillian.launch.wildfly>true</arquillian.launch.wildfly>
                 <arquillian.container.home>${project.build.directory}/wildfly-${version.wildfly82}</arquillian.container.home>
                 <arquillian.container.distribution>org.wildfly:wildfly-dist:zip:${version.wildfly82}</arquillian.container.distribution>
             </properties>
@@ -833,7 +835,7 @@
                 </property>
             </activation>
             <properties>
-                <arquillian.launch.wildfly8>true</arquillian.launch.wildfly8>
+                <arquillian.launch.wildfly>true</arquillian.launch.wildfly>
                 <arquillian.container.home>${project.build.directory}/wildfly-${version.wildfly82}</arquillian.container.home>
                 <arquillian.container.distribution>org.wildfly:wildfly-dist:zip:${version.wildfly82}</arquillian.container.distribution>
                 <arquillian.container.configuration>com.github.albfernandez.richfaces:richfaces-build-resources:zip:configuration-wildfly82-https:${version.richfaces}</arquillian.container.configuration>
@@ -904,7 +906,7 @@
                 </property>
             </activation>
             <properties>
-                <arquillian.launch.jbosseap6>true</arquillian.launch.jbosseap6>
+                <arquillian.launch.wildfly>true</arquillian.launch.wildfly>
                 <arquillian.container.home>${project.build.directory}/jboss-eap-6.2</arquillian.container.home>
                 <arquillian.container.distribution>file:///path/to/jboss-eap-6.2.4.zip</arquillian.container.distribution>
                 <testCategory.excluded.jsf>AND NOT category.JSF22Only</testCategory.excluded.jsf>
@@ -959,7 +961,7 @@
                 </property>
             </activation>
             <properties>
-                <arquillian.launch.jbosseap6>true</arquillian.launch.jbosseap6>
+                <arquillian.launch.wildlfy>true</arquillian.launch.wildlfy>
                 <arquillian.container.home>${project.build.directory}/jboss-eap-6.3</arquillian.container.home>
                 <arquillian.container.distribution>file:///path/to/jboss-eap-6.3.0.zip</arquillian.container.distribution>
                 <testCategory.excluded.jsf>AND NOT category.JSF22Only</testCategory.excluded.jsf>
@@ -1014,7 +1016,7 @@
                 </property>
             </activation>
             <properties>
-                <arquillian.launch.jbosseap6>true</arquillian.launch.jbosseap6>
+                <arquillian.launch.wildfly>true</arquillian.launch.wildfly>
                 <arquillian.container.home>${project.build.directory}/jboss-eap-6.4</arquillian.container.home>
                 <arquillian.container.distribution>file:///path/to/jboss-eap-6.4.0.zip</arquillian.container.distribution>
                 <testCategory.excluded.jsf>AND NOT category.JSF22Only</testCategory.excluded.jsf>
@@ -1069,7 +1071,7 @@
                 </property>
             </activation>
             <properties>
-                <arquillian.launch.tomcat7>true</arquillian.launch.tomcat7>
+                <arquillian.launch.tomcat>true</arquillian.launch.tomcat>
                 <arquillian.richfaces.servletContainerSetup>true</arquillian.richfaces.servletContainerSetup>
             </properties>
             <dependencies>
@@ -1090,7 +1092,7 @@
             </activation>
             <properties>
                 <catalinaHome>${project.build.directory}/apache-tomcat-${version.tomcat7}</catalinaHome>
-                <arquillian.launch.tomcat7>true</arquillian.launch.tomcat7>
+                <arquillian.launch.tomcat>true</arquillian.launch.tomcat>
                 <arquillian.richfaces.servletContainerSetup>true</arquillian.richfaces.servletContainerSetup>
                 <arquillian.container.home>${project.build.directory}/apache-tomcat-${version.tomcat7}</arquillian.container.home>
                 <arquillian.container.distribution>org.apache.tomcat:tomcat:zip:${version.tomcat7}</arquillian.container.distribution>
@@ -1113,7 +1115,7 @@
                 </property>
             </activation>
             <properties>
-                <arquillian.launch.tomcat8>true</arquillian.launch.tomcat8>
+                <arquillian.launch.tomcat>true</arquillian.launch.tomcat>
                 <arquillian.richfaces.servletContainerSetup>true</arquillian.richfaces.servletContainerSetup>
             </properties>
             <dependencies>
@@ -1134,7 +1136,7 @@
             </activation>
             <properties>
                 <catalinaHome>${project.build.directory}/apache-tomcat-${version.tomcat8}</catalinaHome>
-                <arquillian.launch.tomcat8>true</arquillian.launch.tomcat8>
+                <arquillian.launch.tomcat>true</arquillian.launch.tomcat>
                 <arquillian.richfaces.servletContainerSetup>true</arquillian.richfaces.servletContainerSetup>
                 <arquillian.container.home>${project.build.directory}/apache-tomcat-${version.tomcat8}</arquillian.container.home>
                 <arquillian.container.distribution>org.apache.tomcat:tomcat:zip:${version.tomcat8}</arquillian.container.distribution>
@@ -1157,7 +1159,7 @@
                 </property>
             </activation>
             <properties>
-                <arquillian.launch.tomcat8>true</arquillian.launch.tomcat8>
+                <arquillian.launch.tomcat>true</arquillian.launch.tomcat>
                 <arquillian.richfaces.servletContainerSetup>true</arquillian.richfaces.servletContainerSetup>
             </properties>
             <dependencies>
@@ -1178,7 +1180,7 @@
             </activation>
             <properties>
                 <catalinaHome>${project.build.directory}/apache-tomcat-${version.tomcat85}</catalinaHome>
-                <arquillian.launch.tomcat8>true</arquillian.launch.tomcat8>
+                <arquillian.launch.tomcat>true</arquillian.launch.tomcat>
                 <arquillian.richfaces.servletContainerSetup>true</arquillian.richfaces.servletContainerSetup>
                 <arquillian.container.home>${project.build.directory}/apache-tomcat-${version.tomcat85}</arquillian.container.home>
                 <arquillian.container.distribution>org.apache.tomcat:tomcat:zip:${version.tomcat85}</arquillian.container.distribution>
@@ -1201,7 +1203,7 @@
                 </property>
             </activation>
             <properties>
-                <arquillian.launch.tomcat9>true</arquillian.launch.tomcat9>
+                <arquillian.launch.tomcat>true</arquillian.launch.tomcat>
                 <arquillian.richfaces.servletContainerSetup>true</arquillian.richfaces.servletContainerSetup>
             </properties>
             <dependencies>
@@ -1222,7 +1224,7 @@
             </activation>
             <properties>
                 <catalinaHome>${project.build.directory}/apache-tomcat-${version.tomcat9}</catalinaHome>
-                <arquillian.launch.tomcat9>true</arquillian.launch.tomcat9>
+                <arquillian.launch.tomcat>true</arquillian.launch.tomcat>
                 <arquillian.richfaces.servletContainerSetup>true</arquillian.richfaces.servletContainerSetup>
                 <arquillian.container.home>${project.build.directory}/apache-tomcat-${version.tomcat9}</arquillian.container.home>
                 <arquillian.container.distribution>org.apache.tomcat:tomcat:zip:${version.tomcat9}</arquillian.container.distribution>
@@ -1232,6 +1234,50 @@
                 <dependency>
                     <groupId>org.jboss.arquillian.container</groupId>
                     <artifactId>arquillian-tomcat-managed-7</artifactId>
+                    <scope>test</scope>
+                </dependency>
+            </dependencies>
+        </profile>
+        <profile>
+        <id>payara-managed-4-1</id>
+            <activation>
+                <property>
+                    <name>integration</name>
+                    <value>payara4</value>
+                </property>
+            </activation>
+            <properties>
+                <arquillian.launch.payara>true</arquillian.launch.payara>
+                <arquillian.container.home>${project.build.directory}/payara41</arquillian.container.home>
+                <arquillian.container.distribution>fish.payara.distributions:payara-web:zip:${version.payara4}</arquillian.container.distribution>
+            </properties>
+            <dependencies>
+                <dependency>
+                    <groupId>fish.payara.arquillian</groupId>
+                    <artifactId>arquillian-payara-server-managed</artifactId>
+                    <version>1.4</version>
+                    <scope>test</scope>
+                </dependency>
+            </dependencies>
+        </profile>
+        <profile>
+        	<id>payara-managed-5</id>
+            <activation>
+                <property>
+                    <name>integration</name>
+                    <value>payara5</value>
+                </property>
+            </activation>
+            <properties>
+                <arquillian.launch.payara>true</arquillian.launch.payara>
+                <arquillian.container.home>${project.build.directory}/payara5</arquillian.container.home>
+                <arquillian.container.distribution>fish.payara.distributions:payara-web:zip:${version.payara5}</arquillian.container.distribution>
+            </properties>
+            <dependencies>
+                <dependency>
+                    <groupId>fish.payara.arquillian</groupId>
+                    <artifactId>arquillian-payara-server-managed</artifactId>
+                    <version>2.2</version>
                     <scope>test</scope>
                 </dependency>
             </dependencies>
