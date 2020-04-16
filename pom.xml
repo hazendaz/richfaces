@@ -729,22 +729,7 @@
                 </dependency>
             </dependencies>
         </profile>
-        <profile>
-            <id>wildfly-remote-10-0</id>
-            <activation>
-                <property>
-                    <name>integration</name>
-                    <value>wildfly100-remote</value>
-                </property>
-            </activation>
-            <dependencies>
-                <dependency>
-                    <groupId>org.wildfly</groupId>
-                    <artifactId>wildfly-arquillian-container-remote</artifactId>
-                    <scope>test</scope>
-                </dependency>
-            </dependencies>
-        </profile>
+
         <profile>
             <id>wildfly-managed-9-0</id>
             <activation>
@@ -766,22 +751,7 @@
                 </dependency>
             </dependencies>
         </profile>
-        <profile>
-            <id>wildfly-remote-9-0</id>
-            <activation>
-                <property>
-                    <name>integration</name>
-                    <value>wildfly90-remote</value>
-                </property>
-            </activation>
-            <dependencies>
-                <dependency>
-                    <groupId>org.wildfly</groupId>
-                    <artifactId>wildfly-arquillian-container-remote</artifactId>
-                    <scope>test</scope>
-                </dependency>
-            </dependencies>
-        </profile>
+      
         <profile>
             <id>wildfly-managed-8-1</id>
             <activation>
@@ -863,225 +833,9 @@
                 </plugins>
             </build>
         </profile>
-        <profile>
-            <id>wildfly-remote-8-1</id>
-            <activation>
-                <property>
-                    <name>integration</name>
-                    <value>wildfly81-remote</value>
-                </property>
-            </activation>
-            <dependencies>
-                <dependency>
-                    <groupId>org.wildfly</groupId>
-                    <artifactId>wildfly-arquillian-container-remote</artifactId>
-                    <version>${version.wildfly81}</version>
-                    <scope>test</scope>
-                </dependency>
-            </dependencies>
-        </profile>
-        <profile>
-            <id>wildfly-remote-8-2</id>
-            <activation>
-                <property>
-                    <name>integration</name>
-                    <value>wildfly82-remote</value>
-                </property>
-            </activation>
-            <dependencies>
-                <dependency>
-                    <groupId>org.wildfly</groupId>
-                    <artifactId>wildfly-arquillian-container-remote</artifactId>
-                    <version>${version.wildfly82}</version>
-                    <scope>test</scope>
-                </dependency>
-            </dependencies>
-        </profile>
-        <profile>
-            <id>jbosseap-managed-6-2</id>
-            <activation>
-                <property>
-                    <name>integration</name>
-                    <value>jbosseap62</value>
-                </property>
-            </activation>
-            <properties>
-                <arquillian.launch.wildfly>true</arquillian.launch.wildfly>
-                <arquillian.container.home>${project.build.directory}/jboss-eap-6.2</arquillian.container.home>
-                <arquillian.container.distribution>file:///path/to/jboss-eap-6.2.4.zip</arquillian.container.distribution>
-                <testCategory.excluded.jsf>AND NOT category.JSF22Only</testCategory.excluded.jsf>
-            </properties>
-            <dependencies>
-                <dependency>
-                    <groupId>org.jboss.as</groupId>
-                    <artifactId>jboss-as-arquillian-container-managed</artifactId>
-                    <version>7.2.0.Final</version>
-                    <scope>test</scope>
-                </dependency>
-                <dependency>
-                    <groupId>org.jboss.as</groupId>
-                    <artifactId>jboss-as-controller-client</artifactId>
-                    <version>7.2.0.Final</version>
-                    <scope>test</scope>
-                </dependency>
-            </dependencies>
-        </profile>
-        <profile>
-            <id>jbosseap-remote-6-2</id>
-            <activation>
-                <property>
-                    <name>integration</name>
-                    <value>jbosseap62-remote</value>
-                </property>
-            </activation>
-            <properties>
-                <testCategory.excluded.jsf>AND NOT category.JSF22Only</testCategory.excluded.jsf>
-            </properties>
-            <dependencies>
-                <dependency>
-                    <groupId>org.jboss.as</groupId>
-                    <artifactId>jboss-as-arquillian-container-remote</artifactId>
-                    <version>7.2.0.Final</version>
-                    <scope>test</scope>
-                </dependency>
-                <dependency>
-                    <groupId>org.jboss.as</groupId>
-                    <artifactId>jboss-as-controller-client</artifactId>
-                    <version>7.2.0.Final</version>
-                    <scope>test</scope>
-                </dependency>
-            </dependencies>
-        </profile>
-        <profile>
-            <id>jbosseap-managed-6-3</id>
-            <activation>
-                <property>
-                    <name>integration</name>
-                    <value>jbosseap63</value>
-                </property>
-            </activation>
-            <properties>
-                <arquillian.launch.wildlfy>true</arquillian.launch.wildlfy>
-                <arquillian.container.home>${project.build.directory}/jboss-eap-6.3</arquillian.container.home>
-                <arquillian.container.distribution>file:///path/to/jboss-eap-6.3.0.zip</arquillian.container.distribution>
-                <testCategory.excluded.jsf>AND NOT category.JSF22Only</testCategory.excluded.jsf>
-            </properties>
-            <dependencies>
-                <dependency>
-                    <groupId>org.jboss.as</groupId>
-                    <artifactId>jboss-as-arquillian-container-managed</artifactId>
-                    <version>7.2.0.Final</version>
-                    <scope>test</scope>
-                </dependency>
-                <dependency>
-                    <groupId>org.jboss.as</groupId>
-                    <artifactId>jboss-as-controller-client</artifactId>
-                    <version>7.2.0.Final</version>
-                    <scope>test</scope>
-                </dependency>
-            </dependencies>
-        </profile>
-        <profile>
-            <id>jbosseap-remote-6-3</id>
-            <activation>
-                <property>
-                    <name>integration</name>
-                    <value>jbosseap63-remote</value>
-                </property>
-            </activation>
-            <properties>
-                <testCategory.excluded.jsf>AND NOT category.JSF22Only</testCategory.excluded.jsf>
-            </properties>
-            <dependencies>
-                <dependency>
-                    <groupId>org.jboss.as</groupId>
-                    <artifactId>jboss-as-arquillian-container-remote</artifactId>
-                    <version>7.2.0.Final</version>
-                    <scope>test</scope>
-                </dependency>
-                <dependency>
-                    <groupId>org.jboss.as</groupId>
-                    <artifactId>jboss-as-controller-client</artifactId>
-                    <version>7.2.0.Final</version>
-                    <scope>test</scope>
-                </dependency>
-            </dependencies>
-        </profile>
-        <profile>
-            <id>jbosseap-managed-6-4</id>
-            <activation>
-                <property>
-                    <name>integration</name>
-                    <value>jbosseap64</value>
-                </property>
-            </activation>
-            <properties>
-                <arquillian.launch.wildfly>true</arquillian.launch.wildfly>
-                <arquillian.container.home>${project.build.directory}/jboss-eap-6.4</arquillian.container.home>
-                <arquillian.container.distribution>file:///path/to/jboss-eap-6.4.0.zip</arquillian.container.distribution>
-                <testCategory.excluded.jsf>AND NOT category.JSF22Only</testCategory.excluded.jsf>
-            </properties>
-            <dependencies>
-                <dependency>
-                    <groupId>org.jboss.as</groupId>
-                    <artifactId>jboss-as-arquillian-container-managed</artifactId>
-                    <version>7.2.0.Final</version>
-                    <scope>test</scope>
-                </dependency>
-                <dependency>
-                    <groupId>org.jboss.as</groupId>
-                    <artifactId>jboss-as-controller-client</artifactId>
-                    <version>7.2.0.Final</version>
-                    <scope>test</scope>
-                </dependency>
-            </dependencies>
-        </profile>
-        <profile>
-            <id>jbosseap-remote-6-4</id>
-            <activation>
-                <property>
-                    <name>integration</name>
-                    <value>jbosseap64-remote</value>
-                </property>
-            </activation>
-            <properties>
-                <testCategory.excluded.jsf>AND NOT category.JSF22Only</testCategory.excluded.jsf>
-            </properties>
-            <dependencies>
-                <dependency>
-                    <groupId>org.jboss.as</groupId>
-                    <artifactId>jboss-as-arquillian-container-remote</artifactId>
-                    <version>7.2.0.Final</version>
-                    <scope>test</scope>
-                </dependency>
-                <dependency>
-                    <groupId>org.jboss.as</groupId>
-                    <artifactId>jboss-as-controller-client</artifactId>
-                    <version>7.2.0.Final</version>
-                    <scope>test</scope>
-                </dependency>
-            </dependencies>
-        </profile>
-        <profile>
-            <id>tomcat-remote-7</id>
-            <activation>
-                <property>
-                    <name>integration</name>
-                    <value>tomcat7-remote</value>
-                </property>
-            </activation>
-            <properties>
-                <arquillian.launch.tomcat>true</arquillian.launch.tomcat>
-                <arquillian.richfaces.servletContainerSetup>true</arquillian.richfaces.servletContainerSetup>
-            </properties>
-            <dependencies>
-                <dependency>
-                    <groupId>org.jboss.arquillian.container</groupId>
-                    <artifactId>arquillian-tomcat-remote-7</artifactId>
-                    <scope>test</scope>
-                </dependency>
-            </dependencies>
-        </profile>
+        
+        
+
         <profile>
             <id>tomcat-managed-7</id>
             <activation>
@@ -1106,26 +860,7 @@
                 </dependency>
             </dependencies>
         </profile>
-        <profile>
-            <id>tomcat-remote-8</id>
-            <activation>
-                <property>
-                    <name>integration</name>
-                    <value>tomcat8-remote</value>
-                </property>
-            </activation>
-            <properties>
-                <arquillian.launch.tomcat>true</arquillian.launch.tomcat>
-                <arquillian.richfaces.servletContainerSetup>true</arquillian.richfaces.servletContainerSetup>
-            </properties>
-            <dependencies>
-                <dependency>
-                    <groupId>org.jboss.arquillian.container</groupId>
-                    <artifactId>arquillian-tomcat-remote-7</artifactId>
-                    <scope>test</scope>
-                </dependency>
-            </dependencies>
-        </profile>
+      
         <profile>
             <id>tomcat-managed-8</id>
             <activation>
@@ -1151,31 +886,11 @@
             </dependencies>
         </profile>
         <profile>
-            <id>tomcat-remote-85</id>
-            <activation>
-                <property>
-                    <name>integration</name>
-                    <value>tomcat8-remote</value>
-                </property>
-            </activation>
-            <properties>
-                <arquillian.launch.tomcat>true</arquillian.launch.tomcat>
-                <arquillian.richfaces.servletContainerSetup>true</arquillian.richfaces.servletContainerSetup>
-            </properties>
-            <dependencies>
-                <dependency>
-                    <groupId>org.jboss.arquillian.container</groupId>
-                    <artifactId>arquillian-tomcat-remote-7</artifactId>
-                    <scope>test</scope>
-                </dependency>
-            </dependencies>
-        </profile>
-        <profile>
             <id>tomcat-managed-85</id>
             <activation>
                 <property>
                     <name>integration</name>
-                    <value>tomcat8</value>
+                    <value>tomcat85</value>
                 </property>
             </activation>
             <properties>
@@ -1194,26 +909,7 @@
                 </dependency>
             </dependencies>
         </profile>
-        <profile>
-            <id>tomcat-remote-9</id>
-            <activation>
-                <property>
-                    <name>integration</name>
-                    <value>tomcat9-remote</value>
-                </property>
-            </activation>
-            <properties>
-                <arquillian.launch.tomcat>true</arquillian.launch.tomcat>
-                <arquillian.richfaces.servletContainerSetup>true</arquillian.richfaces.servletContainerSetup>
-            </properties>
-            <dependencies>
-                <dependency>
-                    <groupId>org.jboss.arquillian.container</groupId>
-                    <artifactId>arquillian-tomcat-remote-7</artifactId>
-                    <scope>test</scope>
-                </dependency>
-            </dependencies>
-        </profile>
+        
         <profile>
             <id>tomcat-managed-9</id>
             <activation>

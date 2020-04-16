@@ -60,14 +60,6 @@ jobs:
       name: "Richfaces + integration wildfly82-https: verify"
       env: CANFAIL=true
       jdk: openjdk8
-    - script: "mvn clean install -Dcheckstyle.skip=true -Dgpg.skip=true -B -V && mvn verify -Dcheckstyle.skip=true -Dgpg.skip=true -B -V -Pquickrun -Dintegration=Richfaceseap62"
-      name: "Richfaces + integration Richfaceseap62: verify"
-      env: CANFAIL=true
-      jdk: openjdk8
-    - script: "mvn clean install -Dcheckstyle.skip=true -Dgpg.skip=true -B -V && mvn verify -Dcheckstyle.skip=true -Dgpg.skip=true -B -V -Pquickrun -Dintegration=Richfaceseap63"
-      name: "Richfaces + integration Richfaceseap63: verify"
-      env: CANFAIL=true
-      jdk: openjdk8
     - script: "mvn clean install -Dcheckstyle.skip=true -Dgpg.skip=true -B -V && mvn verify -Dcheckstyle.skip=true -Dgpg.skip=true -B -V -Pquickrun -Dintegration=tomcat7"
       name: "Richfaces + integration tomcat7: verify"
       env: CANFAIL=true
