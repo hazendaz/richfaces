@@ -893,6 +893,7 @@
         </profile>
 
         
+        <!--  Currently it doesn't work : java.lang.NoSuchMethodError: javax.ws.rs.core.MultivaluedMap.addAll(Ljava/lang/Object;[Ljava/lang/Object;)V -->
         <profile>
         	<id>payara-managed-5</id>
             <activation>
@@ -914,6 +915,7 @@
                 </dependency>
             </dependencies>
         </profile>
+        <!--  Currently it doesn't work : java.lang.NoSuchMethodError: javax.ws.rs.core.MultivaluedMap.addAll(Ljava/lang/Object;[Ljava/lang/Object;)V -->
         <profile>
         	<id>payara-managed-4-1</id>
             <activation>
@@ -922,10 +924,12 @@
                     <value>payara4</value>
                 </property>
             </activation>
+            
             <properties>
                 <arquillian.launch.payara>true</arquillian.launch.payara>
                 <arquillian.container.home>${project.build.directory}/payara41</arquillian.container.home>
                 <arquillian.container.distribution>fish.payara.distributions:payara-web:zip:${version.payara4}</arquillian.container.distribution>
+                <arquillian.richfaces.servletContainerSetup>true</arquillian.richfaces.servletContainerSetup>
             </properties>
             <dependencies>
                 <dependency>

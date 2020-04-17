@@ -47,7 +47,6 @@
     <container qualifier="payara" default="${arquillian.launch.payara}">
         <configuration>
             <property name="glassFishHome">${arquillian.container.home}</property>
-            <property name="javaVmArguments">${arquillian.container.vmargs}</property>
         </configuration>
     </container>
     

@@ -129,7 +129,7 @@
         <version.arquillian.tomcat>1.0.0.CR6</version.arquillian.tomcat>
         <version.arquillian.wildfly8>8.2.1.Final</version.arquillian.wildfly8>
         <version.arquillian.wildfly>2.2.0.Final</version.arquillian.wildfly>
-        <version.arquillian.payara>1.4</version.arquillian.payara>
+        <version.arquillian.payara>2.2</version.arquillian.payara>
         <version.arquillian.suite.extension>1.1.2</version.arquillian.suite.extension>
         <version.httpclient>4.5.8</version.httpclient>
 
