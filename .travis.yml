@@ -52,15 +52,6 @@ jobs:
       jdk: openjdk8
     - script: "mvn clean install -Dcheckstyle.skip=true -Dgpg.skip=true -B -V && mvn verify -Dcheckstyle.skip=true -Dgpg.skip=true -B -V -Pquickrun -Dintegration=wildfly10"
       name: "Richfaces + integration wildfly 10: verify"
-      env: CANFAIL=true
-      jdk: openjdk8
-    - script: "mvn clean install -Dcheckstyle.skip=true -Dgpg.skip=true -B -V && mvn verify -Dcheckstyle.skip=true -Dgpg.skip=true -B -V -Pquickrun -Dintegration=tomcat8"
-      name: "Richfaces + integration tomcat8: verify"
-      env: CANFAIL=true
-      jdk: openjdk8
-    - script: "mvn clean install -Dcheckstyle.skip=true -Dgpg.skip=true -B -V && mvn verify -Dcheckstyle.skip=true -Dgpg.skip=true -B -V -Pquickrun -Dintegration=tomcat9"
-      name: "Richfaces + integration tomcat9: verify"
-      env: CANFAIL=true
       jdk: openjdk8
 
 
