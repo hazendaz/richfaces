@@ -64,6 +64,10 @@ jobs:
       name: "Richfaces + integration tomcat9: verify"
       env: CANFAIL=true
       jdk: openjdk8
+    - script: "mvn clean install -Dcheckstyle.skip=true -Dgpg.skip=true -B -V && mvn verify -Dcheckstyle.skip=true -Dgpg.skip=true -B -V -Pquickrun -Dintegration=payara5"
+      name: "Richfaces + integration payara5: verify"
+      env: CANFAIL=true
+      jdk: openjdk8
 
   allow_failures:
     - jdk: openjdk8
