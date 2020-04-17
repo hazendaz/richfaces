@@ -69,7 +69,7 @@ public class ITAjaxExceptionHandling {
         String errorMessage = error.getElementsByTagName("error-message").item(0).getTextContent();
 
         assertEquals(IllegalStateException.class.toString(), errorName);
-        assertEquals("this should be handled by JSF", errorMessage);
+        assertEquals(errorMessage.contains("this should be handled by JSF") || errorMessage.contains("See your server log for more information"));
     }
 
     private static void addIndexPage(RichDeployment deployment) {
