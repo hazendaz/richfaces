@@ -1,13 +1,19 @@
-4.6.13-SNAPSHOT 2020-04-16
+4.6.13-SNAPSHOT
 ---------
-	[  ] Fix delete link not rendered in fileupload after jQuery migration.
 
+    [  ] jQuery upgraded to 3.5.1
+
+4.6.12.ayg 2020-04-16
+---------
+
+    [  ] Fix delete link not rendered in fileupload after jQuery migration.
+    [  ] upgrade shrinkwrap.resolver to 2.2.7
 
 4.6.11.ayg 2020-04-14
 ---------
 
-	[  ] richfaces-cdk-maven-plugin Upgraded to com.github.albfernandez.richfaces.cdk:richfaces-cdk-maven-plugin:4.6.1.ayg
-	[  ] jQuery upgraded to 3.5.0
+    [  ] richfaces-cdk-maven-plugin Upgraded to com.github.albfernandez.richfaces.cdk:richfaces-cdk-maven-plugin:4.6.1.ayg
+    [  ] jQuery upgraded to 3.5.0
 
 
 4.6.10.ayg 2020-04-09
