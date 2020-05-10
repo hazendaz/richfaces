@@ -22,10 +22,18 @@ public class ElementIsFocused implements Predicate<WebDriver> {
     public boolean apply(WebDriver browser) {
         try {
             activeElement = FocusRetriever.retrieveActiveElement();
-            if (element == null) {
-                return activeElement == null;
+            if (element == null && activeElement == null) {
+                return true;
             }
-            return activeElement.equals(element);
+            if (element == null || activeElement == null) {
+            	return false;
+            }
+            String elementId = element.getAttribute("id");
+            String activeId = activeElement.getAttribute("id");
+            if (elementId == null) {
+            	elementId = "x";
+            }
+            return element.equals(activeElement) || elementId.equals(activeId); 
         } catch (StaleElementReferenceException e) {
             return false;
         }
