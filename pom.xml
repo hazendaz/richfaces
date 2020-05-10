@@ -731,6 +731,22 @@
                 </dependency>
             </dependencies>
         </profile>
+        <profile>
+            <id>wildfly-remote-18</id>
+            <activation>
+                <property>
+                    <name>integration</name>
+                    <value>wildfly18-remote</value>
+                </property>
+            </activation>
+            <dependencies>
+                <dependency>
+                    <groupId>org.wildfly</groupId>
+                    <artifactId>wildfly-arquillian-container-remote</artifactId>
+                    <scope>test</scope>
+                </dependency>
+            </dependencies>
+        </profile>  
         
         <profile>
             <id>wildfly-managed-10-0</id>
@@ -753,7 +769,22 @@
                 </dependency>
             </dependencies>
         </profile>
-
+        <profile>
+            <id>wildfly-remote-10-0</id>
+            <activation>
+                <property>
+                    <name>integration</name>
+                    <value>wildfly10-remote</value>
+                </property>
+            </activation>
+            <dependencies>
+                <dependency>
+                    <groupId>org.wildfly</groupId>
+                    <artifactId>wildfly-arquillian-container-remote</artifactId>
+                    <scope>test</scope>
+                </dependency>
+            </dependencies>
+        </profile>
 
         <profile>
             <id>wildfly-managed-8-2-https</id>
@@ -792,7 +823,23 @@
                 </plugins>
             </build>
         </profile>
-        
+        <profile>
+            <id>wildfly-remote-8-2</id>
+            <activation>
+                <property>
+                    <name>integration</name>
+                    <value>wildfly82-remote</value>
+                </property>
+            </activation>
+            <dependencies>
+                <dependency>
+                    <groupId>org.wildfly</groupId>
+                    <artifactId>wildfly-arquillian-container-remote</artifactId>
+                    <version>${version.wildfly82}</version>
+                    <scope>test</scope>
+                </dependency>
+            </dependencies>
+        </profile>          
         <profile>
             <id>wildfly-managed-8-1</id>
             <activation>
@@ -815,7 +862,24 @@
                 </dependency>
             </dependencies>
         </profile>
-        
+        <profile>
+            <id>wildfly-remote-8-1</id>
+            <activation>
+                <property>
+                    <name>integration</name>
+                    <value>wildfly81-remote</value>
+                </property>
+            </activation>
+            <dependencies>
+                <dependency>
+                    <groupId>org.wildfly</groupId>
+                    <artifactId>wildfly-arquillian-container-remote</artifactId>
+                    <version>${version.wildfly81}</version>
+                    <scope>test</scope>
+                </dependency>
+            </dependencies>
+        </profile>
+      
         
 
       
@@ -844,6 +908,26 @@
             </dependencies>
         </profile>
         <profile>
+            <id>tomcat-remote-9</id>
+            <activation>
+                <property>
+                    <name>integration</name>
+                    <value>tomcat9-remote</value>
+               </property>
+            </activation>
+            <properties>
+                <arquillian.launch.tomcat>true</arquillian.launch.tomcat>
+                <arquillian.richfaces.servletContainerSetup>true</arquillian.richfaces.servletContainerSetup>
+            </properties>
+            <dependencies>
+                <dependency>
+                    <groupId>org.jboss.arquillian.container</groupId>
+                    <artifactId>arquillian-tomcat-remote-7</artifactId>
+                    <scope>test</scope>
+                </dependency>
+            </dependencies>
+        </profile>
+        <profile>
             <id>tomcat-managed-85</id>
             <activation>
                 <property>
@@ -863,6 +947,26 @@
                 <dependency>
                     <groupId>org.jboss.arquillian.container</groupId>
                     <artifactId>arquillian-tomcat-managed-7</artifactId>
+                    <scope>test</scope>
+                </dependency>
+            </dependencies>
+        </profile>
+        <profile>
+            <id>tomcat-remote-85</id>
+            <activation>
+                <property>
+                    <name>integration</name>
+                    <value>tomcat85-remote</value>
+                </property>
+            </activation>
+            <properties>
+                <arquillian.launch.tomcat>true</arquillian.launch.tomcat>
+                <arquillian.richfaces.servletContainerSetup>true</arquillian.richfaces.servletContainerSetup>
+            </properties>
+            <dependencies>
+                <dependency>
+                    <groupId>org.jboss.arquillian.container</groupId>
+                    <artifactId>arquillian-tomcat-remote-7</artifactId>
                     <scope>test</scope>
                 </dependency>
             </dependencies>
@@ -887,6 +991,26 @@
                 <dependency>
                     <groupId>org.jboss.arquillian.container</groupId>
                     <artifactId>arquillian-tomcat-managed-7</artifactId>
+                    <scope>test</scope>
+                </dependency>
+            </dependencies>
+        </profile>
+        <profile>
+            <id>tomcat-remote-8</id>
+            <activation>
+                <property>
+                    <name>integration</name>
+                    <value>tomcat8-remote</value>
+                </property>
+            </activation>
+            <properties>
+                <arquillian.launch.tomcat>true</arquillian.launch.tomcat>
+                <arquillian.richfaces.servletContainerSetup>true</arquillian.richfaces.servletContainerSetup>
+            </properties>
+            <dependencies>
+                <dependency>
+                    <groupId>org.jboss.arquillian.container</groupId>
+                    <artifactId>arquillian-tomcat-remote-7</artifactId>
                     <scope>test</scope>
                 </dependency>
             </dependencies>

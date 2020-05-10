@@ -7,13 +7,10 @@ The supported container matrix is:
 
 * WildFly 8.1
 * WildFly 8.2
-* WildFly 9.0
 * WildFly 10.0
-* JBoss EAP 6.2
-* JBoss EAP 6.3
-* JBoss EAP 6.4
 * Tomcat 7
 * Tomcat 8
+* Tomcat 9
 
 Note: for specific supported versions consult the pom.xml
 
@@ -257,25 +254,11 @@ Managed Containers
 
     mvn verify -Dintegration=wildfly82
 
-### WildFly 9.0 - Managed
-
-    mvn verify -Dintegration=wildfly90
 
 ### WildFly 10.0 - Managed
 
     mvn verify -Dintegration=wildfly100
 
-### JBoss EAP 6.2 - Managed
-
-    mvn verify -Dintegration=jbosseap62
-
-### JBoss EAP 6.3 - Managed
-
-    mvn verify -Dintegration=jbosseap63
-
-### JBoss EAP 6.4 - Managed
-
-    mvn verify -Dintegration=jbosseap64
 
 ### Tomcat 7 - Managed
 
@@ -285,6 +268,9 @@ Managed Containers
 
     mvn verify -Dintegration=tomcat8
 
+### Tomcat 9 - Managed
+
+    mvn verify -Dintegration=tomcat9
 
 Providing container distribution
 --------------------------------
@@ -336,13 +322,6 @@ Profile: `wildfly-remote-8-2`
 
     mvn verify -Dintegration=wildfly82-remote
 
-### WildFly 9.0 - Remote
-
-Start: `[wildfly-9.0]$ ./bin/standalone.sh`
-
-Profile: `wildfly-remote-9-0`
-
-    mvn verify -Dintegration=wildfly90-remote
 
 ### WildFly 10.0 - Remote
 
@@ -352,31 +331,9 @@ Profile: `wildfly-remote-10-0`
 
     mvn verify -Dintegration=wildfly100-remote
 
-### JBoss EAP 6.2 - Remote
 
-Start: `[jboss-eap-6.2]$ ./bin/standalone.sh`
 
-Profile: `jbosseap-remote-6-2`
-
-    mvn verify -Dintegration=jbosseap62-remote
-
-### JBoss EAP 6.3 - Remote
-
-Start: `[jboss-eap-6.3]$ ./bin/standalone.sh`
-
-Profile: `jbosseap-remote-6-3`
-
-    mvn verify -Dintegration=jbosseap63-remote
-
-### JBoss EAP 6.4 - Remote
-
-Start: `[jboss-eap-6.4]$ ./bin/standalone.sh`
-
-Profile: `jbosseap-remote-6-4`
-
-    mvn verify -Dintegration=jbosseap64-remote
-
-### Tomcat 7/8 - Remote
+### Tomcat 7/8/+ - Remote
 
 You need to modify the `conf/tomcat-users.xml` file:
 
