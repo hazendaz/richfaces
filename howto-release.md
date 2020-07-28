@@ -17,6 +17,7 @@ mvn clean install -Dintegration=wildfly81 -Dsmoke
 
 ```bash
 bash components/change_version.sh -r -o <4.5.0-SNAPSHOT> -n <4.5.0>
+;edit README.md
 git add -A
 git commit -S -m 'Release <4.5.0>'
 mvn clean install verify -Prelease

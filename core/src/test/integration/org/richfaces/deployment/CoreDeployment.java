@@ -447,7 +447,7 @@ public class CoreDeployment extends BaseDeployment {
     }
     
     public void withA4jComponents() {
-        addMavenDependency("com.github.albfernandez.richfaces:richfaces-a4j:4.6.13-SNAPSHOT");
+        addMavenDependency("com.github.albfernandez.richfaces:richfaces-a4j:4.6.13.ayg");
         excludeMavenDependency("richfaces-core");
     }
     
