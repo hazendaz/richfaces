@@ -105,7 +105,6 @@ public class ContainerInstaller {
 
     private void unzip(InputStream inputStream, File destination, boolean overwrite) {
         try {
-            byte[] buf = new byte[1024];
             ZipInputStream zipinputstream = null;
             ZipEntry zipentry;
             zipinputstream = new ZipInputStream(inputStream);
@@ -113,6 +112,9 @@ public class ContainerInstaller {
             zipentry = zipinputstream.getNextEntry();
             while (zipentry != null) {
                 File newFile = new File(destination, zipentry.getName());
+                if (!newFile.toPath().normalize().startsWith(destination.toPath())) {
+                    throw new Exception("Bad zip entry");
+                }
                 if (zipentry.isDirectory()) {
                     newFile.mkdirs();
                     zipentry = zipinputstream.getNextEntry();
